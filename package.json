@@ -11,6 +11,8 @@
     "core-js": "^2.6.5",
     "hypothesis-api-client": "^0.1.6",
     "vue": "^2.6.10",
+    "vue-async-computed": "^3.7.0",
+    "vue-date-filters": "^1.1.0",
     "zotero-api-client": "^0.25.0"
   },
   "devDependencies": {

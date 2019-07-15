@@ -3,7 +3,11 @@
     <div class="card-header">Name der Sammlung</div>
     <div class="card-body p-0">
       <ul class="list-group border-0">
-        <li v-for="i in items" :key="i.idx" class="list-group-item d-flex justify-content-between align-items-center border-left-0 border-right-0 border-top-0"><a target="_blank" :href=i.url>{{ i.title }}</a><Annotations :item=i /></li>
+        <li v-for="i in items" :key="i.idx" class="list-group-item d-flex justify-content-between align-items-left border-left-0 border-right-0 border-top-0">
+          <span>{{ i.language }}</span>
+          <a target="_blank" :href=i.url>{{ i.title }}</a>
+          <Annotations :item=i />
+        </li>
       </ul>
     </div>
   </div>
@@ -19,7 +23,7 @@ export default {
   components: {
     Annotations
   },
-  props: {},
+  props: [ 'groupKey', 'zoteroReady' ],
   data() {
     return {
       items: []
@@ -28,7 +32,7 @@ export default {
   methods: {
     fetch_zotero_collection() {
       api().library('group', 2038099)
-        .collections('UNZ8JH5G')
+        .collections(this.groupKey)
         .items()
         .top()
         .get( {"limit": 100, "sort": "title"} )
@@ -48,8 +52,15 @@ export default {
           })
     }
   },
+  watch: {
+    zoteroReady: function() {
+      if (this.zoteroReady) {
+        this.fetch_zotero_collection()
+      }
+    }
+  },
   created() {
-    this.fetch_zotero_collection()
+    window.console.log(this.zoteroReady())
   }
 }
 </script>

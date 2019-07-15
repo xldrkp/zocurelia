@@ -1,6 +1,6 @@
 <template>
     <div>
-        <span class="badge badge-primary badge-pill" >{{ count }}</span>
+        <span class="badge badge-pill" v-bind:class="{ 'badge-warning': count == 0, 'badge-primary': count > 0}">{{ count }}</span>
     </div>
 </template>
 
@@ -15,32 +15,34 @@ export default {
   },
   data() {
     return {
-        count: Number,
+        count: 0,
+        latest: undefined,
         hac: Object
     }
   },
   methods: {
     url_exists(item) {
-      window.console.log("URL: ", item.url)
       return item.url != "" || false
-    },
-    get_count: function() {
-        window.console.log("Annotation Item", this.item)
-
-        if (this.url_exists(this.item)) {
-          return this.hac.searchAnnotations({ url: this.item.url }, (err, annotations) => {
-            // window.console.log(annotations)
-              this.count = annotations.length
-            })
-        } else {
-            this.count = 0
-        }
     }
   },
-  created() {
-    // Instantiate the Hypothesis client
-    this.hac = new HypothesisClient('')
-    this.get_count()
+  asyncComputed: {
+    get_count: {
+
+        async get() {
+          this.hac = new HypothesisClient('')
+
+          if (this.url_exists(this.item)) {
+            await this.hac.searchAnnotations(
+              { url: this.item.url }, (err, annotations) => {
+                window.console.log(annotations)
+                this.count = annotations.length
+                this.latest = annotations[0]["created"]
+              })
+          } else {
+              this.count = 0
+          }
+        }
+    }
   }
 }
 </script>
