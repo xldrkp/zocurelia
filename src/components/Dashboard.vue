@@ -7,7 +7,7 @@
           <form class="form-inline">
             <div class="input-group">
               <input v-model="groupKey" type="text" class="form-control" placeholder="Top Level Group Key">
-              <div class="input-group-append"><button @click="getCollection" class="btn btn-primary" type="button">Go!</button></div>
+              <div class="input-group-append"><button @click="toggleReady()" class="btn btn-primary" type="button">Go!</button></div>
             </div>
           </form>
         </div>
@@ -39,9 +39,8 @@ export default {
     }
   },
   methods: {
-    getCollection() {
-      window.console.log(this.groupKey)
-      this.zoteroReady = true
+    toggleReady: function() {
+      this.zoteroReady = !this.zoteroReady
     }
   }
 }

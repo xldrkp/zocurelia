@@ -53,14 +53,13 @@ export default {
     }
   },
   watch: {
-    zoteroReady: function() {
-      if (this.zoteroReady) {
+    zoteroReady: function(newValue, oldValue) {
+        window.console.log(newValue, oldValue)
         this.fetch_zotero_collection()
-      }
     }
   },
   created() {
-    window.console.log(this.zoteroReady())
+    // window.console.log(this.zoteroReady())
   }
 }
 </script>
