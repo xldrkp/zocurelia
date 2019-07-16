@@ -36,7 +36,7 @@ export default {
               { url: this.item.url }, (err, annotations) => {
                 window.console.log(annotations)
                 this.count = annotations.length
-                this.latest = annotations[0]["created"]
+                // this.latest = annotations[0]["created"]
               })
           } else {
               this.count = 0
