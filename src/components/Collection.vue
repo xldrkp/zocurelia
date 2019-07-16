@@ -1,13 +1,11 @@
 <template>
-  <div class="card">
-    <div class="card-header">Name der Sammlung</div>
-    <div class="card-body p-0">
-      <ul class="list-group border-0">
-        <li v-for="i in items" :key="i.idx" class="list-group-item d-flex justify-content-between align-items-left border-left-0 border-right-0 border-top-0">
-          {{ i.language }}<a target="_blank" :href=i.url>{{ i.title }}</a>
-          <Annotations :item=i />
-        </li>
-      </ul>
+  <div>
+    <h2>{{ this.collectionKey }} ({{ this.items.length }})</h2>
+    <div class="card" v-for="i in items" :key="i.idx">
+      <div class="card-header"><a target="_blank" :href=i.url>{{ i.title }}</a><Annotations  class="float-right" :item=i /></div>
+        <div class="card-body" >
+          <p>{{ i.abstractNote }}</p>
+      </div>
     </div>
   </div>
 </template>
@@ -44,6 +42,7 @@ export default {
                   collection: i.collections[0],
                   language: i.language, 
                   title: i.title, 
+                  abstractNote: i.abstractNote,
                   url: i.url, 
                   idx: idx
                 }
@@ -63,7 +62,8 @@ export default {
                 {
                   collection: i.collections[0],
                   language: i.language, 
-                  title: i.title, 
+                  title: i.title,
+                  abstractNote: i.abstractNote,
                   url: i.url, 
                   idx: idx
                 }
