@@ -1,5 +1,5 @@
 <template>
-  <div class="card">
+  <div class="card" v-show="zoteroReady">
     <div class="card-header">Name der Sammlung</div>
     <div class="card-body p-0">
       <ul class="list-group border-0">
