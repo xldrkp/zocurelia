@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2>{{ this.collectionKey }} ({{ this.items.length }})</h2>
+    <h1 v-show="this.meta.groupURL != ''">Group: <a :href="( this.meta.groupURL || '#')" target="_blank">{{ this.meta.library }}</a> ({{ this.items.length }})</h1>
     <div class="card" v-for="i in items" :key="i.idx">
       <div class="card-header">
         <Annotations v-if="i.url" class="float-right" :item=i />
@@ -10,6 +10,7 @@
       </div>
       <div class="card-body" >
         <AbstractNote :abstractNote=i.abstractNote />
+        <Tags :tags=i.tags />
      </div>
     </div>
   </div>
@@ -19,18 +20,24 @@
 
 import AbstractNote from '@/components/AbstractNote.vue'
 import Annotations from '@/components/Annotations.vue'
+import Tags from '@/components/Tags.vue'
 import api from 'zotero-api-client'
 
 export default {
   name: 'Collection',
   components: {
     Annotations,
-    AbstractNote
+    AbstractNote,
+    Tags
   },
-  props: [ 'groupID', 'zoteroReady', 'subcollections', 'collectionKey' ],
+  props: [ 'groupID', 'zoteroReady', 'subcollections', 'collectionKey', 'tags' ],
   data() {
     return {
-      items: []
+      items: [],
+      meta: {
+        groupURL: "",
+        library: ""
+      }
     }
   },
   methods: {
@@ -54,6 +61,10 @@ export default {
                   idx: idx
                 }
               ))
+            this.meta = {
+              library: response.raw[0].library.name || "No name",
+              groupURL: response.raw[0].links.alternate.href || "No URL"
+            }
           })
     },
     fetch_complete_zotero_list() {
@@ -64,6 +75,7 @@ export default {
         .then(
           response => {
             let items = response.getData();
+            window.console.log("Raw response: ", response)
             window.console.log("Group Items: ", items)
             this.items = items.map( (i, idx) => (
                 {
@@ -72,9 +84,16 @@ export default {
                   title: i.title,
                   abstractNote: i.abstractNote,
                   url: i.url, 
+                  tags: i.tags, 
                   idx: idx
                 }
               ))
+            this.meta = {
+              library: response.raw[0].library.name || "No name",
+              groupURL: "https://www.zotero.org/groups/" + this.groupID
+            }
+            window.console.log("Meta: ", this.meta)
+            window.console.log("Mapped items: ", this.items)
           })
       }
   },
