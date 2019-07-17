@@ -1,0 +1,15 @@
+.card-header a {
+    font-weight: bold;
+    width: 59vw;
+}
+
+.card-header .title {
+    font-weight: bold;
+}
+
+.card-body .vue-simple-markdown.more {
+    text-overflow: ellipsis; 
+    overflow: hidden;
+    width: 100%;
+    white-space: nowrap;
+}

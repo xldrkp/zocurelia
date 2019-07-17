@@ -1,6 +1,6 @@
 <template>
     <div class="d-inline">
-        <span class="badge badge-pill" v-bind:class="{ 'badge-warning': count == 0, 'badge-primary': count > 0}">{{ count }}</span>
+        Annotations: <span class="badge badge-pill" v-bind:class="{ 'badge-warning': count == 0, 'badge-primary': count > 0}">{{ count }}</span>
     </div>
 </template>
 

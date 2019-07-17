@@ -2,23 +2,30 @@
   <div>
     <h2>{{ this.collectionKey }} ({{ this.items.length }})</h2>
     <div class="card" v-for="i in items" :key="i.idx">
-      <div class="card-header"><a target="_blank" :href=i.url>{{ i.title }}</a><Annotations  class="float-right" :item=i /></div>
-        <div class="card-body" >
-          <p>{{ i.abstractNote }}</p>
+      <div class="card-header">
+        <Annotations v-if="i.url" class="float-right" :item=i />
+        <span v-else class="float-right">No online full text</span>
+        <a v-if="i.url" target="_blank" :href=i.url>{{ i.title }}</a>
+        <span class="title" v-else>{{ i.title }}</span>
       </div>
+      <div class="card-body" >
+        <AbstractNote :abstractNote=i.abstractNote />
+     </div>
     </div>
   </div>
 </template>
 
 <script>
 
+import AbstractNote from '@/components/AbstractNote.vue'
 import Annotations from '@/components/Annotations.vue'
 import api from 'zotero-api-client'
 
 export default {
   name: 'Collection',
   components: {
-    Annotations
+    Annotations,
+    AbstractNote
   },
   props: [ 'groupID', 'zoteroReady', 'subcollections', 'collectionKey' ],
   data() {

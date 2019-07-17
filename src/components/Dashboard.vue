@@ -52,7 +52,7 @@ export default {
   },
   data() {
     return {
-      groupID: 2038099,
+      groupID: 2350037,
       zoteroReady: false,
       collectionKey: undefined
     }
