@@ -1,11 +1,11 @@
 <template>
   <div>
-    <h1 v-show="this.meta.groupURL != ''">Group: <a :href="( this.meta.groupURL || '#')" target="_blank">{{ this.meta.library }}</a> ({{ this.items.length }})</h1>
+    <h1 v-show="this.meta.groupURL != ''">Group: <a :href="( this.meta.groupURL || '#')" target="_blank">{{ this.meta.library }}</a> ({{ this.items.length }} texts)</h1>
     <div class="card" v-for="i in items" :key="i.idx">
       <div class="card-header">
         <Annotations v-if="i.url" class="float-right" :item=i />
         <span v-else class="float-right">No online full text</span>
-        <a v-if="i.url" target="_blank" :href=i.url>{{ i.title }}</a>
+        <a class="title" v-if="i.url" target="_blank" :href=i.url>{{ i.title }}</a>
         <span class="title" v-else>{{ i.title }}</span>
       </div>
       <div class="card-body" >

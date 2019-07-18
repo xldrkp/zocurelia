@@ -1,6 +1,6 @@
 <template>
   <div>
-      <p v-html="list_tags"></p>
+      <p class="tags" v-html="list_tags"></p>
   </div>
 </template>
 

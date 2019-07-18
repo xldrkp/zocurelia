@@ -1,10 +1,29 @@
+.card {
+    margin-bottom: 20px;
+}
+
+.card .tags {
+    margin-top: 10px;
+}
+
+.card .more-link span {
+    display: block;
+    margin-top: 10px;
+    font-weight: 300;
+}
+
+.card-header {
+    font-size: 22px;
+}
+
 .card-header a {
     font-weight: bold;
-    width: 59vw;
 }
 
 .card-header .title {
+    width: 45vw;
     font-weight: bold;
+    display: block;
 }
 
 .card-body .vue-simple-markdown.more {
