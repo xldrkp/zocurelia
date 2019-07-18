@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div v-show="tags != ''">
       <p class="tags" v-html="list_tags"></p>
   </div>
 </template>

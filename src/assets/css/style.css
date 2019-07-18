@@ -1,3 +1,11 @@
+/* Navigation bar */
+
+.navbar a {
+    font-size: 26px;
+}
+
+/* Cards */
+
 .card {
     margin-bottom: 20px;
 }
@@ -24,6 +32,15 @@
     width: 45vw;
     font-weight: bold;
     display: block;
+}
+
+.card-header .authors {
+    font-size: 16px;
+}
+
+.card-header .zotero-logo {
+    width: 20px;
+    margin-right: 8px;
 }
 
 .card-body .vue-simple-markdown.more {

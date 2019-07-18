@@ -1,5 +1,5 @@
 <template>
-  <div class="abstractNote">
+  <div class="abstractNote" v-show="abstractNote != ''">
     <vue-simple-markdown :class="{ more: moreToggle }" :source="abstractNote"></vue-simple-markdown>
       <a class="more-link" href="#" @click.prevent="moreToggle = !moreToggle">
         <span v-if="moreToggle">Show more</span>

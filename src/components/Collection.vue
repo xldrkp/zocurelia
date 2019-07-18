@@ -1,12 +1,13 @@
 <template>
   <div>
-    <h1 v-show="this.meta.groupURL != ''">Group: <a :href="( this.meta.groupURL || '#')" target="_blank">{{ this.meta.library }}</a> ({{ this.items.length }} texts)</h1>
+    <h1 v-show="this.meta.groupURL != ''">Zotero Group: <a :href="( this.meta.groupURL || '#')" target="_blank">{{ this.meta.library }}</a> ({{ this.items.length }} texts)</h1>
     <div class="card" v-for="i in items" :key="i.idx">
       <div class="card-header">
         <Annotations v-if="i.url" class="float-right" :item=i />
         <span v-else class="float-right">No online full text</span>
         <a class="title" v-if="i.url" target="_blank" :href=i.url>{{ i.title }}</a>
         <span class="title" v-else>{{ i.title }}</span>
+        <Authors :authors=i.authors :zotero_item_url=i.zotero_item_url />
       </div>
       <div class="card-body" >
         <AbstractNote :abstractNote=i.abstractNote />
@@ -21,6 +22,7 @@
 import AbstractNote from '@/components/AbstractNote.vue'
 import Annotations from '@/components/Annotations.vue'
 import Tags from '@/components/Tags.vue'
+import Authors from '@/components/Authors.vue'
 import api from 'zotero-api-client'
 
 export default {
@@ -28,7 +30,8 @@ export default {
   components: {
     Annotations,
     AbstractNote,
-    Tags
+    Tags,
+    Authors
   },
   props: [ 'groupID', 'zoteroReady', 'subcollections', 'collectionKey', 'tags' ],
   data() {
@@ -56,6 +59,7 @@ export default {
                   collection: i.collections[0],
                   language: i.language, 
                   title: i.title, 
+                  authors: i.creators,
                   abstractNote: i.abstractNote,
                   url: i.url, 
                   idx: idx
@@ -82,8 +86,10 @@ export default {
                   collection: i.collections[0],
                   language: i.language, 
                   title: i.title,
+                  authors: i.creators,
                   abstractNote: i.abstractNote,
                   url: i.url, 
+                  zotero_item_url: response.raw[idx].links.alternate.href,
                   tags: i.tags, 
                   idx: idx
                 }
