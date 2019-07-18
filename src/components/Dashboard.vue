@@ -28,11 +28,12 @@
             <div class="form-group row">
               <label class="control-label control-label-left col-3"></label>
               <div class="controls col-9">
-                <label class="checkbox control-label col-form-label" for="has_collection">
+                <label class="checkbox control-label col-form-label" for="list_collection">
                   <input
                     type="checkbox"
-                    value="has_collection"
-                    id="has_collection"
+                    value="list_collection"
+                    v-model="list_collection"
+                    id="list_collection"
                     name="field27"
                     data-parsley-errors-container="#errId2"
                   /> List a collection in that group
@@ -40,7 +41,7 @@
                 <span id="errId2" class="error"></span>
               </div>
             </div>
-            <div class="form-group row">
+            <div v-show="list_collection" class="form-group row">
               <label class="control-label col-3" for="CollectionKey">Collection Key</label>
               <div class="controls col-9">
                 <input
@@ -55,7 +56,7 @@
                 <span id="errId3" class="error"></span>
               </div>
             </div>
-            <div class="form-group row">
+            <div v-show="list_collection" class="form-group row">
               <label class="control-label control-label-left col-3"></label>
               <div class="controls col-9">
                 <label class="checkbox control-label" for="list_sub">
@@ -77,6 +78,7 @@
                   <input
                     type="checkbox"
                     value="Private Group"
+                    v-model="is_private_hypo"
                     id="checkbox49"
                     name="field48"
                     data-parsley-errors-container="#errId5"
@@ -85,7 +87,7 @@
                 <span id="errId5" class="error"></span>
               </div>
             </div>
-            <div class="form-group row">
+            <div v-show="is_private_hypo" class="form-group row">
               <label class="control-label col-3" for="Token">Token</label>
               <div class="controls col-9">
                 <input
@@ -99,7 +101,7 @@
                 <span id="errId6" class="error"></span>
               </div>
             </div>
-            <div class="form-group row">
+            <div v-show="is_private_hypo" class="form-group row">
               <label class="control-label col-3" for="Group">Group</label>
               <div class="controls col-9">
                 <input
@@ -144,7 +146,9 @@ export default {
     return {
       groupID: 2350037,
       zoteroReady: false,
-      collectionKey: undefined
+      collectionKey: undefined,
+      list_collection: false,
+      is_private_hypo: false
     };
   },
   methods: {
