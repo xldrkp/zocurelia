@@ -24,6 +24,16 @@
     font-size: 22px;
 }
 
+.card .hypo-link {
+    font-size: 16px;
+    margin-right: 6px;
+}
+
+.card .no-full-text {
+    font-size: 16px;
+    margin-top: 8px;
+}
+
 .card-header a {
     font-weight: bold;
 }

@@ -3,8 +3,8 @@
     <h1 v-show="this.meta.groupURL != ''">Zotero Group: <a :href="( this.meta.groupURL || '#')" target="_blank">{{ this.meta.library }}</a> ({{ this.items.length }} texts)</h1>
     <div class="card" v-for="i in items" :key="i.idx">
       <div class="card-header">
-        <Annotations v-if="i.url" class="float-right" :item=i />
-        <span v-else class="float-right">No online full text</span>
+        <Annotations v-if="i.url" class="float-right" :item=i :url=i.url />
+        <span v-else class="no-full-text float-right">No online full text</span>
         <a class="title" v-if="i.url" target="_blank" :href=i.url>{{ i.title }}</a>
         <span class="title" v-else>{{ i.title }}</span>
         <Authors :authors=i.authors :zotero_item_url=i.zotero_item_url />

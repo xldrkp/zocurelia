@@ -1,6 +1,11 @@
 <template>
     <div class="d-inline">
-        Annotations <span class="badge badge-pill" v-bind:class="{ 'badge-warning': count == 0, 'badge-primary': count > 0}">{{ count }}</span>
+        <a class="hypo-link" :href="'https://via.hypothes.is/' + url" target="_blank">
+          <span v-show="count > 0">Keep annotating!</span>
+          <span v-show="count == 0">Start annotating!</span>
+        </a>
+        
+        <span class="badge badge-pill" v-bind:class="{ 'badge-warning': count == 0, 'badge-primary': count > 0}">{{ count }}</span>
     </div>
 </template>
 
@@ -10,9 +15,7 @@ import HypothesisClient from 'hypothesis-api-client'
 
 export default {
   name: 'Annotations',
-  props: {
-      item: Object
-  },
+  props: [ 'item', 'url'],
   data() {
     return {
         count: 0,
