@@ -4,38 +4,119 @@
       <div class="row pb-3">
         <div class="col-9">
           <h3>Filter Settings</h3>
-          <form
-            v-on:submit.prevent="startRequest"
-            class="d-flex justify-content-between needs-validation"
-            novalidate
-          >
-            <div class="form-row align-items-center">
-              <div class="col-sm-4 my-1">
-                <div class="form-group">
-                  <label for="groupID">Group ID</label>
-                  <input
-                    required
-                    v-model="groupID"
-                    type="text"
-                    class="form-control"
-                    placeholder="Top Level Group ID"
-                    id="groupID"
-                  />
-                </div>
-              </div>
-              <div class="col-sm-4 my-1">
-                <label for="collectionKey">Collection Key</label>
-                <input
-                  v-model="collectionKey"
-                  type="text"
-                  class="form-control"
-                  id="collectionKey"
-                  placeholder="Collection Key"
-                />
-              </div>
 
-              <div class="col-md-1 my-1">
-                <button class="btn btn-primary" type="submit">Go!</button>
+          <form v-on:submit.prevent="startRequest" class="needs-validation" novalidate>
+            <div class="form-group row">
+              <label class="control-label col-3 col-form-label" for="GroupID">
+                Group ID
+                <span class="req">*</span>
+              </label>
+              <div class="col-9">
+                <input
+                  id="GroupID"
+                  type="text"
+                  v-model="groupID"
+                  class="form-control"
+                  data-role="text"
+                  required="required"
+                  placeholder="Enter a Zotero group ID like 240012"
+                  data-parsley-errors-container="#errId1"
+                />
+                <span id="errId1" class="error"></span>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label class="control-label control-label-left col-3"></label>
+              <div class="controls col-9">
+                <label class="checkbox control-label col-form-label" for="has_collection">
+                  <input
+                    type="checkbox"
+                    value="has_collection"
+                    id="has_collection"
+                    name="field27"
+                    data-parsley-errors-container="#errId2"
+                  /> List a collection in that group
+                </label>
+                <span id="errId2" class="error"></span>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label class="control-label col-3" for="CollectionKey">Collection Key</label>
+              <div class="controls col-9">
+                <input
+                  id="CollectionKey"
+                  name="CollectionKey"
+                  type="text"
+                  class="form-control k-textbox"
+                  data-role="text"
+                  placeholder="Enter a valid collection key like ETAGD5RT"
+                  data-parsley-errors-container="#errId3"
+                />
+                <span id="errId3" class="error"></span>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label class="control-label control-label-left col-3"></label>
+              <div class="controls col-9">
+                <label class="checkbox control-label" for="list_sub">
+                  <input
+                    id="list_sub"
+                    name="list_sub"
+                    type="checkbox"
+                    value="List all subcollections"
+                    data-parsley-errors-container="#errId4"
+                  /> List all subcollections
+                </label>
+                <span id="errId4" class="error"></span>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label class="control-label col-3">Hypothesis</label>
+              <div class="controls col-9">
+                <label class="checkbox control-label" for="checkbox49">
+                  <input
+                    type="checkbox"
+                    value="Private Group"
+                    id="checkbox49"
+                    name="field48"
+                    data-parsley-errors-container="#errId5"
+                  />Private Group
+                </label>
+                <span id="errId5" class="error"></span>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label class="control-label col-3" for="Token">Token</label>
+              <div class="controls col-9">
+                <input
+                  id="Token"
+                  type="text"
+                  class="form-control k-textbox"
+                  data-role="text"
+                  placeholder="Enter a valid API token. You will find it at &quot;Account > Developer&quot;."
+                  data-parsley-errors-container="#errId6"
+                />
+                <span id="errId6" class="error"></span>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label class="control-label col-3" for="Group">Group</label>
+              <div class="controls col-9">
+                <input
+                  id="Group"
+                  type="text"
+                  class="form-control k-textbox"
+                  data-role="text"
+                  placeholder="Enter a valid group ID like aYZTZ2Ge9"
+                  data-parsley-errors-container="#errId7"
+                />
+                <span id="errId7" class="error"></span>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label class="col-3"></label>
+              <div class="controls col-9">
+                <button id="button58" type="submit" class="btn btn-primary btn-default">Go!</button>
               </div>
             </div>
           </form>
