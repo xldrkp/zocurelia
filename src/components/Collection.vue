@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1 v-show="this.meta.groupURL != ''">Zotero Group: <a :href="( this.meta.groupURL || '#')" target="_blank">{{ this.meta.library }}</a> ({{ this.items.length }} texts)</h1>
+    <h1 v-show="this.meta.groupURL != ''">Zotero Group: <a :href="( this.meta.groupURL || '#')" target="_blank">{{ this.meta.library }}</a> ({{ this.items.length }}&nbsp;texts)</h1>
     <div class="card" v-for="i in items" :key="i.idx">
       <div class="card-header">
         <Annotations v-if="i.url" class="float-right" :item=i :url=i.url />
