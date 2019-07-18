@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1 v-show="this.meta.groupURL != ''">Zotero Group: <a :href="( this.meta.groupURL || '#')" target="_blank">{{ this.meta.library }}</a> ({{ this.items.length }}&nbsp;texts)</h1>
+    <h3 class="section-header" v-show="this.meta.groupURL != ''">Zotero Group: <a :href="( this.meta.groupURL || '#')" target="_blank">{{ this.meta.library }}</a> ({{ this.items.length }}&nbsp;texts)</h3>
     <div class="card" v-for="i in items" :key="i.idx">
       <div class="card-header">
         <Annotations v-if="i.url" class="float-right" :item=i :url=i.url />
@@ -123,9 +123,6 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h3 {
-  margin: 40px 0 0;
-}
 ul {
   list-style-type: none;
   padding: 0;

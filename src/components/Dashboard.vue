@@ -3,6 +3,7 @@
     <div class="container">
       <div class="row pb-3">
         <div class="col-9">
+          <h3>Filter Settings</h3>
           <form
             v-on:submit.prevent="startRequest"
             class="d-flex justify-content-between needs-validation"
@@ -10,23 +11,25 @@
           >
             <div class="form-row align-items-center">
               <div class="col-sm-4 my-1">
-                <div class="input-group">
+                <div class="form-group">
+                  <label for="groupID">Group ID</label>
                   <input
                     required
                     v-model="groupID"
                     type="text"
                     class="form-control"
                     placeholder="Top Level Group ID"
+                    id="groupID"
                   />
                 </div>
               </div>
               <div class="col-sm-4 my-1">
-                <label class="sr-only" for="inlineFormInputName">Collection Key</label>
+                <label for="collectionKey">Collection Key</label>
                 <input
                   v-model="collectionKey"
                   type="text"
                   class="form-control"
-                  id="inlineFormInputName"
+                  id="collectionKey"
                   placeholder="Collection Key"
                 />
               </div>
