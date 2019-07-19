@@ -5,7 +5,7 @@
         <div class="col-9">
           <h3>Filter Settings</h3>
 
-          <form v-on:submit.prevent="startRequest" class="needs-validation" novalidate>
+          <form v-on:submit.prevent="startRequest" class="needs-validation" >
             <div class="form-group row">
               <label class="control-label col-3 col-form-label" for="GroupID">
                 Group ID
@@ -22,7 +22,7 @@
                   placeholder="Enter a Zotero group ID like 240012"
                   data-parsley-errors-container="#errId1"
                 />
-                <span id="errId1" class="error"></span>
+                <div class="invalid-feedback">Please provide a valid group ID.</div>
               </div>
             </div>
             <div class="form-group row">
@@ -82,7 +82,7 @@
                     id="checkbox49"
                     name="field48"
                     data-parsley-errors-container="#errId5"
-                  />Private Group
+                  /> Private Group
                 </label>
                 <span id="errId5" class="error"></span>
               </div>
@@ -125,9 +125,31 @@
         </div>
       </div>
 
-      <div class="row">
-        <div class="col-md-9">
-          <Collection :groupID="groupID" :zoteroReady="zoteroReady" :collectionKey="collectionKey" />
+      <div id="action-area">
+        <div class="row">
+          <div class="col-md-9">
+            <div class="alert alert-primary" v-show="loading_status == 'fresh'">
+              <h3>Get started with Zotero Annotated Reading Lists!</h3>
+              <p>Start filtering a Zotero reading list!</p>
+            </div>
+
+            <div v-show="loading_status == 'loading'">
+              <div class="col-md-12 d-flex justify-content-center">
+                <i class="fa fa-refresh fa-spin fa-3x fa-fw"></i>
+              </div>
+            </div>
+
+            <div class="alert alert-danger" v-show="loading_status == 'error'">
+              <h3>An error occured!</h3>
+              <p class="error">{{ get_error }}</p>
+            </div>
+
+            <Collection
+              v-show="loading_status == 'done'"
+              :groupID="groupID"
+              :collectionKey="collectionKey"
+            />
+          </div>
         </div>
       </div>
     </div>
@@ -144,8 +166,7 @@ export default {
   },
   data() {
     return {
-      groupID: 2350037,
-      zoteroReady: false,
+      groupID: undefined,
       collectionKey: undefined,
       list_collection: false,
       is_private_hypo: false
@@ -153,7 +174,19 @@ export default {
   },
   methods: {
     startRequest: function() {
-      this.zoteroReady = !this.zoteroReady;
+      this.$store.dispatch("fetch_complete_zotero_list", this.groupID);
+    }
+  },
+  computed: {
+    loading_status() {
+      let status = this.$store.getters.loading_status;
+      window.console.log(status);
+      return status;
+    },
+    get_error() {
+      let error = this.$store.getters.get_error;
+      window.console.log(error);
+      return error;
     }
   }
 };

@@ -14,6 +14,7 @@
     "vue-async-computed": "^3.7.0",
     "vue-date-filters": "^1.1.0",
     "vue-simple-markdown": "^1.0.9",
+    "vuex": "^3.1.1",
     "zotero-api-client": "^0.25.0"
   },
   "devDependencies": {
