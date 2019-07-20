@@ -7,6 +7,7 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
+    create: false,
     loading_status: "fresh",
     zotero_items: [],
     meta_data: {
@@ -21,6 +22,9 @@ export default new Vuex.Store({
     },
     get_error: state => {
       return state.error;
+    },
+    get_create: state => {
+      return state.create;
     }
   },
   mutations: {
@@ -35,11 +39,18 @@ export default new Vuex.Store({
     },
     SET_ERROR(state, error) {
       state.error = error;
+    },
+    SET_CREATE(state, status) {
+      state.create = status;
     }
   },
   actions: {
+    create(context, status) {
+      context.commit("SET_CREATE", status);
+    },
     fetch_complete_zotero_list(context, groupID) {
       context.commit("SET_LOADING_STATUS", "loading");
+      context.commit("SET_CREATE", false);
       api()
         .library("group", groupID)
         .items()
@@ -73,7 +84,7 @@ export default new Vuex.Store({
         .catch(err => {
           window.console.error(err.response.status);
           if (err.response.status != 200) {
-            context.commit("SET_ERROR", err.response.status)
+            context.commit("SET_ERROR", err.response.status);
             context.commit("SET_LOADING_STATUS", "error");
           }
         });

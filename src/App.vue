@@ -17,6 +17,9 @@ export default {
   components: {
     Navigation,
     Dashboard
+  },
+  created() {
+    this.$store.dispatch('create', false)
   }
 }
 </script>
