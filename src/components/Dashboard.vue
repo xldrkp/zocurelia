@@ -4,7 +4,9 @@
       <div class="row pb-3 justify-content-center">
         <div class="col-8">
           <div class="alert alert-primary" v-show="!get_create && loading_status =='fresh'">
-            <h3>Get started with Zotero Annotated Reading Lists!</h3>
+            <h3>Get started with Zotero Reading Lists Annotated!</h3>
+            <p>Zotero Reading Lists Annotated combine Zotero group libraries with the Hypothesis activity per text.</p>
+            <p>You can create your own lists and share them among your colleagues or students.</p>
             <p>
               <a href="#" @click.prevent="create(true)">Create a new list</a> or have a look at an
               <a href="#">example</a>.
@@ -127,7 +129,11 @@
               <div class="form-group row">
                 <label class="col-3"></label>
                 <div class="controls col-9">
-                  <button id="button58" type="submit" class="btn btn-primary btn-default">Go!</button>
+                  <button
+                    id="button58"
+                    type="submit"
+                    class="btn btn-primary btn-default"
+                  >Get me my list!</button>
                 </div>
               </div>
             </form>
@@ -172,7 +178,6 @@ export default {
   },
   data() {
     return {
-      groupID: undefined,
       collectionKey: undefined,
       list_collection: false,
       is_private_hypo: false
@@ -183,11 +188,12 @@ export default {
       this.$store.dispatch("fetch_complete_zotero_list", this.groupID);
     },
     set_create: function() {
-      this.create(true)
+      this.create(true);
     },
-    ...mapActions(["create"]),
+    ...mapActions(["create", "set_groupID"])
   },
   computed: {
+    ...mapGetters(["get_create", "loading_status"]),
     loading_status() {
       let status = this.$store.getters.loading_status;
       window.console.log(status);
@@ -198,7 +204,19 @@ export default {
       window.console.log(error);
       return error;
     },
-    ...mapGetters(["get_create", "loading_status"])
+    groupID: {
+      get: function() {
+        return this.$store.getters.groupID
+      },
+      set: function(groupID) {
+        this.$store.commit('SET_GROUPID', groupID)
+      }
+    }
+  },
+  created() {
+    if (this.groupID != null) {
+      this.startRequest()
+    }
   }
 };
 </script>

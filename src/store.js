@@ -7,6 +7,7 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
+    groupID: null,
     create: false,
     loading_status: "fresh",
     zotero_items: [],
@@ -25,6 +26,9 @@ export default new Vuex.Store({
     },
     get_create: state => {
       return state.create;
+    },
+    groupID: state => {
+      return state.groupID;
     }
   },
   mutations: {
@@ -42,9 +46,15 @@ export default new Vuex.Store({
     },
     SET_CREATE(state, status) {
       state.create = status;
+    },
+    SET_GROUPID(state, id) {
+      state.groupID = id;
     }
   },
   actions: {
+    set_groupID(context, id) {
+      context.commit("SET_GROUPID", id)
+    },
     create(context, status) {
       context.commit("SET_CREATE", status);
     },
@@ -57,6 +67,7 @@ export default new Vuex.Store({
         .top()
         .get({ limit: 100, sort: "title" })
         .then(response => {
+          
           let items = response.getData();
           window.console.log("Raw response: ", response);
           window.console.log("Group Items: ", items);

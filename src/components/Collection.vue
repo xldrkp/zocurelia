@@ -1,8 +1,15 @@
 <template>
   <div>
+    <v-dialog />
     <h3 class="section-header" v-show="meta_data.groupURL != ''">
+      <a href="#" @click.prevent="showModal" class="float-right share-list">
+        <i class="fa d-inline fa-lg fa-share-alt-square"></i> Share this list
+      </a>
       Zotero Group:
-      <a :href="( meta_data.groupURL || '#')" target="_blank">{{ meta_data.library }}</a>
+      <a
+        :href="( meta_data.groupURL || '#')"
+        target="_blank"
+      >{{ meta_data.library }}</a>
       ({{ zotero_items.length }}&nbsp;texts)
     </h3>
     <div class="card" v-for="i in zotero_items" :key="i.idx">
@@ -37,7 +44,9 @@ export default {
   },
   props: ["groupID", "subcollections", "collectionKey", "tags"],
   data() {
-    return {};
+    return {
+      list_url: "http://localhost"
+    };
   },
   computed: {
     meta_data: {
@@ -51,7 +60,43 @@ export default {
       }
     }
   },
-  methods: {},
+  methods: {
+    share: function() {
+      window.console.log("Shared!");
+    },
+    concat_share_url: function() {
+      let protocol = window.location.protocol
+      let hostname = window.location.hostname
+      let port = window.location.port
+
+      return protocol + "//" + hostname + ":" + port + 
+        "/?" +
+        "groupID=" + this.groupID 
+    },
+    showModal() {
+      this.$modal.show("dialog", {
+        title: "Share this Zotero Annotated Reading List",
+        text:
+          "<p>Give this URL to others so that they can participate.</p><input class='form-control' type='text' value='" +
+          this.concat_share_url() +
+          "'/>",
+        buttons: [
+          {
+            title: "Copy URL",
+            handler: () => {}
+          },
+          {
+            title: "", // Button title
+            default: true, // Will be triggered by default if 'Enter' pressed.
+            handler: () => {} // Button click handler
+          },
+          {
+            title: "Close"
+          }
+        ]
+      });
+    }
+  },
   created() {}
 };
 </script>

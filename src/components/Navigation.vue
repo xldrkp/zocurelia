@@ -2,9 +2,9 @@
   <nav class="navbar navbar-expand-md navbar-dark bg-primary">
     <div class="container">
       <a class="navbar-brand" href="#">
-        <i class="fa d-inline fa-lg fa-stop-circle"></i>
+        <i class="fa d-inline fa-book"></i>
         &nbsp;
-        <b>Zotero Annotated Reading Lists</b>
+        <b>ZoReLiA</b>
       </a>
       <button
         class="navbar-toggler navbar-toggler-right border-0"

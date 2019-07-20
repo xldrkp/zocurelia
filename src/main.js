@@ -5,12 +5,14 @@ import VueDates from 'vue-date-filters'
 import VueSimpleMarkdown from 'vue-simple-markdown'
 import store from "./store";
 import 'vue-simple-markdown/dist/vue-simple-markdown.css'
+import VModal from 'vue-js-modal'
 
 Vue.config.productionTip = false
 
 Vue.use(AsyncComputed)
 Vue.use(VueDates)
 Vue.use(VueSimpleMarkdown)
+Vue.use(VModal, { dialog: true })
 
 new Vue({
   store,
