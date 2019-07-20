@@ -24,7 +24,7 @@
           href="#"
           @click.prevent="create(true)"
           class="btn navbar-btn ml-md-2 btn-light text-dark"
-        >Create new</a>
+        >New</a>
       </div>
     </div>
   </nav>
@@ -35,8 +35,10 @@ import { mapActions, mapGetters } from "vuex";
 
 export default {
   name: "Navigation",
+  methods: {
+    ...mapActions(["create"])
+  },
   computed: {
-    ...mapActions(["create"]),
     ...mapGetters(["get_create"])
   }
 };

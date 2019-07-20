@@ -14,11 +14,7 @@
           <div v-show="get_create">
             <h3>Filter Settings</h3>
 
-            <form
-              v-show="loading_status == 'fresh'"
-              v-on:submit.prevent="startRequest"
-              class="needs-validation"
-            >
+            <form v-on:submit.prevent="startRequest" class="needs-validation">
               <div class="form-group row">
                 <label class="control-label col-3 col-form-label" for="GroupID">
                   Group ID
@@ -154,7 +150,7 @@
             </div>
 
             <Collection
-              v-show="loading_status == 'done'"
+              v-show="loading_status == 'done' && !get_create"
               :groupID="groupID"
               :collectionKey="collectionKey"
             />
@@ -185,7 +181,11 @@ export default {
   methods: {
     startRequest: function() {
       this.$store.dispatch("fetch_complete_zotero_list", this.groupID);
-    }
+    },
+    set_create: function() {
+      this.create(true)
+    },
+    ...mapActions(["create"]),
   },
   computed: {
     loading_status() {
@@ -198,7 +198,6 @@ export default {
       window.console.log(error);
       return error;
     },
-    ...mapActions(["create"]),
     ...mapGetters(["get_create", "loading_status"])
   }
 };
