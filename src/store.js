@@ -53,7 +53,7 @@ export default new Vuex.Store({
   },
   actions: {
     set_groupID(context, id) {
-      context.commit("SET_GROUPID", id)
+      context.commit("SET_GROUPID", id);
     },
     create(context, status) {
       context.commit("SET_CREATE", status);
@@ -67,30 +67,34 @@ export default new Vuex.Store({
         .top()
         .get({ limit: 100, sort: "title" })
         .then(response => {
-          
           let items = response.getData();
-          window.console.log("Raw response: ", response);
-          window.console.log("Group Items: ", items);
-          let mapped_items = items.map((i, idx) => ({
-            collection: i.collections[0],
-            language: i.language,
-            title: i.title,
-            authors: i.creators,
-            abstractNote: i.abstractNote,
-            url: i.url,
-            zotero_item_url: response.raw[idx].links.alternate.href,
-            tags: i.tags,
-            idx: idx
-          }));
+          window.console.log("Items length: ", items.length);
           let meta = {
             library: response.raw[0].library.name || "No name",
             groupURL: "https://www.zotero.org/groups/" + groupID
           };
-          window.console.log("Meta: ", meta);
-          window.console.log("Mapped items: ", mapped_items);
-          context.commit("SET_LOADING_STATUS", "done");
-          context.commit("SET_ZOTERO_LIST", mapped_items);
-          context.commit("SET_META_DATA", meta);
+          if (items.length == 0) {
+            // @TODO Was ist, wenn es keine Einträge in der Gruppe gibt? 
+          } else {
+            window.console.log("Raw response: ", response);
+            window.console.log("Group Items: ", items);
+            let mapped_items = items.map((i, idx) => ({
+              collection: i.collections[0],
+              language: i.language,
+              title: i.title,
+              authors: i.creators,
+              abstractNote: i.abstractNote,
+              url: i.url,
+              zotero_item_url: response.raw[idx].links.alternate.href,
+              tags: i.tags,
+              idx: idx
+            }));
+            window.console.log("Meta: ", meta);
+            window.console.log("Mapped items: ", mapped_items);
+            context.commit("SET_LOADING_STATUS", "done");
+            context.commit("SET_ZOTERO_LIST", mapped_items);
+            context.commit("SET_META_DATA", meta);
+          }
         })
         .catch(err => {
           window.console.error(err.response.status);
