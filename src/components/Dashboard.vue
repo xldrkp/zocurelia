@@ -186,6 +186,7 @@ export default {
   methods: {
     startRequest: function() {
       this.$store.dispatch("fetch_complete_zotero_list", this.groupID);
+      // this.$store.dispatch("fetch_collections", "2038099", "FSEUQMKG");
     },
     set_create: function() {
       this.create(true);
@@ -206,16 +207,16 @@ export default {
     },
     groupID: {
       get: function() {
-        return this.$store.getters.groupID
+        return this.$store.getters.groupID;
       },
       set: function(groupID) {
-        this.$store.commit('SET_GROUPID', groupID)
+        this.$store.commit("SET_GROUPID", groupID);
       }
     }
   },
   created() {
     if (this.groupID != null) {
-      this.startRequest()
+      this.startRequest();
     }
   }
 };
