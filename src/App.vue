@@ -2,12 +2,14 @@
   <div id="app">
     <Navigation />
     <Dashboard />
+    <Footer />
   </div>
 </template>
 
 <script>
 import Navigation from "./components/Navigation.vue";
 import Dashboard from "./components/Dashboard.vue";
+import Footer from "./components/Footer.vue";
 import "@/assets/css/theme.css";
 import "@/assets/css/style.css";
 import { mapActions } from "vuex";
@@ -16,7 +18,8 @@ export default {
   name: "app",
   components: {
     Navigation,
-    Dashboard
+    Dashboard,
+    Footer
   },
   methods: {
     ...mapActions(["set_groupID"]),

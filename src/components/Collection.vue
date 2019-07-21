@@ -1,16 +1,14 @@
 <template>
   <div>
     <v-dialog />
-    <h3 class="section-header" v-show="meta_data.groupURL != ''">
-      <a href="#" @click.prevent="showModal" class="float-right share-list">
+    <div class="d-flex justify-content-end mb-3">
+      <a href="#" @click.prevent="showModal" class="share-list">
         <i class="fa d-inline fa-lg fa-share-alt-square"></i> Share this list
       </a>
+    </div>
+    <h3 class="section-header" v-show="meta_data.groupURL != ''">
       Zotero Group:
-      <a
-        :href="( meta_data.groupURL || '#')"
-        target="_blank"
-      >{{ meta_data.library }}</a>
-      ({{ zotero_items.length }}&nbsp;texts)
+      <a :href="( meta_data.groupURL || '#')" target="_blank">{{ meta_data.library }}</a>
     </h3>
     <div class="card" v-for="i in zotero_items" :key="i.idx">
       <div class="card-header">
@@ -65,13 +63,20 @@ export default {
       window.console.log("Shared!");
     },
     concat_share_url: function() {
-      let protocol = window.location.protocol
-      let hostname = window.location.hostname
-      let port = window.location.port
+      let protocol = window.location.protocol;
+      let hostname = window.location.hostname;
+      let port = window.location.port;
 
-      return protocol + "//" + hostname + ":" + port + 
+      return (
+        protocol +
+        "//" +
+        hostname +
+        ":" +
+        port +
         "/?" +
-        "groupID=" + this.groupID 
+        "groupID=" +
+        this.groupID
+      );
     },
     showModal() {
       this.$modal.show("dialog", {

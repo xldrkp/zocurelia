@@ -1,9 +1,9 @@
 <template>
   <div class="py-3">
     <div class="container">
-      <div class="row pb-3 justify-content-center">
+      <div class="row pb-1 justify-content-center">
         <div class="col-8">
-          <div class="alert alert-primary" v-show="!get_create && loading_status =='fresh'">
+          <div class="mt-4 alert alert-primary" v-show="!get_create && loading_status =='fresh'">
             <h3>Get started with Zotero Reading Lists Annotated!</h3>
             <p>Zotero Reading Lists Annotated combine Zotero group libraries with the Hypothesis activity per text.</p>
             <p>You can create your own lists and share them among your colleagues or students.</p>
@@ -19,7 +19,7 @@
             <form v-on:submit.prevent="startRequest" class="needs-validation">
               <div class="form-group row">
                 <label class="control-label col-3 col-form-label" for="GroupID">
-                  Group ID
+                  Zotero Group
                   <span class="req">*</span>
                 </label>
                 <div class="col-9">
@@ -53,7 +53,7 @@
                 </div>
               </div>
               <div v-show="list_collection" class="form-group row">
-                <label class="control-label col-3" for="CollectionKey">Collection Key</label>
+                <label class="control-label col-3" for="CollectionKey">Collection in Group</label>
                 <div class="controls col-9">
                   <input
                     id="CollectionKey"
@@ -83,7 +83,7 @@
                 </div>
               </div>
               <div class="form-group row">
-                <label class="control-label col-3">Hypothesis</label>
+                <label class="control-label col-3">Hypothesis Settings</label>
                 <div class="controls col-9">
                   <label class="checkbox control-label" for="checkbox49">
                     <input
