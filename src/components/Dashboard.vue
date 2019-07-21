@@ -47,7 +47,7 @@
                       id="list_collection"
                       name="field27"
                       data-parsley-errors-container="#errId2"
-                    /> List collections in that group
+                    /> List items in collections
                   </label>
                   <span id="errId2" class="error"></span>
                 </div>
@@ -185,8 +185,11 @@ export default {
   },
   methods: {
     startRequest: function() {
-      this.$store.dispatch("fetch_complete_zotero_list", this.groupID);
-      // this.$store.dispatch("fetch_collections", "2038099", "FSEUQMKG");
+      if (this.list_collection) {
+        this.$store.dispatch("fetch_collections", "2038099", "FSEUQMKG");
+      } else {
+        this.$store.dispatch("fetch_complete_zotero_list", this.groupID);
+      }
     },
     set_create: function() {
       this.create(true);
