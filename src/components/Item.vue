@@ -1,7 +1,7 @@
 <template>
   <div class="card">
     <div class="card-header">
-      <Annotations v-if="item.url" class="float-right" :item="i" :url="item.url" />
+      <Annotations v-if="item.url" class="float-right" :item=item :url="item.url" />
       <span v-else class="no-full-text float-right">No online full text</span>
       <a class="title" v-if="item.url" target="_blank" :href="item.url">{{ item.title }}</a>
       <span class="title" v-else>{{ item.title }}</span>
