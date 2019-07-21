@@ -47,7 +47,7 @@
                       id="list_collection"
                       name="field27"
                       data-parsley-errors-container="#errId2"
-                    /> List a collection in that group
+                    /> List collections in that group
                   </label>
                   <span id="errId2" class="error"></span>
                 </div>
@@ -61,7 +61,7 @@
                     type="text"
                     class="form-control k-textbox"
                     data-role="text"
-                    placeholder="Enter a valid collection key like ETAGD5RT"
+                    placeholder="Optional collection key like ETAGD5RT"
                     data-parsley-errors-container="#errId3"
                   />
                   <span id="errId3" class="error"></span>
