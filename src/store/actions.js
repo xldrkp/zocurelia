@@ -7,6 +7,18 @@ export default {
   create(context, status) {
     context.commit("SET_CREATE", status);
   },
+  fetch_collections(context, groupID, collectionKey) {
+    context.commit("SET_LOADING_STATUS", "loading");
+
+    api()
+      .library("group", groupID)
+      .collections(collectionKey)
+      .collections()
+      .get()
+      .then(response => {
+        window.console.log(response.getData());
+      });
+  },
   fetch_complete_zotero_list(context, groupID) {
     context.commit("SET_LOADING_STATUS", "loading");
     context.commit("SET_CREATE", false);
