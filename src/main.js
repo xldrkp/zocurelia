@@ -4,7 +4,7 @@ import App from "./App.vue";
 import AsyncComputed from "vue-async-computed";
 import VueDates from "vue-date-filters";
 import VueSimpleMarkdown from "vue-simple-markdown";
-import storeConfig from "../store/store-config";
+import storeConfig from "./store/store-config";
 // import store from "./store";
 import "vue-simple-markdown/dist/vue-simple-markdown.css";
 import VModal from "vue-js-modal";

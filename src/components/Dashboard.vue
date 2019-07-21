@@ -155,7 +155,7 @@
               <p class="error">{{ get_error }}</p>
             </div>
 
-            <Collection
+            <Result
               v-show="loading_status == 'done' && !get_create"
               :groupID="groupID"
               :collectionKey="collectionKey"
@@ -168,13 +168,13 @@
 </template>
 
 <script>
-import Collection from "@/components/Collection.vue";
+import Result from "@/components/Result.vue";
 import { mapActions, mapGetters } from "vuex";
 
 export default {
   name: "Dashboard",
   components: {
-    Collection
+    Result
   },
   data() {
     return {
