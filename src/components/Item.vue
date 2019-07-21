@@ -1,17 +1,15 @@
 <template>
-  <div>
-    <div class="card" v-for="i in zotero_items" :key="i.idx">
-      <div class="card-header">
-        <Annotations v-if="i.url" class="float-right" :item="i" :url="i.url" />
-        <span v-else class="no-full-text float-right">No online full text</span>
-        <a class="title" v-if="i.url" target="_blank" :href="i.url">{{ i.title }}</a>
-        <span class="title" v-else>{{ i.title }}</span>
-        <Authors :authors="i.authors" :zotero_item_url="i.zotero_item_url" />
-      </div>
-      <div class="card-body">
-        <AbstractNote :abstractNote="i.abstractNote" />
-        <Tags :tags="i.tags" />
-      </div>
+  <div class="card">
+    <div class="card-header">
+      <Annotations v-if="item.url" class="float-right" :item="i" :url="item.url" />
+      <span v-else class="no-full-text float-right">No online full text</span>
+      <a class="title" v-if="item.url" target="_blank" :href="item.url">{{ item.title }}</a>
+      <span class="title" v-else>{{ item.title }}</span>
+      <Authors :authors="item.authors" :zotero_item_url="item.zotero_item_url" />
+    </div>
+    <div class="card-body">
+      <AbstractNote :abstractNote="item.abstractNote" />
+      <Tags :tags="item.tags" />
     </div>
   </div>
 </template>
@@ -31,6 +29,6 @@ export default {
     Tags,
     Authors
   },
-  props: ["groupID", "subcollections", "collectionKey", "tags", "zotero_items"]
+  props: ["groupID", "subcollections", "collectionKey", "tags", "item"]
 };
 </script>

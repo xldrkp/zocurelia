@@ -10,7 +10,7 @@
       Zotero Group:
       <a :href="( meta_data.groupURL || '#')" target="_blank">{{ meta_data.library }}</a>
     </h3>
-    <Item :zotero_items=zotero_items />
+    <Item v-for="item in zotero_items" :key="item.idx" :item="item" />
   </div>
 </template>
 
@@ -36,6 +36,11 @@ export default {
     zotero_items: {
       get() {
         return this.$store.state.zotero_items;
+      }
+    },
+    groupID: {
+      get: function() {
+        return this.$store.getters.groupID;
       }
     }
   },
@@ -86,18 +91,3 @@ export default {
   created() {}
 };
 </script>
-
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
-}
-</style>
