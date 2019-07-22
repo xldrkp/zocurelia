@@ -16,5 +16,11 @@ export default {
   },
   SET_GROUPID(state, id) {
     state.groupID = id;
+  },
+  SET_LIST_COLLECTION(state, flag) {
+    state.list_collection = flag;
+  },
+  SET_COLLECTIONS(state, collections) {
+    state.collections = collections;
   }
 };

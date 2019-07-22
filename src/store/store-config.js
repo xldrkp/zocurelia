@@ -4,6 +4,8 @@ import getters from "./getters";
 
 const state = {
   groupID: null,
+  list_collection: false,
+  collections: [],
   create: false,
   loading_status: "fresh",
   zotero_items: [],

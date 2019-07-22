@@ -5,10 +5,17 @@ export default {
     context.commit("SET_GROUPID", id);
   },
   create(context, status) {
+    // Clears all filter setting before applying new settings
+    context.dispatch("clear_filter");
     context.commit("SET_CREATE", status);
+  },
+  clear_filter(context) {
+    context.commit("SET_COLLECTIONS", []);
+    context.commit("SET_LIST_COLLECTION", false);
   },
   fetch_collections(context, groupID, collectionKey) {
     context.commit("SET_LOADING_STATUS", "loading");
+    context.commit("SET_CREATE", false);
 
     api()
       .library("group", groupID)
@@ -16,7 +23,10 @@ export default {
       .collections()
       .get()
       .then(response => {
-        window.console.log(response.getData());
+        let collections = response.getData();
+        window.console.log("List of collections: ", collections);
+        context.commit("SET_COLLECTIONS", collections);
+        context.commit("SET_LOADING_STATUS", "done");
       });
   },
   fetch_complete_zotero_list(context, groupID) {

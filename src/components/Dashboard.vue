@@ -42,7 +42,6 @@
                   <label class="checkbox control-label col-form-label" for="list_collection">
                     <input
                       type="checkbox"
-                      value="list_collection"
                       v-model="list_collection"
                       id="list_collection"
                       name="field27"
@@ -179,14 +178,13 @@ export default {
   data() {
     return {
       collectionKey: undefined,
-      list_collection: false,
       is_private_hypo: false
     };
   },
   methods: {
     startRequest: function() {
       if (this.list_collection) {
-        this.$store.dispatch("fetch_collections", "2038099", "FSEUQMKG");
+        this.$store.dispatch("fetch_collections", this.groupID, this.collectionKey);
       } else {
         this.$store.dispatch("fetch_complete_zotero_list", this.groupID);
       }
@@ -214,6 +212,14 @@ export default {
       },
       set: function(groupID) {
         this.$store.commit("SET_GROUPID", groupID);
+      }
+    },
+    list_collection: {
+      get: function() {
+        return this.$store.getters.list_collection;
+      },
+      set: function(status) {
+        this.$store.commit("SET_LIST_COLLECTION", status);
       }
     }
   },

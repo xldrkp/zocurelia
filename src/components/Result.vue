@@ -6,21 +6,19 @@
         <i class="fa d-inline fa-lg fa-share-alt-square"></i> Share this list
       </a>
     </div>
-    <h3 class="section-header" v-show="meta_data.groupURL != ''">
-      Zotero Group:
-      <a :href="( meta_data.groupURL || '#')" target="_blank">{{ meta_data.library }}</a>
-    </h3>
-    <Item v-for="item in zotero_items" :key="item.idx" :item="item" />
+    <Group :meta_data="meta_data" />
+    <!-- <Item v-for="item in zotero_items" :key="item.idx" :item="item" /> -->
   </div>
 </template>
 
 <script>
-import Item from "@/components/Item.vue";
+import Group from "@/components/Group.vue";
+// import Item from "@/components/Item.vue";
 
 export default {
   name: "Result",
   components: {
-    Item
+    Group
   },
   data() {
     return {
@@ -42,7 +40,7 @@ export default {
       get: function() {
         return this.$store.getters.groupID;
       }
-    }
+    },
   },
   methods: {
     share: function() {
