@@ -1,18 +1,21 @@
 <template>
   <div>
-    <h3 class="section-header" v-show="meta_data.groupURL != ''">
-      Zotero Group:
-      <a :href="( meta_data.groupURL || '#')" target="_blank">{{ meta_data.library }}</a>
-    </h3>
-
     <div v-if="list_collections && !get_create">
+      <h3 class="section-header" v-show="items[0].groupURL != ''">
+        Zotero Group:
+        <a :href="( items[0].groupURL || '#')" target="_blank">{{ items[0].library }}</a>
+      </h3>
       <div v-for="collection in collections" :key="collection.index">
-        <Collection :title=collection.name :collectionKey=collection.key />
+        <Collection :title="collection.name" :collectionKey="collection.key" />
       </div>
     </div>
 
     <div v-if="!list_collections">
-      <Item v-for="item in zotero_items" :key="item.index" :item="item" />
+      <h3 class="section-header" v-show="items[0].groupURL != ''">
+        Zotero Group:
+        <a :href="( items[0].groupURL || '#')" target="_blank">{{ items[0].library }}</a>
+      </h3>
+      <Item v-for="item in items" :key="item.index" :item="item" />
     </div>
   </div>
 </template>
@@ -27,6 +30,11 @@ export default {
   components: {
     Collection,
     Item
+  },
+  data() {
+    return {
+      items: []
+    };
   },
   computed: {
     ...mapGetters([
@@ -43,9 +51,22 @@ export default {
     ...mapActions([
       "set_groupID",
       "fetch_complete_zotero_list",
-      "fetch_top_level_collections"
-    ]),
-    created() {}
+      "fetch_top_level_collections",
+      "map_items"
+    ])
+  },
+  created() {
+    // This method get a collection key from the parent
+    //  component and fetches its items asynchronously
+    if (!this.list_collections) {
+      this.fetch_complete_zotero_list().then(response => {
+        this.map_items(response).then(response => {
+          this.$store.commit("SET_LOADING_STATUS", "done");
+          this.items = response;
+          window.console.log("Meta: ", this.items[0])
+        });
+      });
+    }
   }
 };
 </script>

@@ -25,17 +25,21 @@ export default {
     context.commit("SET_COLLECTIONS", mapped_collections);
     context.commit("SET_LOADING_STATUS", "done");
   },
-  map_items(context, data) {
+  map_items(context, raw_response) {
     // Get the relevant information for the UI and map it
     // accordingly
+    let data = raw_response.getData();
+    let raw = raw_response.raw;
+
     let mapped_items = data.map((i, idx) => ({
+      library: raw[0].library.name || "No name",
+      groupURL: "https://www.zotero.org/groups/" + context.getters.groupID,
       language: i.language,
       title: i.title,
       authors: i.creators,
       abstractNote: i.abstractNote,
       url: i.url,
-      zotero_item_url:
-        context.getters.zotero_response.raw[idx].links.alternate.href,
+      zotero_item_url: raw[idx].links.alternate.href,
       tags: i.tags,
       idx: idx
     }));
@@ -118,14 +122,17 @@ export default {
   fetch_complete_zotero_list(context) {
     // Fetch complete item list in library
     let groupID = context.getters.groupID;
+
     context.commit("SET_LOADING_STATUS", "loading");
     context.commit("SET_CREATE", false);
-    api()
+
+    return api()
       .library("group", groupID)
       .items()
       .top()
       .get({ limit: 100, sort: "title" })
       .then(response => {
+        return response;
         // Store the raw response
         // Some meta information is needed later
         window.console.log("Raw response: ", response);
@@ -140,23 +147,20 @@ export default {
           window.console.error("No items in this group!");
         } else {
           // If items exist save them
-          window.console.log("Group Items: ", raw_items);
-          context.commit("SET_RAW_ITEMS", raw_items);
-
-          context.dispatch("map_items");
+          context.dispatch("map_items", raw_items);
           context.dispatch("map_meta_data");
 
           // Indicate that loading is done
           context.commit("SET_LOADING_STATUS", "done");
         }
+      })
+      .catch(err => {
+        window.console.error(err.response.status);
+        if (err.response.status != 200) {
+          context.commit("SET_ERROR", err.response.status);
+          context.commit("SET_LOADING_STATUS", "error");
+        }
       });
-    // .catch(err => {
-    //   window.console.error(err.response.status);
-    //   if (err.response.status != 200) {
-    //     context.commit("SET_ERROR", err.response.status);
-    //     context.commit("SET_LOADING_STATUS", "error");
-    //   }
-    // });
   },
   fetch_multiple_collections(context, collectionKey, recursive = false) {
     // Test if certain collection exists and get

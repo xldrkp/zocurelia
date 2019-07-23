@@ -21,7 +21,7 @@ export default {
     };
   },
   methods: {
-    ...mapActions(["fetch_single_collection", "map_items2"])
+    ...mapActions(["fetch_single_collection", "map_items"])
   },
   computed: {
     ...mapGetters(["zotero_items", "collections", "meta_data"])
@@ -31,7 +31,7 @@ export default {
     //  component and fetches its items asynchronously
     this.fetch_single_collection(this.collectionKey).then(response => {
       window.console.log("The response: ", response);
-      this.map_items(response.getData()).then(response => {
+      this.map_items(response).then(response => {
         window.console.log("Items: ", response);
         this.$store.commit("SET_LOADING_STATUS", "done");
         this.items = response;
