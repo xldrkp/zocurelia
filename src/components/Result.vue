@@ -6,14 +6,13 @@
         <i class="fa d-inline fa-lg fa-share-alt-square"></i> Share this list
       </a>
     </div>
-    <Group :meta_data="meta_data" />
-    <!-- <Item v-for="item in zotero_items" :key="item.idx" :item="item" /> -->
+    <Group />
   </div>
 </template>
 
 <script>
 import Group from "@/components/Group.vue";
-// import Item from "@/components/Item.vue";
+import { mapGetters } from "vuex";
 
 export default {
   name: "Result",
@@ -26,21 +25,7 @@ export default {
     };
   },
   computed: {
-    meta_data: {
-      get() {
-        return this.$store.state.meta_data;
-      }
-    },
-    zotero_items: {
-      get() {
-        return this.$store.state.zotero_items;
-      }
-    },
-    groupID: {
-      get: function() {
-        return this.$store.getters.groupID;
-      }
-    },
+    ...mapGetters(["meta_data", "zotero_items", "groupID"])
   },
   methods: {
     share: function() {

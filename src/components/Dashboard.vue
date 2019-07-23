@@ -39,34 +39,35 @@
               <div class="form-group row">
                 <label class="control-label control-label-left col-3"></label>
                 <div class="controls col-9">
-                  <label class="checkbox control-label col-form-label" for="list_collection">
+                  <label class="checkbox control-label col-form-label" for="list_collections">
                     <input
                       type="checkbox"
-                      v-model="list_collection"
-                      id="list_collection"
+                      v-model="list_collections"
+                      id="list_collections"
                       name="field27"
                       data-parsley-errors-container="#errId2"
-                    /> List items in collections
+                    /> List collections of the group
                   </label>
                   <span id="errId2" class="error"></span>
                 </div>
               </div>
-              <div v-show="list_collection" class="form-group row">
-                <label class="control-label col-3" for="CollectionKey">Collection in Group</label>
+              <div v-show="list_collections" class="form-group row">
+                <label class="control-label col-3" for="CollectionKey">Collection</label>
                 <div class="controls col-9">
                   <input
                     id="CollectionKey"
                     name="CollectionKey"
                     type="text"
+                    v-model="collectionKey"
                     class="form-control k-textbox"
                     data-role="text"
-                    placeholder="Optional collection key like ETAGD5RT"
+                    placeholder="Collection key like ETAGD5RT"
                     data-parsley-errors-container="#errId3"
                   />
                   <span id="errId3" class="error"></span>
                 </div>
               </div>
-              <div v-show="list_collection" class="form-group row">
+              <div v-show="list_collections" class="form-group row">
                 <label class="control-label control-label-left col-3"></label>
                 <div class="controls col-9">
                   <label class="checkbox control-label" for="list_sub">
@@ -131,6 +132,7 @@
                   <button
                     id="button58"
                     type="submit"
+                    :submit="set_submitted(true)"
                     class="btn btn-primary btn-default"
                   >Get me my list!</button>
                 </div>
@@ -177,20 +179,26 @@ export default {
   },
   data() {
     return {
-      collectionKey: undefined,
       is_private_hypo: false
     };
   },
   methods: {
     startRequest: function() {
-      if (this.list_collection) {
-        this.$store.dispatch("fetch_collections", this.groupID, this.collectionKey);
+      if (this.list_collections) {
+        this.$store.dispatch(
+          "fetch_top_level_collections",
+          this.groupID,
+          this.collectionKey
+        );
       } else {
         this.$store.dispatch("fetch_complete_zotero_list", this.groupID);
       }
     },
     set_create: function() {
       this.create(true);
+    },
+    set_submitted: function(status) {
+      this.$store.commit("SET_SUBMITTED", status);
     },
     ...mapActions(["create", "set_groupID"])
   },
@@ -214,12 +222,25 @@ export default {
         this.$store.commit("SET_GROUPID", groupID);
       }
     },
-    list_collection: {
+    list_collections: {
       get: function() {
-        return this.$store.getters.list_collection;
+        return this.$store.getters.list_collections;
       },
       set: function(status) {
         this.$store.commit("SET_LIST_COLLECTION", status);
+      }
+    },
+    collectionKey: {
+      get: function() {
+        return this.$store.getters.collectionKey;
+      },
+      set: function(key) {
+        this.$store.commit("SET_COLLECTIONKEY", key);
+      }
+    },
+    submitted: {
+      get: function() {
+        return this.$store.getters.submitted;
       }
     }
   },
