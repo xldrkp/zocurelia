@@ -45,34 +45,6 @@ export default {
     }));
     return mapped_items;
   },
-  // map_items(context) {
-  //   // Get the relevant information for the UI and map it
-  //   // accordingly
-  //   let raw_items = context.getters.raw_items;
-  //   let mapped_items = raw_items.map((i, idx) => ({
-  //     language: i.language,
-  //     title: i.title,
-  //     authors: i.creators,
-  //     abstractNote: i.abstractNote,
-  //     url: i.url,
-  //     zotero_item_url:
-  //       context.getters.zotero_response.raw[idx].links.alternate.href,
-  //     tags: i.tags,
-  //     idx: idx
-  //   }));
-  //   window.console.log("Mapped items: ", mapped_items);
-  //   context.commit("SET_ZOTERO_ITEMS", mapped_items);
-  //   return mapped_items;
-  // },
-  map_meta_data(context) {
-    // Map information like URLs, headline, title etc.
-    let meta = {
-      library: context.getters.zotero_response.raw[0].library.name || "No name",
-      groupURL: "https://www.zotero.org/groups/" + context.getters.groupID
-    };
-    window.console.log("Meta: ", meta);
-    context.commit("SET_META_DATA", meta);
-  },
   fetch_top_level_collections(context) {
     // Test if collections on top level exist and fetch them
     window.console.log("Inside Fetch Top Level");
@@ -81,12 +53,13 @@ export default {
 
     context.commit("SET_LOADING_STATUS", "loading");
     context.commit("SET_CREATE", false);
-    api()
+    return api()
       .library("group", groupID)
       .collections()
       .top()
       .get({ limit: 100, sort: "title" })
       .then(response => {
+        return response;
         // Store the raw response
         // Some meta information is needed later
         window.console.log("Raw response: ", response);
