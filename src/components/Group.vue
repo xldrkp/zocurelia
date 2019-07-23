@@ -1,20 +1,16 @@
 <template>
   <div>
+    <h3 class="section-header" v-show="meta_data.groupURL != ''">
+      Zotero Group:
+      <a :href="( meta_data.groupURL || '#')" target="_blank">{{ meta_data.name }}</a>
+    </h3>
     <div v-if="list_collections && !get_create">
-      <h3 class="section-header" v-show="items[0].groupURL != ''">
-        Zotero Group:
-        <a :href="( items[0].groupURL || '#')" target="_blank">{{ items[0].library }}</a>
-      </h3>
       <div v-for="collection in collections" :key="collection.index">
         <Collection :title="collection.name" :collectionKey="collection.key" />
       </div>
     </div>
 
     <div v-if="!list_collections">
-      <h3 class="section-header" v-show="items[0].groupURL != ''">
-        Zotero Group:
-        <a :href="( items[0].groupURL || '#')" target="_blank">{{ items[0].library }}</a>
-      </h3>
       <Item v-for="item in items" :key="item.index" :item="item" />
     </div>
   </div>
@@ -33,7 +29,8 @@ export default {
   },
   data() {
     return {
-      items: []
+      items: [],
+      meta_data: {}
     };
   },
   computed: {
@@ -43,8 +40,7 @@ export default {
       "get_create",
       "zotero_items",
       "list_collections",
-      "collections",
-      "meta_data"
+      "collections"
     ])
   },
   methods: {
@@ -56,6 +52,18 @@ export default {
     ])
   },
   created() {
+    // Get only one item to get the library title etc.
+    this.fetch_complete_zotero_list(1).then(response => {
+      window.console.log("Data for Library Meta: ", response.raw);
+      if (response.raw.length == 1) {
+        this.meta_data = {
+          name: response.raw[0].library.name,
+          groupURL: response.raw[0].library.links.alternate.href + "/items"
+        };
+      } else {
+        window.console.error("No items in this library!");
+      }
+    });
     // This method get a collection key from the parent
     //  component and fetches its items asynchronously
     if (!this.list_collections) {
@@ -63,7 +71,7 @@ export default {
         this.map_items(response).then(response => {
           this.$store.commit("SET_LOADING_STATUS", "done");
           this.items = response;
-          window.console.log("Meta: ", this.items[0])
+          window.console.log("Meta: ", this.items[0]);
         });
       });
     }

@@ -4,6 +4,9 @@ export default {
   set_groupID(context, id) {
     context.commit("SET_GROUPID", id);
   },
+  set_list_collections(context, status) {
+    context.commit("SET_LIST_COLLECTION", status);
+  },
   create(context, status) {
     // Clears all filter setting before applying new settings
     context.dispatch("clear_filter");
@@ -59,7 +62,7 @@ export default {
       .top()
       .get({ limit: 100, sort: "title" })
       .then(response => {
-        return response;
+        // return response;
         // Store the raw response
         // Some meta information is needed later
         window.console.log("Raw response: ", response);
@@ -84,15 +87,8 @@ export default {
           context.commit("SET_LOADING_STATUS", "done");
         }
       });
-    // .catch(err => {
-    //   window.console.error(err.response.status);
-    //   if (err.response.status != 200) {
-    //     context.commit("SET_ERROR", err.response.status);
-    //     context.commit("SET_LOADING_STATUS", "error");
-    //   }
-    // });
   },
-  fetch_complete_zotero_list(context) {
+  fetch_complete_zotero_list(context, limit = 100) {
     // Fetch complete item list in library
     let groupID = context.getters.groupID;
 
@@ -103,36 +99,9 @@ export default {
       .library("group", groupID)
       .items()
       .top()
-      .get({ limit: 100, sort: "title" })
+      .get({ limit: limit, sort: "title" })
       .then(response => {
         return response;
-        // Store the raw response
-        // Some meta information is needed later
-        window.console.log("Raw response: ", response);
-        context.commit("SET_RESPONSE", response);
-
-        let raw_items = response.getData();
-        window.console.log("Raw items length: ", raw_items.length);
-
-        // Test if items exisit or if group has not items at all
-        if (raw_items.length == 0) {
-          // @TODO Was ist, wenn es keine Einträge in der Gruppe gibt?
-          window.console.error("No items in this group!");
-        } else {
-          // If items exist save them
-          context.dispatch("map_items", raw_items);
-          context.dispatch("map_meta_data");
-
-          // Indicate that loading is done
-          context.commit("SET_LOADING_STATUS", "done");
-        }
-      })
-      .catch(err => {
-        window.console.error(err.response.status);
-        if (err.response.status != 200) {
-          context.commit("SET_ERROR", err.response.status);
-          context.commit("SET_LOADING_STATUS", "error");
-        }
       });
   },
   fetch_multiple_collections(context, collectionKey, recursive = false) {
@@ -171,36 +140,6 @@ export default {
       .get({ limit: 100, sort: "title" })
       .then(response => {
         return response;
-        // Store the raw response
-        // Some meta information is needed later
-        window.console.log("Raw response: ", response);
-        context.commit("SET_RESPONSE", response);
-
-        let raw_items = response.getData();
-        window.console.log("Raw items length: ", raw_items.length);
-
-        // Test if items exisit or if group has not items at all
-        if (raw_items.length == 0) {
-          // @TODO Was ist, wenn es keine Einträge in der Gruppe gibt?
-          window.console.error("No items in this group!");
-        } else {
-          // If items exist save them
-          window.console.log("Group Items: ", raw_items);
-          context.commit("SET_RAW_ITEMS", raw_items);
-
-          // Indicate that loading is done
-          context.commit("SET_LOADING_STATUS", "done");
-
-          context.dispatch("map_meta_data");
-          return context.dispatch("map_items");
-        }
       });
-    // .catch(err => {
-    //   window.console.error(err.response.status);
-    //   if (err.response.status != 200) {
-    //     context.commit("SET_ERROR", err.response.status);
-    //     context.commit("SET_LOADING_STATUS", "error");
-    //   }
-    // });
   }
 };

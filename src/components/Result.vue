@@ -25,7 +25,7 @@ export default {
     };
   },
   computed: {
-    ...mapGetters(["meta_data", "zotero_items", "groupID"])
+    ...mapGetters(["meta_data", "zotero_items", "groupID", "list_collections"])
   },
   methods: {
     share: function() {
@@ -44,7 +44,8 @@ export default {
         port +
         "/?" +
         "groupID=" +
-        this.groupID
+        this.groupID +
+        (this.list_collections ? "&list_collections=true" : "")
       );
     },
     showModal() {

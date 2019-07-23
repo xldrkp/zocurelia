@@ -22,7 +22,7 @@ export default {
     Footer
   },
   methods: {
-    ...mapActions(["set_groupID"]),
+    ...mapActions(["set_groupID", "set_list_collections"]),
     parse_query_string: function() {
       // Credits to https://www.joezimjs.com/javascript/3-ways-to-parse-a-query-string-in-a-url/
       let queryString = window.location.search.substring(1);
@@ -47,6 +47,10 @@ export default {
     if ("groupID" in params) {
       window.console.log("Group ID found!");
       this.set_groupID(params.groupID);
+    }
+    if ("list_collections" in params) {
+      window.console.log("I have to list all collections!");
+      this.set_list_collections(params.list_collections);
     }
   }
 };
