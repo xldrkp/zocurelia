@@ -45,6 +45,7 @@ export default {
     window.console.log(this.parse_query_string());
     let params = this.parse_query_string();
     if ("groupID" in params) {
+      this.$store.commit("SET_LOADING_STATUS", "done");
       window.console.log("Group ID found!");
       this.set_groupID(params.groupID);
     }

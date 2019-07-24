@@ -1,10 +1,10 @@
 <template>
   <nav class="navbar navbar-expand-md navbar-dark bg-primary">
     <div class="container">
-      <a class="navbar-brand" href="#">
+      <a class="navbar-brand" href="#" @click.prevent="create(false)">
         <i class="fa d-inline fa-book"></i>
         &nbsp;
-        <b>ZoReLiA</b>
+        <b>ZOCURELIA</b>
       </a>
       <button
         class="navbar-toggler navbar-toggler-right border-0"

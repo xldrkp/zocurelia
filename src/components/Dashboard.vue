@@ -4,8 +4,8 @@
       <div class="row pb-1 justify-content-center">
         <div class="col-8">
           <div class="mt-4 alert alert-primary" v-show="!get_create && loading_status =='fresh'">
-            <h3>Get started with Zotero Reading Lists Annotated!</h3>
-            <p>Zotero Reading Lists Annotated combine Zotero group libraries with the Hypothesis activity per text.</p>
+            <h3>Get started with <b>Zotero Curated Reading Lists Annotated</b></h3>
+            <p>Zotero Curated Reading Lists Annotated combine <a target="_blank" href="https:/zotero.org">Zotero</a> group libraries with <a target="_blank" href="https://hypothes.is">Hypothesis</a>.</p>
             <p>You can create your own lists and share them among your colleagues or students.</p>
             <p>
               <a href="#" @click.prevent="create(true)">Create a new list</a> or have a look at an
@@ -194,7 +194,6 @@ export default {
         );
       } else {
         // window.console.log("Fetching group items...");
-        this.set_groupID(this.groupID);
         this.fetch_complete_zotero_list().then(response => {
           this.map_items(response).then(response => {
             this.items = response;
@@ -213,7 +212,6 @@ export default {
     },
     ...mapActions([
       "create",
-      "set_groupID",
       "fetch_complete_zotero_list",
       "map_items"
     ])
