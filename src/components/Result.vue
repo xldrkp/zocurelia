@@ -6,7 +6,7 @@
         <i class="fa d-inline fa-lg fa-share-alt-square"></i> Share this list
       </a>
     </div>
-    <Group />
+    <Group :items="items" />
   </div>
 </template>
 
@@ -19,6 +19,7 @@ export default {
   components: {
     Group
   },
+  props: ["items"],
   data() {
     return {
       list_url: "http://localhost"

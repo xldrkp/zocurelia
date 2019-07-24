@@ -13,9 +13,11 @@ export default {
     context.commit("SET_CREATE", status);
   },
   clear_filter(context) {
+    window.console.log("Clearing filter...");
+    context.commit("SET_SUBMITTED", false);
     context.commit("SET_COLLECTIONS", []);
     context.commit("SET_LIST_COLLECTION", false);
-    context.commit("SET_SUBMITTED", false);
+    context.commit("SET_LOADING_STATUS", "fresh");
   },
   map_collections(context) {
     // Map the name etc. of collections
@@ -89,11 +91,12 @@ export default {
       });
   },
   fetch_complete_zotero_list(context, limit = 100) {
+    window.console.log("Inside fetch_complete_zotero_list...");
     // Fetch complete item list in library
     let groupID = context.getters.groupID;
 
-    context.commit("SET_LOADING_STATUS", "loading");
-    context.commit("SET_CREATE", false);
+    // context.commit("SET_LOADING_STATUS", "loading");
+    // context.commit("SET_CREATE", false);
 
     return api()
       .library("group", groupID)

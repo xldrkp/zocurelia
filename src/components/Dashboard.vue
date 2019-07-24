@@ -179,11 +179,13 @@ export default {
   },
   data() {
     return {
-      is_private_hypo: false
+      is_private_hypo: false,
+      items: []
     };
   },
   methods: {
     startRequest: function() {
+      window.console.log("Started request...");
       if (this.list_collections) {
         this.$store.dispatch(
           "fetch_top_level_collections",
@@ -191,7 +193,16 @@ export default {
           this.collectionKey
         );
       } else {
-        this.$store.dispatch("fetch_complete_zotero_list", this.groupID);
+        // window.console.log("Fetching group items...");
+        this.set_groupID(this.groupID);
+        this.fetch_complete_zotero_list().then(response => {
+          this.map_items(response).then(response => {
+            this.items = response;
+            window.console.log("Meta: ", this.items[0]);
+            this.$store.commit("SET_LOADING_STATUS", "done");
+            this.$store.commit("SET_CREATE", false);
+          });
+        });
       }
     },
     set_create: function() {
@@ -200,15 +211,15 @@ export default {
     set_submitted: function(status) {
       this.$store.commit("SET_SUBMITTED", status);
     },
-    ...mapActions(["create", "set_groupID"])
+    ...mapActions([
+      "create",
+      "set_groupID",
+      "fetch_complete_zotero_list",
+      "map_items"
+    ])
   },
   computed: {
     ...mapGetters(["get_create", "loading_status"]),
-    loading_status() {
-      let status = this.$store.getters.loading_status;
-      window.console.log(status);
-      return status;
-    },
     get_error() {
       let error = this.$store.getters.get_error;
       window.console.log(error);
@@ -245,6 +256,9 @@ export default {
     }
   },
   created() {
+    window.console.log("Inside Dashboard created()");
+    // Immediately start a search when groupID has been set
+    // with the URL parameter
     if (this.groupID != null) {
       this.startRequest();
     }

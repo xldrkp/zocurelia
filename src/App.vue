@@ -22,7 +22,7 @@ export default {
     Footer
   },
   methods: {
-    ...mapActions(["set_groupID", "set_list_collections"]),
+    ...mapActions(["set_groupID", "set_list_collections", "create"]),
     parse_query_string: function() {
       // Credits to https://www.joezimjs.com/javascript/3-ways-to-parse-a-query-string-in-a-url/
       let queryString = window.location.search.substring(1);
