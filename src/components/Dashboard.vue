@@ -2,25 +2,61 @@
   <div class="py-3">
     <div class="container">
       <div class="row pb-1 justify-content-center">
-        <div class="col-8">
-          <div class="mt-4 alert alert-primary" v-show="!get_create && loading_status =='fresh'">
-            <h3>
-              Get started with
-              <b>Zotero Curated Reading Lists Annotated</b>
-            </h3>
-            <p>
-              Zotero Curated Reading Lists Annotated combine
-              <a
-                target="_blank"
-                href="https:/zotero.org"
-              >Zotero</a> group libraries with
-              <a target="_blank" href="https://hypothes.is">Hypothesis</a>.
-            </p>
-            <p>You can create your own lists and share them among your colleagues or students.</p>
-            <p>
-              <a href="#" @click.prevent="create(true)">Create a new list</a> or have a look at an
-              <a href="#">example</a>.
-            </p>
+        <div class="col-12">
+          <div class="mt-4" v-show="!get_create && loading_status =='fresh'">
+            <div class="container">
+              <div class="row">
+                <div class="col-md-12">
+                  <h1>Read and Annotate!</h1>
+                  <p class="lead mb-4">
+                    ZoCuReLiA is short for
+                    <b>Zo</b>tero
+                    <b>Cu</b>rated
+                    <b>Re</b>ading
+                    <b>Li</b>sts
+                    <b>An</b>notated. In addition to presenting a hand-picked and curated reading list for your community it also shows the hypothes.is activity per text.
+                    <a
+                      href="http://localhost:8080/?groupID=2350037&list_collections=true"
+                    >Check out an example!</a>
+                  </p>
+                </div>
+              </div>
+              <div class="row d-flex justify-content-between">
+                <div class="col-md-4 col-lg-3 p-4">
+                  <img
+                    class="img-fluid d-block"
+                    src="https://static.pingendo.com/img-placeholder-1.svg"
+                    width="1500"
+                  />
+                  <h4 class="my-3">
+                    <b>Curate Your Texts&nbsp;</b>
+                  </h4>
+                  <p>I should be incapable of drawing a single stroke at the present moment; and yet I feel that I never was a greater artist than now.</p>
+                </div>
+                <div class="col-md-4 col-lg-3 p-4">
+                  <img
+                    class="img-fluid d-block"
+                    src="https://static.pingendo.com/img-placeholder-2.svg"
+                    width="1500"
+                  />
+                  <h4 class="my-3">
+                    <b>Share the Link</b>
+                  </h4>
+                  <p>I am so happy, my dear friend, so absorbed in the exquisite sense of mere tranquil existence, that I neglect my talents.</p>
+                </div>
+                <div class="col-md-4 col-lg-3 p-4">
+                  <img
+                    class="img-fluid d-block"
+                    src="https://static.pingendo.com/img-placeholder-3.svg"
+                    width="1500"
+                  />
+                  <h4 class="my-3">
+                    <b>Track Annotations</b>
+                  </h4>
+                  <p>I throw myself down among the tall grass by the trickling stream; and, as I lie close to the earth, a thousand unknown plants are noticed by me.</p>
+                </div>
+              </div>
+            </div>
           </div>
 
           <div v-show="get_create">
@@ -154,7 +190,7 @@
 
       <div id="action-area">
         <div class="row justify-content-center">
-          <div class="col-8">
+          <div class="col-lg-8 col-md-12">
             <div v-show="loading_status == 'loading'">
               <div class="col-md-12 d-flex justify-content-center">
                 <i class="fa fa-refresh fa-spin fa-3x fa-fw"></i>

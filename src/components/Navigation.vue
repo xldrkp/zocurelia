@@ -4,7 +4,7 @@
       <a class="navbar-brand" href="#" @click.prevent="create(false)">
         <i class="fa d-inline fa-book"></i>
         &nbsp;
-        <b>ZOCURELIA</b>
+        <b>ZoCuReLiA</b>
       </a>
       <button
         class="navbar-toggler navbar-toggler-right border-0"
@@ -23,7 +23,7 @@
         <a
           href="#"
           @click.prevent="create(true)"
-          class="btn navbar-btn ml-md-2 btn-light text-dark"
+          class="btn navbar-btn ml-md-2 btn-sm btn-light text-dark"
         >New</a>
       </div>
     </div>
