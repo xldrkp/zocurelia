@@ -73,6 +73,8 @@ export default {
       });
     }
   },
-  created() {}
+  created() {
+    window.console.log("Result created()...");
+  }
 };
 </script>

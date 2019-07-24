@@ -3,6 +3,7 @@ import mutations from "./mutations";
 import getters from "./getters";
 
 const state = {
+  search_done: false,
   submitted: false,
   groupID: null,
   list_collections: false,

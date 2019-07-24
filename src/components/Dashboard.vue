@@ -4,8 +4,18 @@
       <div class="row pb-1 justify-content-center">
         <div class="col-8">
           <div class="mt-4 alert alert-primary" v-show="!get_create && loading_status =='fresh'">
-            <h3>Get started with <b>Zotero Curated Reading Lists Annotated</b></h3>
-            <p>Zotero Curated Reading Lists Annotated combine <a target="_blank" href="https:/zotero.org">Zotero</a> group libraries with <a target="_blank" href="https://hypothes.is">Hypothesis</a>.</p>
+            <h3>
+              Get started with
+              <b>Zotero Curated Reading Lists Annotated</b>
+            </h3>
+            <p>
+              Zotero Curated Reading Lists Annotated combine
+              <a
+                target="_blank"
+                href="https:/zotero.org"
+              >Zotero</a> group libraries with
+              <a target="_blank" href="https://hypothes.is">Hypothesis</a>.
+            </p>
             <p>You can create your own lists and share them among your colleagues or students.</p>
             <p>
               <a href="#" @click.prevent="create(true)">Create a new list</a> or have a look at an
@@ -157,6 +167,7 @@
             </div>
 
             <Result
+              v-if="search_done"
               v-show="loading_status == 'done' && !get_create"
               :groupID="groupID"
               :collectionKey="collectionKey"
@@ -187,11 +198,15 @@ export default {
     startRequest: function() {
       window.console.log("Started request...");
       if (this.list_collections) {
-        this.$store.dispatch(
-          "fetch_top_level_collections",
-          this.groupID,
-          this.collectionKey
-        );
+        this.$store
+          .dispatch(
+            "fetch_top_level_collections",
+            this.groupID,
+            this.collectionKey
+          )
+          .then(() => {
+            this.$store.commit("SET_SEARCH_DONE", true);
+          });
       } else {
         // window.console.log("Fetching group items...");
         this.fetch_complete_zotero_list().then(response => {
@@ -200,6 +215,7 @@ export default {
             window.console.log("Meta: ", this.items[0]);
             this.$store.commit("SET_LOADING_STATUS", "done");
             this.$store.commit("SET_CREATE", false);
+            this.$store.commit("SET_SEARCH_DONE", true);
           });
         });
       }
@@ -210,14 +226,10 @@ export default {
     set_submitted: function(status) {
       this.$store.commit("SET_SUBMITTED", status);
     },
-    ...mapActions([
-      "create",
-      "fetch_complete_zotero_list",
-      "map_items"
-    ])
+    ...mapActions(["create", "fetch_complete_zotero_list", "map_items"])
   },
   computed: {
-    ...mapGetters(["get_create", "loading_status"]),
+    ...mapGetters(["get_create", "loading_status", "search_done"]),
     get_error() {
       let error = this.$store.getters.get_error;
       window.console.log(error);

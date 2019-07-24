@@ -37,5 +37,8 @@ export default {
   },
   SET_SUBMITTED(state, status) {
     state.submitted = status;
+  },
+  SET_SEARCH_DONE(state, status) {
+    state.search_done = status;
   }
 };

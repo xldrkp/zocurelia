@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h4>{{ title }}, {{ collectionKey }}</h4>
+    <h4 class="collection-header">{{ title }}</h4>
     <Item v-for="item in items" :key="item.index" :item="item" />
   </div>
 </template>

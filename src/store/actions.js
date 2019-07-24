@@ -18,6 +18,7 @@ export default {
     context.commit("SET_COLLECTIONS", []);
     context.commit("SET_LIST_COLLECTION", false);
     context.commit("SET_LOADING_STATUS", "fresh");
+    context.commit("SET_SEARCH_DONE", false);
   },
   map_collections(context) {
     // Map the name etc. of collections

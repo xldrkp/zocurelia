@@ -42,6 +42,7 @@ export default {
     }
   },
   created() {
+    window.console.log("App created()...");
     window.console.log(this.parse_query_string());
     let params = this.parse_query_string();
     if ("groupID" in params) {

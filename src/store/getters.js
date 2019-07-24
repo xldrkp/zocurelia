@@ -37,5 +37,8 @@ export default {
   },
   submitted: state => {
     return state.submitted;
+  },
+  search_done: state => {
+    return state.search_done;
   }
 };

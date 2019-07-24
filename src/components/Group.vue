@@ -53,6 +53,7 @@ export default {
   },
   created() {
     // Get only one item to get the library title etc.
+    window.console.log("Inside Group created()...")
     this.fetch_complete_zotero_list(1).then(response => {
       window.console.log("Data for Library Meta: ", response.raw);
       if (response.raw.length == 1) {

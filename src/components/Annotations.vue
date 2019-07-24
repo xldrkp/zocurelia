@@ -9,6 +9,7 @@
       class="badge badge-pill"
       v-bind:class="{ 'badge-warning': count == 0, 'badge-primary': count > 0}"
     >{{ count }}</span>
+    <span class="hypothesis-group">Public</span>
   </div>
 </template>
 
