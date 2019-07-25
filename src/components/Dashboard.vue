@@ -9,51 +9,92 @@
                 <div class="col-md-12">
                   <h1>Read and Annotate!</h1>
                   <p class="lead mb-4">
-                    ZoCuReLiA is short for
+                    Zocurelia is short for
                     <b>Zo</b>tero
-                    <b>Cu</b>rated
-                    <b>Re</b>ading
-                    <b>Li</b>sts
-                    <b>An</b>notated. In addition to presenting a hand-picked and curated reading list for your community it also shows the hypothes.is activity per text.
+                    <b>cu</b>rated
+                    <b>re</b>ading
+                    <b>li</b>sts
+                    <b>an</b>notated. In addition to presenting a hand-picked and curated
+                    <b>Zotero</b> reading list for your community it also shows the
+                    <b>Hypothesis</b> activity per text.
                     <a
                       href="http://localhost:8080/?groupID=2350037&list_collections=true"
                     >Check out an example!</a>
                   </p>
                 </div>
               </div>
+              <!-- First row -->
               <div class="row d-flex justify-content-between">
                 <div class="col-md-4 col-lg-3 p-4">
                   <img
-                    class="img-fluid d-block"
-                    src="https://static.pingendo.com/img-placeholder-1.svg"
+                    class="img-fluid d-block img-feature"
+                    src="@/assets/img/features1.png"
                     width="1500"
                   />
                   <h4 class="my-3">
-                    <b>Curate Your Texts&nbsp;</b>
+                    <b>Zotero Collections</b>
                   </h4>
-                  <p>I should be incapable of drawing a single stroke at the present moment; and yet I feel that I never was a greater artist than now.</p>
+                  <p>Choose texts for your curriculum and structure them in Zotero collections.</p>
                 </div>
                 <div class="col-md-4 col-lg-3 p-4">
                   <img
-                    class="img-fluid d-block"
-                    src="https://static.pingendo.com/img-placeholder-2.svg"
+                    class="img-fluid d-block img-feature"
+                    src="@/assets/img/features2.png"
                     width="1500"
                   />
                   <h4 class="my-3">
-                    <b>Share the Link</b>
+                    <b>Markdown</b>
                   </h4>
-                  <p>I am so happy, my dear friend, so absorbed in the exquisite sense of mere tranquil existence, that I neglect my talents.</p>
+                  <p>Use Markdown to structure and enhance the abstract. Embed questions for your students.</p>
                 </div>
                 <div class="col-md-4 col-lg-3 p-4">
                   <img
-                    class="img-fluid d-block"
-                    src="https://static.pingendo.com/img-placeholder-3.svg"
+                    class="img-fluid d-block img-feature"
+                    src="@/assets/img/features3.png"
                     width="1500"
                   />
                   <h4 class="my-3">
-                    <b>Track Annotations</b>
+                    <b>Tags</b>
                   </h4>
-                  <p>I throw myself down among the tall grass by the trickling stream; and, as I lie close to the earth, a thousand unknown plants are noticed by me.</p>
+                  <p>Make use of tags in Zotero and help your students to adjust their learning curve.</p>
+                </div>
+              </div>
+              <!-- Second row -->
+              <div class="row d-flex justify-content-around">
+                <div class="col-md-4 col-lg-3 p-4">
+                  <img
+                    class="img-fluid d-block img-feature"
+                    src="@/assets/img/features4.png"
+                    width="1500"
+                  />
+                  <h4 class="my-3">
+                    <b>Hypothesis</b>
+                  </h4>
+                  <p>Link from Zotero to Open Access online versions of the text. Show your students where the discussion takes place.</p>
+                </div>
+                <div class="col-md-4 col-lg-3 p-4">
+                  <img
+                    class="img-fluid d-block img-feature"
+                    src="@/assets/img/features5.png"
+                    width="1500"
+                  />
+                  <h4 class="my-3">
+                    <b>Annotation Activity</b>
+                  </h4>
+                  <p>Show the activity right on your reading list and motivate others to participate.</p>
+                </div>
+              </div>
+            </div>
+            <hr>
+            <div class="py-5 text-center">
+              <div class="container">
+                <div class="row">
+                  <div class="col-md-8 mx-auto">
+                    <p class="mb-3">
+                      Want to read more on the motivation and idea behind Zocurelia?
+                    </p>
+                      <a class="btn btn-primary" href="#">Read a Blog Post</a>
+                  </div>
                 </div>
               </div>
             </div>

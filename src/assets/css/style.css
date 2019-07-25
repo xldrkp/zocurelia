@@ -12,6 +12,12 @@
     font-weight: normal;
 }
 
+/* Dashboard */
+
+.img-feature {
+  border: 1px solid #ddd;
+}
+
 /* Filter settings */
 
 .req {
