@@ -4,133 +4,22 @@
       <div class="row pb-1 justify-content-center">
         <div class="col-12">
           <div class="mt-4" v-show="!get_create && loading_status =='fresh'">
-            <div class="py-5">
+            <div class="py-3">
               <!-- first part -->
-              <div class="container">
-                <div class="row">
-                  <div class="col-md-12">
-                    <h1>Read and Annotate!</h1>
-                    <p class="lead mb-4">
-                      Zocurelia is short for
-                      <b>Zo</b>tero
-                      <b>cu</b>rated
-                      <b>re</b>ading
-                      <b>li</b>sts
-                      <b>an</b>notated. In addition to presenting a hand-picked and curated
-                      <b>Zotero</b> reading list for your community it also shows the
-                      <b>Hypothesis</b> activity per text.
-                      <a
-                        href="http://localhost:8080/?groupID=2350037&list_collections=true"
-                      >Check out an example!</a>
-                    </p>
-                  </div>
-                </div>
-                <!-- Features -->
-                <div class="container">
-                  <div class="row justify-content-center">
-                    <div class="col-lg-4 col-md-6 p-4">
-                      <div class="row">
-                        <div class="col-3 p-0 d-flex align-items-center">
-                          <img
-                            class="img-fluid d-block"
-                            src="@/assets/img/features1.png"
-                          />
-                        </div>
-                        <div class="col-9">
-                          <p class="lead mb-1">
-                            <b>Curate Collaboratively</b>
-                          </p>
-                          <p
-                            class="mb-0"
-                          >Choose texts for your curriculum and structure them in Zotero collections. Invite others to add to the list.</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 p-4">
-                      <div class="row">
-                        <div class="col-3 p-0 pt-4 d-flex align-items-start">
-                          <img
-                            class="img-fluid d-block"
-                            src="@/assets/img/features2.png"
-                          />
-                        </div>
-                        <div class="col-9">
-                          <p class="lead mb-1">
-                            <b>Markdown</b>
-                          </p>
-                          <p class="mb-0">Use Markdown to structure and enhance the abstract. Embed further links and questions for your community.</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 p-4">
-                      <div class="row">
-                        <div class="col-3 p-0 d-flex align-items-center">
-                          <img
-                            class="img-fluid d-block"
-                            src="@/assets/img/features3.png"
-                          />
-                        </div>
-                        <div class="col-9">
-                          <p class="lead mb-1">
-                            <b>Tags</b>
-                          </p>
-                          <p class="mb-0">Make use of tags in Zotero and help your community to adjust their learning curve.</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 p-4">
-                      <div class="row">
-                        <div class="col-3 p-0 d-flex align-items-center">
-                          <img
-                            class="img-fluid d-block"
-                            src="@/assets/img/features4.png"
-                          />
-                        </div>
-                        <div class="col-9">
-                          <p class="lead mb-1">
-                            <b>Hypothesis</b>
-                          </p>
-                          <p
-                            class="mb-0"
-                          >Link from Zotero to Open Access versions of articles and books and thus show your community where the discussion takes place.</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 p-4">
-                      <div class="row">
-                        <div class="col-3 p-0 d-flex align-items-center">
-                          <img
-                            class="img-fluid d-block"
-                            src="@/assets/img/features5.png"
-                          />
-                        </div>
-                        <div class="col-9">
-                          <p class="lead mb-1">
-                            <b>Share Your List</b>
-                          </p>
-                          <p class="mb-0">Share a link to the Zocurelia list with your class or in social media.</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 p-4">
-                      <div class="row">
-                        <div class="col-3 p-0 d-flex align-items-center">
-                          <img
-                            class="img-fluid d-block"
-                            src="@/assets/img/features6.png"
-                          />
-                        </div>
-                        <div class="col-9">
-                          <p class="lead mb-1">
-                            <b>Annotation Activity</b>
-                          </p>
-                          <p class="mb-0">Show the activity right on your reading list and motivate others to participate.</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <h1>Read and Annotate!</h1>
+              <p class="lead mb-4">
+                Zocurelia is short for
+                <b>Zo</b>tero
+                <b>cu</b>rated
+                <b>re</b>ading
+                <b>li</b>sts
+                <b>an</b>notated. In addition to presenting a hand-picked and curated
+                <b>Zotero</b> reading list for your community it also shows the
+                <b>Hypothesis</b> activity per text.
+                <a
+                  href="http://localhost:8080/?groupID=2350037&list_collections=true"
+                >Check out an example!</a>
+              </p>
               <!-- First row -->
               <div class="row d-flex justify-content-between">
                 <div class="col-md-4 col-lg-3 p-4">
