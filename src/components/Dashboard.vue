@@ -32,9 +32,9 @@
                     width="1500"
                   />
                   <h4 class="my-3">
-                    <b>Zotero Collections</b>
+                    <b>Collect Collaboratively</b>
                   </h4>
-                  <p>Choose texts for your curriculum and structure them in Zotero collections.</p>
+                  <p>Choose texts for your curriculum and structure them in Zotero collections. Invite others to add to the list.</p>
                 </div>
                 <div class="col-md-4 col-lg-3 p-4">
                   <img
@@ -45,7 +45,7 @@
                   <h4 class="my-3">
                     <b>Markdown</b>
                   </h4>
-                  <p>Use Markdown to structure and enhance the abstract. Embed questions for your students.</p>
+                  <p>Use Markdown to structure and enhance the abstract. Embed further links and questions for your community.</p>
                 </div>
                 <div class="col-md-4 col-lg-3 p-4">
                   <img
@@ -56,11 +56,11 @@
                   <h4 class="my-3">
                     <b>Tags</b>
                   </h4>
-                  <p>Make use of tags in Zotero and help your students to adjust their learning curve.</p>
+                  <p>Make use of tags in Zotero and help your community to adjust their learning curve.</p>
                 </div>
               </div>
               <!-- Second row -->
-              <div class="row d-flex justify-content-around">
+              <div class="row d-flex justify-content-between">
                 <div class="col-md-4 col-lg-3 p-4">
                   <img
                     class="img-fluid d-block img-feature"
@@ -70,12 +70,23 @@
                   <h4 class="my-3">
                     <b>Hypothesis</b>
                   </h4>
-                  <p>Link from Zotero to Open Access online versions of the text. Show your students where the discussion takes place.</p>
+                  <p>Link from Zotero to Open Access versions of articles and books and thus show your community where the discussion takes place.</p>
                 </div>
                 <div class="col-md-4 col-lg-3 p-4">
                   <img
                     class="img-fluid d-block img-feature"
                     src="@/assets/img/features5.png"
+                    width="1500"
+                  />
+                  <h4 class="my-3">
+                    <b>Share Your List</b>
+                  </h4>
+                  <p>Share a link to the Zocurelia list with your class or in social media.</p>
+                </div>
+                <div class="col-md-4 col-lg-3 p-4">
+                  <img
+                    class="img-fluid d-block img-feature"
+                    src="@/assets/img/features6.png"
                     width="1500"
                   />
                   <h4 class="my-3">
@@ -86,12 +97,13 @@
               </div>
             </div>
             <hr>
+            <!-- blog post -->
             <div class="py-5 text-center">
               <div class="container">
                 <div class="row">
                   <div class="col-md-8 mx-auto">
                     <p class="mb-3">
-                      Want to read more on the motivation and idea behind Zocurelia?
+                      Want to read more on the motivation and idea behind Zocurelia and how you could use it?
                     </p>
                       <a class="btn btn-primary" href="#">Read a Blog Post</a>
                   </div>

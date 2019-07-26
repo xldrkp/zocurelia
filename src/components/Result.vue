@@ -51,7 +51,7 @@ export default {
     },
     showModal() {
       this.$modal.show("dialog", {
-        title: "Share this Zotero Annotated Reading List",
+        title: "Share this Zotero Curated Reading List",
         text:
           "<p>Give this URL to others so that they can participate.</p><input class='form-control' type='text' value='" +
           this.concat_share_url() +

@@ -54,10 +54,6 @@
   font-size: 18px;
 }
 
-.card .hypo-link {
-  font-size: 16px;
-  margin-right: 6px;
-}
 
 .card .no-full-text {
   font-size: 16px;
@@ -69,7 +65,7 @@
 }
 
 .card-header .title {
-  width: 45vw;
+  width: 70%;
   font-weight: bold;
   display: block;
 }
@@ -91,6 +87,12 @@
 }
 
 /* Annotations */
+
+.card .hypo-link {
+  font-size: 16px;
+  margin-right: 6px;
+  margin-left: 15px;
+}
 
 .badge.badge-primary {
   margin-right: 6px;

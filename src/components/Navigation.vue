@@ -1,7 +1,7 @@
 <template>
   <nav class="navbar navbar-expand-md navbar-dark bg-primary">
     <div class="container">
-      <a class="navbar-brand" href="#" @click.prevent="create(false)">
+      <a class="navbar-brand" href="/">
         <i class="fa d-inline fa-book"></i>
         &nbsp;
         <b>Zocurelia</b>

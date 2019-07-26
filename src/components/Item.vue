@@ -3,8 +3,7 @@
     <div class="card-header">
       <Annotations v-if="item.url" class="float-right" :item=item :url="item.url" />
       <span v-else class="no-full-text float-right">No online full text</span>
-      <a class="title" v-if="item.url" target="_blank" :href="item.url">{{ item.title }}</a>
-      <span class="title" v-else>{{ item.title }}</span>
+      <span class="title">{{ item.title }}</span>
       <Authors :authors="item.authors" :zotero_item_url="item.zotero_item_url" />
     </div>
     <div class="card-body">
