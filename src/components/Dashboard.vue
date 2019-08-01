@@ -34,8 +34,8 @@
               <div class="row">
                 <div class="col-lg-6 col-md-12 text-center text-md-left">
                   <p class="lead">
-                    <b>Zotero</b> is great for collecting and distributing Open Access literature and Open Educational Ressources in a reading community. But as
-                    <b>Zotero</b> reading lists and collections do not provide a kind of back channel, you usually need additional tools to track and share comments, annotations and discussions.
+                    <b>Zotero</b> is great for collecting and distributing Open Access literature and Open Educational Resources in a reading community. But as
+                    <b>Zotero</b> reading lists and collections do not provide a back channel, you usually need additional tools to track and share comments, annotations and discussions.
                   </p>
                 </div>
                 <div class="col-lg-6 col-md-12 text-center text-md-left">
@@ -43,7 +43,12 @@
                     Here,
                     <b>Hypothesis</b> comes in handy. All online media in your reading list can be annotated and discussed among community members with this smart browser tool.
                   </p>
-                  <p class="lead">But how do you and your community track this activity on your reading list? Enter <em>Zocurelia</em>!</p>
+                  <p class="lead">
+                    <b>
+                      But how do you and your community track this activity on your reading list? Enter
+                      <em>Zocurelia</em>!
+                    </b>
+                  </p>
                 </div>
               </div>
             </div>
@@ -58,12 +63,8 @@
                     <b>re</b>ading
                     <b>li</b>sts
                     <b>a</b>nnotated.
-                    With a
-                    <em>Zocurelia</em> list you can now show the
-                    Hypothesis activity for each text on a Zotero list.
-                    <em>Zocurelia</em> combines the features of
-                    <b>Zotero</b> and
-                    <b>Hypothesis</b> seamlessly with a flat learning curve.
+                    It integrates the features of Zotero and Hypothesis seamlessly. With a
+                    <em>Zocurelia</em> list you can show the Hypothesis activity for each text on a Zotero reading list.
                   </p>
                 </div>
               </div>
@@ -79,7 +80,7 @@
                     width="1500"
                   />
                   <h4 class="my-3">
-                    <b>Collect Collaboratively</b>
+                    <b>Collect</b>
                   </h4>
                   <p>Choose texts for your curriculum and structure them in Zotero collections. Invite others to curate the list with you.</p>
                 </div>
@@ -90,9 +91,9 @@
                     width="1500"
                   />
                   <h4 class="my-3">
-                    <b>Markdown</b>
+                    <b>Assign</b>
                   </h4>
-                  <p>Use Markdown to structure and enhance the abstract field in Zotero. Embed further links and questions for your community.</p>
+                  <p>Use Markdown to structure and enhance the abstract field in Zotero. Embed questions and assignments for your community.</p>
                 </div>
                 <div class="col-md-4 col-lg-3 p-4">
                   <img
@@ -101,9 +102,9 @@
                     width="1500"
                   />
                   <h4 class="my-3">
-                    <b>Tags</b>
+                    <b>Tag</b>
                   </h4>
-                  <p>Make use of tags in Zotero and help your community to adjust their learning curve.</p>
+                  <p>Allow your community to classify texts in Zotero with tags and thus help each other to adjust their learning curve.</p>
                 </div>
               </div>
               <!-- Second row -->
@@ -115,9 +116,9 @@
                     width="1500"
                   />
                   <h4 class="my-3">
-                    <b>Hypothesis</b>
+                    <b>Annotate</b>
                   </h4>
-                  <p>Link from Zotero to Open Access versions of articles and books and thus show your community where the discussion takes place.</p>
+                  <p>Link from Zotero to Open Access versions of articles and books. Use Hypothesis to annotate and discuss while reading.</p>
                 </div>
                 <div class="col-md-4 col-lg-3 p-4">
                   <img
@@ -126,14 +127,9 @@
                     width="1500"
                   />
                   <h4 class="my-3">
-                    <b>Share Your List</b>
+                    <b>Share</b>
                   </h4>
-                  <p>
-                    Share a link to the Zocurelia list within your class or in social media.
-                    <a
-                      href="http://localhost:8080/?groupID=2350037&list_collections=true"
-                    >Check out an example</a>.
-                  </p>
+                  <p>Invite other to participate in your reading community and share a link to the Zocurelia list within your class or in social media.</p>
                 </div>
                 <div class="col-md-4 col-lg-3 p-4">
                   <img
@@ -142,9 +138,12 @@
                     width="1500"
                   />
                   <h4 class="my-3">
-                    <b>Annotation Activity</b>
+                    <b>Follow</b>
                   </h4>
-                  <p>Show your community's activity directly in your reading list and thus motivate others to participate.</p>
+                  <p>
+                    Curious what others think about the texts you are reading? Track what's going on in your reading community directly in
+                    <em>Zocurelia</em>.
+                  </p>
                 </div>
               </div>
             </div>
@@ -165,7 +164,7 @@
           </div>
 
           <div class="pt-3" v-show="get_create">
-            <h3>Filter Settings</h3>
+            <h3>Build Your Own Zocurelia Community</h3>
             <p>Get started with pasting the group ID of a Zotero list. Optionally, paste the key of a Zotero collection to show just a section of the list.</p>
 
             <form v-on:submit.prevent="startRequest" class="needs-validation">
