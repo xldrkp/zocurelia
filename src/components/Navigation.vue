@@ -20,7 +20,7 @@
             <router-link class="nav-link" to="/about">About</router-link>
           </li>
         </ul>
-        <router-link class="btn navbar-btn ml-md-2 btn-sm btn-light text-dark" to="/new">New</router-link>
+        <router-link class="btn navbar-btn ml-md-2 btn-sm btn-light text-dark" to="/new" replace>New</router-link>
       </div>
     </div>
   </nav>
