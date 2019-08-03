@@ -47,7 +47,7 @@ export default {
         hostname +
         ":" +
         port +
-        "/?" +
+        "/#/list?" +
         "groupID=" +
         this.groupID +
         (this.list_collections ? "&list_collections=true" : "")
