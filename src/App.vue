@@ -1,14 +1,13 @@
 <template>
   <div id="app">
     <Navigation />
-    <Dashboard />
+    <router-view></router-view>
     <Footer />
   </div>
 </template>
 
 <script>
 import Navigation from "./components/Navigation.vue";
-import Dashboard from "./components/Dashboard.vue";
 import Footer from "./components/Footer.vue";
 import "@/assets/css/theme.css";
 import "@/assets/css/style.css";
@@ -18,7 +17,6 @@ export default {
   name: "app",
   components: {
     Navigation,
-    Dashboard,
     Footer
   },
   methods: {

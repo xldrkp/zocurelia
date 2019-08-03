@@ -1,12 +1,16 @@
 <template>
-  <div>
-    <v-dialog />
-    <div class="d-flex justify-content-end mb-3">
-      <a href="#" @click.prevent="showModal" class="share-list">
-        <i class="fa d-inline fa-lg fa-share-alt-square"></i> Share this list
-      </a>
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <v-dialog />
+        <div class="d-flex justify-content-end mb-3">
+          <a href="#" @click.prevent="showModal" class="share-list">
+            <i class="fa d-inline fa-lg fa-share-alt-square"></i> Share this list
+          </a>
+        </div>
+        <Group :items="items" />
+      </div>
     </div>
-    <Group :items="items" />
   </div>
 </template>
 

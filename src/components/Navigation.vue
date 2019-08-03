@@ -1,11 +1,11 @@
 <template>
   <nav class="navbar navbar-expand-md navbar-dark bg-primary">
     <div class="container">
-      <a class="navbar-brand" href="/">
+      <router-link class="navbar-brand" to="/">
         <i class="fa d-inline fa-book"></i>
         &nbsp;
         <b>Zocurelia</b>
-      </a>
+      </router-link>
       <button
         class="navbar-toggler navbar-toggler-right border-0"
         type="button"
@@ -17,14 +17,10 @@
       <div class="collapse navbar-collapse" id="navbar16">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <a class="nav-link" href="#">About</a>
+            <router-link class="nav-link" to="/about">About</router-link>
           </li>
         </ul>
-        <a
-          href="#"
-          @click.prevent="create(true)"
-          class="btn navbar-btn ml-md-2 btn-sm btn-light text-dark"
-        >New</a>
+        <router-link class="btn navbar-btn ml-md-2 btn-sm btn-light text-dark" to="/new">New</router-link>
       </div>
     </div>
   </nav>
