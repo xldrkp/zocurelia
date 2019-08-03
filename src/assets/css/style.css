@@ -18,6 +18,16 @@
   border: 1px solid #ddd;
 }
 
+.motivation-logo {
+  width: 20%;
+  margin-right: 15px;
+}
+
+svg.motivation-logo {
+  color: #bd1c2b;
+  width: 15%;
+}
+
 /* Filter settings */
 
 .req {
