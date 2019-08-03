@@ -63,7 +63,7 @@
                     <b>Hypothesis</b> comes in handy. All online media in your reading list can be annotated and discussed among community members with this smart browser tool.
                   </p>
                 </div>
-                <div class="col-12">
+                <div class="col-12 pt-4">
                   <p class="lead">
                     <b>
                       But how do you and your community track this activity on your reading list? Enter
