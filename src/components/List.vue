@@ -2,8 +2,7 @@
   <div class="container">
     <div id="action-area">
       <div class="row justify-content-center">
-        <div class="col-lg-8 col-md-12">
-
+        <div class="mt-3 col-lg-8 col-md-12">
           <div v-show="loading_status == 'loading'">
             <div class="mt-5 col-md-12 d-flex justify-content-center">
               <i class="fa fa-refresh fa-spin fa-3x fa-fw"></i>
@@ -21,7 +20,7 @@
               <i class="fa d-inline fa-lg fa-share-alt-square"></i> Share with your community
             </a>
           </div>
-          <Group :items="items" />
+          <Group />
         </div>
       </div>
     </div>
@@ -49,13 +48,15 @@ export default {
       "groupID",
       "list_collections",
       "loading_status",
-      "get_error"
+      "get_error",
+      "collectionKey"
     ])
   },
   methods: {
     ...mapActions([
       "fetch_complete_zotero_list",
       "fetch_top_level_collections",
+      "fetch_single_collection",
       "map_items"
     ]),
     share: function() {
@@ -99,30 +100,28 @@ export default {
     // Check if the store contains a filter configuration.
     // This could be the case due to the submitted New form
     // or URL query parameters that the router caught.
-    if (this.list_collections) {
-      this.$store
-        .dispatch(
-          "fetch_top_level_collections",
-          this.groupID,
+
+    // Because the store values are set in router.js
+    // the List view will know what to do.
+
+    // Case: Collections of the library
+    if (this.list_collections && this.collectionKey === null) {
+      this.$router.replace(
+        "/list?groupID=" + this.groupID + "&list_collections=true"
+      );
+      // Case: Special collection
+    } else if (this.list_collections && this.collectionKey != null) {
+      window.console.log("List: Fetching single collection...");
+      this.$router.replace(
+        "/list?groupID=" +
+          this.groupID +
+          "&list_collections=true" +
+          "&collectionKey=" +
           this.collectionKey
-        )
-        .then(() => {
-          this.$store.commit("SET_SEARCH_DONE", true);
-          this.$router.replace(
-            "/list?groupID=" + this.groupID + "&list_collections=true"
-          );
-        });
+      );
+      // Case: Complete library
     } else {
-      // window.console.log("Fetching group items...");
-      this.fetch_complete_zotero_list().then(response => {
-        this.map_items(response).then(response => {
-          this.items = response;
-          window.console.log("Meta: ", this.items[0]);
-          this.$store.commit("SET_LOADING_STATUS", "done");
-          this.$store.commit("SET_SEARCH_DONE", true);
-          this.$router.replace("/list?groupID=" + this.groupID);
-        });
-      });
+      this.$router.replace("/list?groupID=" + this.groupID);
     }
   }
 };
