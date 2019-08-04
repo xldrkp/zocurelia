@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="mt-3">
     <h4 class="collection-header">{{ title }}</h4>
     <Item v-for="item in items" :key="item.index" :item="item" />
   </div>
