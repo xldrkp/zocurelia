@@ -25,15 +25,18 @@ export default {
   },
   data() {
     return {
-      list_url: "http://localhost",
       items: []
     };
   },
   computed: {
-    ...mapGetters(["meta_data", "zotero_items", "groupID", "list_collections"]),
+    ...mapGetters(["meta_data", "zotero_items", "groupID", "list_collections"])
   },
   methods: {
-    ...mapActions(["fetch_complete_zotero_list", "fetch_top_level_collections", "map_items"]),
+    ...mapActions([
+      "fetch_complete_zotero_list",
+      "fetch_top_level_collections",
+      "map_items"
+    ]),
     share: function() {
       window.console.log("Shared!");
     },
@@ -70,6 +73,8 @@ export default {
   },
   created() {
     window.console.log("Result created()...");
+  },
+  beforeMount() {
     // Check if the store contains a filter configuration.
     // This could be the case due to the submitted New form
     // or URL query parameters that the router caught.
@@ -82,6 +87,7 @@ export default {
         )
         .then(() => {
           this.$store.commit("SET_SEARCH_DONE", true);
+          this.$router.replace("/list?groupID=" + this.groupID + "&list_collections=true")
         });
     } else {
       // window.console.log("Fetching group items...");
@@ -91,6 +97,7 @@ export default {
           window.console.log("Meta: ", this.items[0]);
           this.$store.commit("SET_LOADING_STATUS", "done");
           this.$store.commit("SET_SEARCH_DONE", true);
+          this.$router.replace("/list?groupID=" + this.groupID)
         });
       });
     }
