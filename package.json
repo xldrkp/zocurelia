@@ -12,7 +12,7 @@
   "dependencies": {
     "babel-jest": "^24.8.0",
     "core-js": "^2.6.5",
-    "hypothesis-api-client": "^0.1.6",
+    "hypothesis-api-client": "https://github.com/xldrkp/hypothesis-api-client.git",
     "jest": "^24.8.0",
     "vue": "^2.6.10",
     "vue-async-computed": "^3.7.0",
