@@ -19,7 +19,7 @@
                   <div class="d-flex col-md-4 align-items-center justify-content-center" style>
                     <a
                       class="btn btn-primary btn-lg my-4"
-                      href="http://localhost:8080/?groupID=2350037&list_collections=true"
+                      href="/list?groupID=2350037"
                     >Check out an example!</a>
                   </div>
                 </div>
