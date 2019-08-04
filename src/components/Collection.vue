@@ -1,6 +1,6 @@
 <template>
   <div class="mt-3">
-    <h4 class="collection-header">{{ title }}</h4>
+    <h4 class="collection-header">{{ title }} <span class="collection-key">&nbsp;{{ collectionKey }}</span></h4>
     <Item v-for="item in items" :key="item.index" :item="item" />
   </div>
 </template>
@@ -27,7 +27,7 @@ export default {
     ...mapGetters(["zotero_items", "collections", "meta_data"])
   },
   created() {
-    // This method get a collection key from the parent 
+    // This method get a collection key from the parent
     //  component and fetches its items asynchronously
     this.fetch_single_collection(this.collectionKey).then(response => {
       window.console.log("The response: ", response);

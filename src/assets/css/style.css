@@ -25,7 +25,7 @@
 
 svg.motivation-logo {
   color: #bd1c2b;
-  width: 15%;
+  width: 18%;
 }
 
 /* Filter settings */
@@ -45,6 +45,11 @@ svg.motivation-logo {
 }
 
 /* Cards */
+
+.collection-key {
+  color: #ddd;
+  font-size: 16px;
+}
 
 .card {
   margin-bottom: 20px;
