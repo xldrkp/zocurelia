@@ -10,7 +10,7 @@
             <form @submit.prevent="submit()" class="needs-validation">
               <div class="form-group row">
                 <label class="control-label col-3 col-form-label" for="GroupID">
-                  Zotero Group
+                  Public Zotero Group
                   <span class="req">*</span>
                 </label>
                 <div class="col-3 col-xs-5">
