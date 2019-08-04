@@ -15,12 +15,16 @@ function getQuery(route) {
   window.console.log("Parameters: ", params);
 
   if ("groupID" in params) {
-    window.console.log("Group ID found!");
+    window.console.log("Router: Group ID found!");
     store.commit("SET_GROUPID", params.groupID);
   }
   if ("list_collections" in params) {
-    window.console.log("I have to list all collections!");
+    window.console.log("Router: I have to list all collections!");
     store.commit("SET_LIST_COLLECTION", true);
+  }
+  if ("collectionKey" in params) {
+    window.console.log("Router: I have to list a certain collection!");
+    store.commit("SET_COLLECTIONKEY", params.collectionKey);
   }
 
   return route.query;
