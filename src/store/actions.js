@@ -19,7 +19,12 @@ export default {
     context.commit("SET_LIST_COLLECTION", false);
     context.commit("SET_LOADING_STATUS", "fresh");
     context.commit("SET_SEARCH_DONE", false);
+    // @TODO Remove ID for production
+    // context.commit("SET_GROUPID", 2350037);
     context.commit("SET_GROUPID", null);
+    // @TODO Remove key for production
+    // context.commit("SET_COLLECTIONKEY", "PLCUTVQN");
+    context.commit("SET_COLLECTIONKEY", null);
   },
   map_collections(context) {
     // Map the name etc. of collections
@@ -98,7 +103,6 @@ export default {
     let groupID = context.getters.groupID;
 
     context.commit("SET_LOADING_STATUS", "loading");
-    // context.commit("SET_CREATE", false);
 
     return api()
       .library("group", groupID)
@@ -132,9 +136,10 @@ export default {
         context.commit("SET_LOADING_STATUS", "done");
       });
   },
-  fetch_single_collection(context, collectionKey) {
+  fetch_single_collection(context, collectionKey, limit = 100) {
+    window.console.log("Inside fetch_single_collection...");
+    // Test if certain collection exists and get
     context.commit("SET_LOADING_STATUS", "loading");
-    context.commit("SET_INIT", false);
 
     let groupID = context.getters.groupID;
 
@@ -143,8 +148,9 @@ export default {
       .collections(collectionKey)
       .items()
       .top()
-      .get({ limit: 100, sort: "title" })
+      .get({ limit: limit, sort: "title" })
       .then(response => {
+        context.commit("SET_LOADING_STATUS", "done");
         return response;
       });
   }
