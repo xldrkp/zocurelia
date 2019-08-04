@@ -16,18 +16,18 @@ function getQuery(route) {
 
   if ("groupID" in params) {
     window.console.log("Group ID found!");
-    window.console.log(store)
-    store.commit("SET_GROUPID", params.groupID)
+    store.commit("SET_GROUPID", params.groupID);
   }
   if ("list_collections" in params) {
     window.console.log("I have to list all collections!");
-    store.commit("SET_LIST_COLLECTION", true)
+    store.commit("SET_LIST_COLLECTION", true);
   }
 
   return route.query;
 }
 
 export default new Router({
+  mode: "history",
   routes: [
     {
       path: "/",
