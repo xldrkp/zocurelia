@@ -165,45 +165,22 @@ export default {
     };
   },
   methods: {
-    startRequest: function() {
-      window.console.log("Started request...");
-      if (this.list_collections) {
-        this.$store
-          .dispatch(
-            "fetch_top_level_collections",
-            this.groupID,
-            this.collectionKey
-          )
-          .then(() => {
-            this.$store.commit("SET_SEARCH_DONE", true);
-          });
-      } else {
-        // window.console.log("Fetching group items...");
-        this.fetch_complete_zotero_list().then(response => {
-          this.map_items(response).then(response => {
-            this.items = response;
-            window.console.log("Meta: ", this.items[0]);
-            this.$store.commit("SET_LOADING_STATUS", "done");
-            this.$store.commit("SET_CREATE", false);
-            this.$store.commit("SET_SEARCH_DONE", true);
-          });
-        });
-      }
-    },
-    set_create: function() {
-      this.create(true);
+    initialize: function() {
+      this.init(true);
     },
     set_submitted: function(status) {
       this.$store.commit("SET_SUBMITTED", status);
     },
     submit: function() {
       this.set_submitted(true);
-      this.$router.push({ path: "/list", query: { groupID: this.groupID, list_collections: true } });
+      this.$router.push({
+        path: "/list"
+      });
     },
-    ...mapActions(["create", "fetch_complete_zotero_list", "map_items"])
+    ...mapActions(["create", "fetch_complete_zotero_list", "map_items", "init"])
   },
   computed: {
-    ...mapGetters(["get_create", "loading_status", "search_done"]),
+    ...mapGetters(["get_init", "loading_status", "search_done"]),
     get_error() {
       let error = this.$store.getters.get_error;
       window.console.log(error);
@@ -232,10 +209,11 @@ export default {
       set: function(key) {
         this.$store.commit("SET_COLLECTIONKEY", key);
       }
-    },
+    }
   },
   beforeMount() {
     this.set_submitted(false);
+    this.initialize();
   },
   created() {
     window.console.log("Inside New created()");

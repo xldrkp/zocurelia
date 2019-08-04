@@ -16,23 +16,24 @@
 
 <script>
 import Group from "@/components/Group.vue";
-import { mapGetters } from "vuex";
+import { mapGetters, mapActions } from "vuex";
 
 export default {
-  name: "Result",
+  name: "List",
   components: {
     Group
   },
-  props: ["items"],
   data() {
     return {
-      list_url: "http://localhost"
+      list_url: "http://localhost",
+      items: []
     };
   },
   computed: {
-    ...mapGetters(["meta_data", "zotero_items", "groupID", "list_collections"])
+    ...mapGetters(["meta_data", "zotero_items", "groupID", "list_collections"]),
   },
   methods: {
+    ...mapActions(["fetch_complete_zotero_list", "fetch_top_level_collections", "map_items"]),
     share: function() {
       window.console.log("Shared!");
     },
@@ -41,17 +42,7 @@ export default {
       let hostname = window.location.hostname;
       let port = window.location.port;
 
-      return (
-        protocol +
-        "//" +
-        hostname +
-        ":" +
-        port +
-        "/#/list?" +
-        "groupID=" +
-        this.groupID +
-        (this.list_collections ? "&list_collections=true" : "")
-      );
+      return protocol + "//" + hostname + ":" + port + this.$route.fullPath;
     },
     showModal() {
       this.$modal.show("dialog", {
@@ -79,6 +70,30 @@ export default {
   },
   created() {
     window.console.log("Result created()...");
+    // Check if the store contains a filter configuration.
+    // This could be the case due to the submitted New form
+    // or URL query parameters that the router caught.
+    if (this.list_collections) {
+      this.$store
+        .dispatch(
+          "fetch_top_level_collections",
+          this.groupID,
+          this.collectionKey
+        )
+        .then(() => {
+          this.$store.commit("SET_SEARCH_DONE", true);
+        });
+    } else {
+      // window.console.log("Fetching group items...");
+      this.fetch_complete_zotero_list().then(response => {
+        this.map_items(response).then(response => {
+          this.items = response;
+          window.console.log("Meta: ", this.items[0]);
+          this.$store.commit("SET_LOADING_STATUS", "done");
+          this.$store.commit("SET_SEARCH_DONE", true);
+        });
+      });
+    }
   }
 };
 </script>
