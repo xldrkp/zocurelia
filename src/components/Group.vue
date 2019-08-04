@@ -4,7 +4,7 @@
       Zotero Group:
       <a :href="( meta_data.groupURL || '#')" target="_blank">{{ meta_data.name }}</a>
     </h3>
-    <div v-if="list_collections && !get_create">
+    <div v-if="list_collections && !get_init">
       <div v-for="collection in collections" :key="collection.index">
         <Collection :title="collection.name" :collectionKey="collection.key" />
       </div>
@@ -37,7 +37,7 @@ export default {
     ...mapGetters([
       "collectionKey",
       "submitted",
-      "get_create",
+      "get_init",
       "zotero_items",
       "list_collections",
       "collections"
