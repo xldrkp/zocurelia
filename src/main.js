@@ -20,11 +20,6 @@ Vue.use(Vuex);
 
 export const store = new Vuex.Store(storeConfig);
 
-// router.beforeEach((to, from, next) => {
-//   window.console.log("Before each route...");
-//   next();
-// });
-
 new Vue({
   store,
   router,
