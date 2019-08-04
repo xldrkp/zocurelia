@@ -20,8 +20,8 @@ export default {
   SET_ERROR(state, error) {
     state.error = error;
   },
-  SET_CREATE(state, status) {
-    state.create = status;
+  SET_INIT(state, status) {
+    state.init = status;
   },
   SET_GROUPID(state, id) {
     state.groupID = id;

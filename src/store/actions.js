@@ -7,10 +7,10 @@ export default {
   set_list_collections(context, status) {
     context.commit("SET_LIST_COLLECTION", status);
   },
-  create(context, status) {
+  init(context, status) {
     // Clears all filter setting before applying new settings
     context.dispatch("clear_filter");
-    context.commit("SET_CREATE", status);
+    context.commit("SET_INIT", status);
   },
   clear_filter(context) {
     window.console.log("Clearing filter...");
@@ -19,6 +19,7 @@ export default {
     context.commit("SET_LIST_COLLECTION", false);
     context.commit("SET_LOADING_STATUS", "fresh");
     context.commit("SET_SEARCH_DONE", false);
+    context.commit("SET_GROUPID", null);
   },
   map_collections(context) {
     // Map the name etc. of collections
@@ -58,7 +59,7 @@ export default {
     let groupID = context.getters.groupID;
 
     context.commit("SET_LOADING_STATUS", "loading");
-    context.commit("SET_CREATE", false);
+    context.commit("SET_INIT", false);
     return api()
       .library("group", groupID)
       .collections()
@@ -112,7 +113,7 @@ export default {
     // Test if certain collection exists and get
     // If recursive is set, also fetch subcollections down one level
     context.commit("SET_LOADING_STATUS", "loading");
-    context.commit("SET_CREATE", false);
+    context.commit("SET_INIT", false);
 
     if (recursive);
 
@@ -132,7 +133,7 @@ export default {
   },
   fetch_single_collection(context, collectionKey) {
     context.commit("SET_LOADING_STATUS", "loading");
-    context.commit("SET_CREATE", false);
+    context.commit("SET_INIT", false);
 
     let groupID = context.getters.groupID;
 

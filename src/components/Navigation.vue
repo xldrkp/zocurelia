@@ -35,7 +35,7 @@ export default {
     ...mapActions(["create"])
   },
   computed: {
-    ...mapGetters(["get_create"])
+    ...mapGetters(["get_init"])
   }
 };
 </script>

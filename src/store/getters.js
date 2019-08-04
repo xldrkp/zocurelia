@@ -5,8 +5,8 @@ export default {
   get_error: state => {
     return state.error;
   },
-  get_create: state => {
-    return state.create;
+  get_init: state => {
+    return state.init;
   },
   groupID: state => {
     return state.groupID;
