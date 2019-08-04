@@ -58,7 +58,7 @@
                   <span id="errId3" class="error"></span>
                 </div>
               </div>
-              <div v-show="list_collections" class="form-group row">
+              <!-- <div v-show="list_collections" class="form-group row">
                 <label class="control-label control-label-left col-3"></label>
                 <div class="controls col-9">
                   <label class="checkbox control-label" for="list_sub">
@@ -72,7 +72,7 @@
                   </label>
                   <span id="errId4" class="error"></span>
                 </div>
-              </div>
+              </div> -->
               <div class="form-group row">
                 <label class="control-label col-3">Hypothesis Settings</label>
                 <div class="controls col-9">
