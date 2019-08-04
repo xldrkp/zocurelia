@@ -107,7 +107,7 @@ export default {
     // Case: Collections of the library
     if (this.list_collections && this.collectionKey === null) {
       this.$router.replace(
-        "/list?groupID=" + this.groupID + "&list_collections=true"
+        "/list?groupID=" + this.groupID + "&list_collections"
       );
       // Case: Special collection
     } else if (this.list_collections && this.collectionKey != null) {
@@ -115,7 +115,7 @@ export default {
       this.$router.replace(
         "/list?groupID=" +
           this.groupID +
-          "&list_collections=true" +
+          "&list_collections" +
           "&collectionKey=" +
           this.collectionKey
       );
