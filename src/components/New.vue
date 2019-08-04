@@ -132,22 +132,7 @@
         </div>
       </div>
 
-      <div id="action-area">
-        <div class="row justify-content-center">
-          <div class="col-lg-8 col-md-12">
-            <div v-show="loading_status == 'loading'">
-              <div class="col-md-12 d-flex justify-content-center">
-                <i class="fa fa-refresh fa-spin fa-3x fa-fw"></i>
-              </div>
-            </div>
 
-            <div class="alert alert-danger" v-show="loading_status == 'error'">
-              <h3>An error occured!</h3>
-              <p class="error">{{ get_error }}</p>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
   </div>
 </template>

@@ -97,7 +97,7 @@ export default {
     // Fetch complete item list in library
     let groupID = context.getters.groupID;
 
-    // context.commit("SET_LOADING_STATUS", "loading");
+    context.commit("SET_LOADING_STATUS", "loading");
     // context.commit("SET_CREATE", false);
 
     return api()
@@ -106,6 +106,7 @@ export default {
       .top()
       .get({ limit: limit, sort: "title" })
       .then(response => {
+        context.commit("SET_LOADING_STATUS", "done");
         return response;
       });
   },
