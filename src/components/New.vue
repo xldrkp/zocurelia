@@ -197,10 +197,8 @@ export default {
       this.$store.commit("SET_SUBMITTED", status);
     },
     submit: function() {
-      //if you want to send any data into server before redirection then you can do it here
       this.set_submitted(true);
-      this.$router.push({ path: "/list", query: { groupID: this.groupID } });
-      // this.$router.push("/about");
+      this.$router.push({ path: "/list", query: { groupID: this.groupID, list_collections: true } });
     },
     ...mapActions(["create", "fetch_complete_zotero_list", "map_items"])
   },
@@ -235,22 +233,12 @@ export default {
         this.$store.commit("SET_COLLECTIONKEY", key);
       }
     },
-    submitted: {
-      get: function() {
-        return this.$store.getters.submitted;
-      }
-    }
   },
   beforeMount() {
     this.set_submitted(false);
   },
   created() {
     window.console.log("Inside New created()");
-    // Immediately start a search when groupID has been set
-    // with the URL parameter
-    if (this.groupID != null) {
-      this.startRequest();
-    }
   }
 };
 </script>
