@@ -1,8 +1,8 @@
 <template>
   <div class="d-inline">
     <a class="hypo-link" :href="'https://via.hypothes.is/' + url" target="_blank">
-      <span v-show="count > 0">Keep annotating!</span>
-      <span v-show="count == 0">Start annotating!</span>
+      <span v-show="count > 0">What do you think?</span>
+      <span v-show="count == 0">Start discussing!</span>
     </a>
 
     <span
