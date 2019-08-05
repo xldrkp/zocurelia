@@ -65,9 +65,9 @@ export default {
     concat_share_url: function() {
       let protocol = window.location.protocol;
       let hostname = window.location.hostname;
-      let port = window.location.port;
+      let port = window.location.port != "" ? ":" + window.location.port : "";
 
-      return protocol + "//" + hostname + ":" + port + this.$route.fullPath;
+      return protocol + "//" + hostname + port + this.$route.fullPath;
     },
     showModal() {
       this.$modal.show("dialog", {
