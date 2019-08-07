@@ -72,7 +72,7 @@
                   </label>
                   <span id="errId4" class="error"></span>
                 </div>
-              </div> -->
+              </div>-->
               <div class="form-group row">
                 <label class="control-label col-3">Hypothesis Settings</label>
                 <div class="controls col-9">
@@ -94,6 +94,7 @@
                 <div class="controls col-9">
                   <input
                     id="Token"
+                    v-model="hypothesis_token"
                     type="text"
                     class="form-control k-textbox"
                     data-role="text"
@@ -108,6 +109,7 @@
                 <div class="controls col-9">
                   <input
                     id="Group"
+                    v-model="hypothesis_group"
                     type="text"
                     class="form-control k-textbox"
                     data-role="text"
@@ -131,8 +133,6 @@
           </div>
         </div>
       </div>
-
-
     </div>
   </div>
 </template>
@@ -193,6 +193,23 @@ export default {
       },
       set: function(key) {
         this.$store.commit("SET_COLLECTIONKEY", key);
+      }
+    },
+    hypothesis_token: {
+      get: function() {
+        // return this.$store.getters.hypothesis_token;
+        return localStorage.hypothesis_token;
+      },
+      set: function(token) {
+        localStorage.hypothesis_token = token;
+      }
+    },
+    hypothesis_group: {
+      get: function() {
+        return this.$store.getters.hypothesis_group;
+      },
+      set: function(group) {
+        this.$store.commit("SET_HYPOTHESIS_GROUP", group);
       }
     }
   },

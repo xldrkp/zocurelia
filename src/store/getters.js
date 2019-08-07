@@ -40,5 +40,11 @@ export default {
   },
   search_done: state => {
     return state.search_done;
+  },
+  hypothesis_token: state => {
+    return state.hypothesis_token;
+  },
+  hypothesis_group: state => {
+    return state.hypothesis_group;
   }
 };

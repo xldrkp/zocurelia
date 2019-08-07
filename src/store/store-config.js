@@ -19,7 +19,9 @@ const state = {
     groupURL: "",
     library: ""
   },
-  error: ""
+  error: "",
+  hypothesis_token: "",
+  hypothesis_group: null
 };
 
 export default {

@@ -40,5 +40,11 @@ export default {
   },
   SET_SEARCH_DONE(state, status) {
     state.search_done = status;
+  },
+  SET_HYPOTHESIS_TOKEN(state, token) {
+    state.hypothesis_token = token;
+  },
+  SET_HYPOTHESIS_GROUP(state, group) {
+    state.hypothesis_group = group;
   }
 };

@@ -1,6 +1,6 @@
 <template>
   <div class="d-inline">
-    <a class="hypo-link" :href="'https://via.hypothes.is/' + url" target="_blank">
+    <a class="hypo-link" :href="'https://hyp.is/go?url=' + url + ( hypothesis_group != null ? ('&group=' + hypothesis_group) : '')" target="_blank">
       <span v-show="count > 0">What do you think?</span>
       <span v-show="count == 0">Start discussing!</span>
     </a>
@@ -9,12 +9,13 @@
       class="badge badge-pill"
       v-bind:class="{ 'badge-warning': count == 0, 'badge-primary': count > 0}"
     >{{ count }}</span>
-    <span class="hypothesis-group">Public</span>
+    <span class="hypothesis-group">{{(hypothesis_group != null ? hypothesis_group : 'Public')}}</span>
   </div>
 </template>
 
 <script>
 import HypothesisClient from "hypothesis-api-client";
+import { mapGetters } from "vuex";
 
 export default {
   name: "Annotations",
@@ -26,6 +27,9 @@ export default {
       hac: Object
     };
   },
+  computed: {
+    ...mapGetters(["hypothesis_group"])
+  },
   methods: {
     url_exists(item) {
       return item.url != "" || false;
@@ -34,15 +38,24 @@ export default {
   asyncComputed: {
     get_count: {
       async get() {
-        this.hac = new HypothesisClient("");
+        let token = localStorage.getItem("hypothesis_token") || "";
+        this.hac = new HypothesisClient(token);
+
+        let search_options = this.$store.getters.hypothesis_group
+          ? {
+              url: this.item.url,
+              group: this.$store.getters.hypothesis_group
+            }
+          : {
+              url: this.item.url
+            };
 
         if (this.url_exists(this.item)) {
           await this.hac.searchAnnotations(
-            { url: this.item.url },
+            search_options,
             (err, annotations) => {
-              window.console.log(annotations);
+              window.console.log("Annotations: ", annotations);
               this.count = annotations.length;
-              // this.latest = annotations[0]["created"]
             }
           );
         } else {
@@ -50,6 +63,9 @@ export default {
         }
       }
     }
+  },
+  created() {
+    window.console.log("Group ID:", this.hypothesis_group)
   }
 };
 </script>
