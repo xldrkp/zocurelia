@@ -9,7 +9,7 @@
                 <div class="row">
                   <div class="col-md-8 text-center text-md-left">
                     <!-- first part -->
-                    <h1>Enjoy Reading in Decentralized Communities</h1>
+                    <h1>Enjoy Reading in Distributed Communities</h1>
                     <p class="lead">
                       Reading for yourself can be fun. Doing it together and sharing different perspectives on texts in a group can make reading an even greater pleasure.
                       <br />
