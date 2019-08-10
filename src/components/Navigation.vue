@@ -15,12 +15,26 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbar16">
-        <ul class="navbar-nav ml-auto">
+        <ul class="navbar-nav mr-auto">
           <li class="nav-item">
             <router-link class="nav-link" to="/about">About</router-link>
           </li>
+          <li class="nav-item">
+            <router-link class="nav-link" to="/help">Help</router-link>
+          </li>
         </ul>
-        <router-link class="btn navbar-btn ml-md-2 btn-sm btn-light text-dark" to="/new" replace>New</router-link>
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <router-link
+              class="btn navbar-btn ml-md-2 btn-sm btn-light text-dark"
+              to="/new"
+              replace
+            >New</router-link>
+          </li>
+          <li class="nav-item">
+            <router-link class="nav-link" to="/settings" replace>Settings</router-link>
+          </li>
+        </ul>
       </div>
     </div>
   </nav>

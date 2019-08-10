@@ -20,7 +20,6 @@ const state = {
     library: ""
   },
   error: "",
-  hypothesis_token: "",
   hypothesis_group: null
 };
 

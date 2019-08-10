@@ -4,8 +4,10 @@
       <div class="row pb-1 justify-content-center">
         <div class="col-12">
           <div class="pt-3">
-            <h3>Build Your Own Zocurelia Community</h3>
-            <p>Get started with pasting the group ID of a Zotero list. Optionally, paste the key of a Zotero collection to show just a section of the list.</p>
+            <h1>Create a Zocurelia Community</h1>
+            <p
+              class="lead"
+            >Get started with pasting the group ID of a Zotero list. Optionally, paste the key of a Zotero collection to show just a section of the list.</p>
 
             <form @submit.prevent="submit()" class="needs-validation">
               <div class="form-group row">
@@ -44,7 +46,7 @@
               </div>
               <div v-show="list_collections" class="form-group row">
                 <label class="control-label col-3" for="CollectionKey">Collection</label>
-                <div class="controls col-9">
+                <div class="controls col-3">
                   <input
                     id="CollectionKey"
                     name="CollectionKey"
@@ -75,7 +77,7 @@
               </div>-->
               <div class="form-group row">
                 <label class="control-label col-3">Hypothesis Settings</label>
-                <div class="controls col-9">
+                <div class="controls col-3">
                   <label class="checkbox control-label" for="checkbox49">
                     <input
                       type="checkbox"
@@ -90,23 +92,8 @@
                 </div>
               </div>
               <div v-show="is_private_hypo" class="form-group row">
-                <label class="control-label col-3" for="Token">Token</label>
-                <div class="controls col-9">
-                  <input
-                    id="Token"
-                    v-model="hypothesis_token"
-                    type="text"
-                    class="form-control k-textbox"
-                    data-role="text"
-                    placeholder="Enter a valid API token. You will find it at &quot;Account > Developer&quot;."
-                    data-parsley-errors-container="#errId6"
-                  />
-                  <span id="errId6" class="error"></span>
-                </div>
-              </div>
-              <div v-show="is_private_hypo" class="form-group row">
                 <label class="control-label col-3" for="Group">Group</label>
-                <div class="controls col-9">
+                <div class="controls col-3">
                   <input
                     id="Group"
                     v-model="hypothesis_group"
@@ -121,12 +108,18 @@
               </div>
               <div class="form-group row">
                 <label class="col-3"></label>
-                <div class="controls col-9">
+                <div class="d-flex justify-content-start controls col-9">
                   <button
                     id="button58"
                     type="submit"
                     class="btn btn-primary btn-default"
                   >Get me my list!</button>
+                  <button
+                    id="button58"
+                    type="button"
+                    class="btn btn-secondary btn-default ml-2"
+                    @click="reset()"
+                  >Reset</button>
                 </div>
               </div>
             </form>
@@ -150,6 +143,10 @@ export default {
     };
   },
   methods: {
+    reset: function() {
+      this.reset_form();
+      this.is_private_hypo = false;
+    },
     initialize: function() {
       this.init(true);
     },
@@ -162,10 +159,21 @@ export default {
         path: "/list"
       });
     },
-    ...mapActions(["create", "fetch_complete_zotero_list", "map_items", "init"])
+    ...mapActions([
+      "create",
+      "fetch_complete_zotero_list",
+      "map_items",
+      "init",
+      "reset_form"
+    ])
   },
   computed: {
-    ...mapGetters(["get_init", "loading_status", "search_done"]),
+    ...mapGetters([
+      "get_init",
+      "loading_status",
+      "search_done",
+      "hypothesis_group"
+    ]),
     get_error() {
       let error = this.$store.getters.get_error;
       window.console.log(error);
@@ -195,15 +203,6 @@ export default {
         this.$store.commit("SET_COLLECTIONKEY", key);
       }
     },
-    hypothesis_token: {
-      get: function() {
-        // return this.$store.getters.hypothesis_token;
-        return localStorage.hypothesis_token;
-      },
-      set: function(token) {
-        localStorage.hypothesis_token = token;
-      }
-    },
     hypothesis_group: {
       get: function() {
         return this.$store.getters.hypothesis_group;
@@ -219,6 +218,10 @@ export default {
   },
   created() {
     window.console.log("Inside New created()");
+    if (this.$store.getters.hypothesis_group != null) {
+      window.console.log("Found! asdf")
+      this.is_private_hypo = true;
+    }
   }
 };
 </script>

@@ -12,19 +12,22 @@ export default {
     context.dispatch("clear_filter");
     context.commit("SET_INIT", status);
   },
+  reset_form(context) {
+    context.commit("SET_GROUPID", null);
+    context.commit("SET_LIST_COLLECTION", false);
+    context.commit("SET_COLLECTIONKEY", null);
+    context.commit("SET_HYPOTHESIS_GROUP", null)
+  },
   clear_filter(context) {
     window.console.log("Clearing filter...");
     context.commit("SET_SUBMITTED", false);
     context.commit("SET_COLLECTIONS", []);
-    context.commit("SET_LIST_COLLECTION", false);
     context.commit("SET_LOADING_STATUS", "fresh");
     context.commit("SET_SEARCH_DONE", false);
     // @TODO Remove ID for production
     // context.commit("SET_GROUPID", 2350037);
-    context.commit("SET_GROUPID", null);
     // @TODO Remove key for production
     // context.commit("SET_COLLECTIONKEY", "PLCUTVQN");
-    context.commit("SET_COLLECTIONKEY", null);
   },
   map_collections(context) {
     // Map the name etc. of collections

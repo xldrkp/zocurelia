@@ -64,16 +64,16 @@
                   </p>
                 </div>
               </div>
-                <div class="row justify-content-center text-center">
-                  <div class="col-6 pt-4">
-                    <p class="lead">
-                      <b>
-                        But how do you and your community track this activity on your reading list? Enter
-                        <em>Zocurelia</em>!
-                      </b>
-                    </p>
-                  </div>
+              <div class="row justify-content-center text-center">
+                <div class="col-6 pt-4">
+                  <p class="lead">
+                    <b>
+                      But how do you and your community track this activity on your reading list? Enter
+                      <em>Zocurelia</em>!
+                    </b>
+                  </p>
                 </div>
+              </div>
             </div>
             <div class="container">
               <div class="row pt-5">

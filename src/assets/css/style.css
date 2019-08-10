@@ -127,3 +127,16 @@ svg.motivation-logo {
 .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
   opacity: 0;
 }
+
+/* Settings */
+
+.help {
+  background: #eee;
+  padding: 15px;
+}
+
+.screenshot {
+  border: 2px solid #ddd;
+  padding: 10px;
+  margin-bottom: 15px;
+}

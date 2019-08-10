@@ -49,7 +49,8 @@ export default {
       "list_collections",
       "loading_status",
       "get_error",
-      "collectionKey"
+      "collectionKey",
+      "hypothesis_group"
     ])
   },
   methods: {
@@ -109,8 +110,10 @@ export default {
       this.$router.replace(
         "/list?groupID=" + this.groupID + "&list_collections"
       );
-      // Case: Special collection
-    } else if (this.list_collections && this.collectionKey != null) {
+    }
+
+    // Case: Special collection
+    if (this.list_collections && this.collectionKey != null) {
       window.console.log("List: Fetching single collection...");
       this.$router.replace(
         "/list?groupID=" +
@@ -120,7 +123,26 @@ export default {
           this.collectionKey
       );
       // Case: Complete library
-    } else {
+    }
+
+    // Case: Collections of the library and private Hypothesis access
+    if (this.list_collections && this.hypothesis_group != "") {
+      window.console.log("List: Fetching single collection...");
+      this.$router.replace(
+        "/list?groupID=" +
+          this.groupID +
+          "&list_collections" +
+          "&hypothesis_group=" +
+          this.hypothesis_group
+      );
+    }
+
+    // Case: Complete library
+    if (
+      !this.list_collections &&
+      this.collectionKey == null &&
+      this.hypothesis_group == ""
+    ) {
       this.$router.replace("/list?groupID=" + this.groupID);
     }
   }
