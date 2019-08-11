@@ -100,6 +100,7 @@
                     type="text"
                     class="form-control k-textbox"
                     data-role="text"
+                    :required="is_private_hypo"
                     placeholder="Enter a valid group ID like aYZTZ2Ge9"
                     data-parsley-errors-container="#errId7"
                   />

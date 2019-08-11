@@ -4,18 +4,20 @@
       <h3>Get Access to Hypothesis</h3>
       <p class="lead">Enter your Hypothesis token to track your private groups.</p>
       <div class="form-row justify-content-start">
-        <div class="col-md-10">
-          <input
-            id="token"
-            v-model="hypothesis_token"
-            type="text"
-            class="form-control"
-            placeholder="Enter a valid API token."
-          />
-        </div>
-        <div class="col">
-          <button @click="reset()" class="btn btn-primary">Reset</button>
-        </div>
+        <form class="form-row">
+          <div class="col-md-10">
+            <input
+              id="token"
+              v-model="hypothesis_token"
+              type="text"
+              class="form-control"
+              placeholder="Enter a valid API token."
+            />
+          </div>
+          <div class="col-md-2">
+            <input @click="remove()" type="reset" value="Remove" class="btn btn-primary" />
+          </div>
+        </form>
       </div>
     </div>
     <div class="col-md-4 help">
@@ -47,14 +49,14 @@ export default {
     return {};
   },
   methods: {
-    reset: function() {
-      localStorage.hypothesis_token = "";
+    remove: function() {
+      localStorage.removeItem("hypothesis_token");
     }
   },
   computed: {
     hypothesis_token: {
       get: function() {
-        return localStorage.hypothesis_token;
+        return localStorage.getItem("hypothesis_token");
       },
       set: function(token) {
         localStorage.hypothesis_token = token;

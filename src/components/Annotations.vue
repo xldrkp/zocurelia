@@ -1,6 +1,10 @@
 <template>
   <div class="d-inline">
-    <a class="hypo-link" :href="'https://hyp.is/go?url=' + url + ( hypothesis_group != null ? ('&group=' + hypothesis_group) : '')" target="_blank">
+    <a
+      class="hypo-link"
+      :href="'https://hyp.is/go?url=' + url + ( hypothesis_group != '' ? ('&group=' + hypothesis_group) : ('&group=__world__'))"
+      target="_blank"
+    >
       <span v-show="count > 0">What do you think?</span>
       <span v-show="count == 0">Start discussing!</span>
     </a>
@@ -9,7 +13,10 @@
       class="badge badge-pill"
       v-bind:class="{ 'badge-warning': count == 0, 'badge-primary': count > 0}"
     >{{ count }}</span>
-    <span class="hypothesis-group">{{(hypothesis_group != null ? hypothesis_group : 'Public')}}</span>
+    <span class="hypothesis-group">
+      <i class="fa fa-users"></i>
+      {{(hypothesis_group != '' ? hypothesis_group : 'Public')}}
+    </span>
   </div>
 </template>
 
@@ -38,7 +45,7 @@ export default {
   asyncComputed: {
     get_count: {
       async get() {
-        let token = localStorage.getItem("hypothesis_token") || "";
+        let token = localStorage.getItem("hypothesis_token") || null;
         this.hac = new HypothesisClient(token);
 
         let search_options = this.$store.getters.hypothesis_group
@@ -47,7 +54,8 @@ export default {
               group: this.$store.getters.hypothesis_group
             }
           : {
-              url: this.item.url
+              url: this.item.url,
+              group: "__world__"
             };
 
         if (this.url_exists(this.item)) {
@@ -65,7 +73,7 @@ export default {
     }
   },
   created() {
-    window.console.log("Group ID:", this.hypothesis_group)
+    window.console.log("Group ID:", this.hypothesis_group);
   }
 };
 </script>

@@ -2,14 +2,13 @@
   <div class="container">
     <div id="action-area">
       <div class="row justify-content-center">
-        <div v-show="hypothesis_group != '' && !check_token" class="mt-3 col-md-10">
+        <div v-if="hypothesis_group != '' && !check_token" class="mt-5 col-md-10">
           <div class="alert alert-warning" role="alert">
-            <h4>Warning!</h4>
-            <p>Please enter a valid Hypothesis token to access private Hypothesis groups! You can do this <router-link to="/settings" replace>on the Settings page</router-link>.</p>
+            <h4>Got Access?</h4>
+            <p>Please enter a valid Hypothesis token to access Hypothesis groups! You can do this <router-link to="/settings" replace>on the Settings page</router-link>.</p>
           </div>
         </div>
-
-        <div class="mt-3 col-md-10">
+        <div v-else class="mt-3 col-md-10">
           <div v-show="loading_status == 'loading'">
             <div class="mt-5 col-md-12 d-flex justify-content-center">
               <i class="fa fa-refresh fa-spin fa-3x fa-fw"></i>
@@ -62,7 +61,7 @@ export default {
       "hypothesis_group"
     ]),
     check_token() {
-      return localStorage.hypothesis_token || false
+      return localStorage.hypothesis_token || ""
     }
   },
   methods: {
@@ -138,7 +137,7 @@ export default {
     }
 
     // Case: Collections of the library and private Hypothesis access
-    if (this.list_collections && this.hypothesis_group != "") {
+    if (this.list_collections && this.hypothesis_group != "" && this.check_token != "") {
       window.console.log("List: Fetching single collection...");
       this.$router.replace(
         "/list?groupID=" +
