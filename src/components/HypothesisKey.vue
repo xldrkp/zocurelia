@@ -22,6 +22,12 @@
           </div>
         </form>
       </div>
+      <div v-if="login_success" class="alert alert-success mt-3" role="alert">You've logged into Hypothesis successfully!</div>
+      <div
+        class="alert alert-danger mt-3"
+        role="alert"
+        v-if="login_success === false"
+      >There was a problem logging into Hypothesis! Please check the token again.</div>
     </div>
     <div class="col-md-4 help">
       <h3>Help</h3>
@@ -51,7 +57,9 @@ import HypothesisClient from "hypothesis-api-client";
 export default {
   name: "HypothesisKey",
   data() {
-    return {};
+    return {
+      login_success: null
+    };
   },
   methods: {
     store: function() {
@@ -60,9 +68,11 @@ export default {
       this.hac.getUserProfile((err, profile) => {
         if (err) {
           window.console.error(err);
+          this.login_success = false;
         } else {
+          this.login_success = true;
           window.console.log("Profile: ", profile);
-      this.$store.commit("SET_HYPOTHESIS_ACCESS", true);
+          this.$store.commit("SET_HYPOTHESIS_ACCESS", true);
         }
       });
     },
@@ -80,6 +90,9 @@ export default {
         localStorage.hypothesis_token = token;
       }
     }
+  },
+  beforeDestroy() {
+    this.login_success = null;
   }
 };
 </script>
