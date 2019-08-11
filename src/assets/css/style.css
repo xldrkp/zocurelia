@@ -1,3 +1,30 @@
+/* Body general */
+
+html,
+body {
+ height: 100%;
+ position: relative;
+}
+
+/* App container */
+
+.app-container {
+  min-height: 100vh; /* will cover the 100% of viewport */
+  overflow: hidden;
+  display: block;
+  position: relative;
+  padding-bottom: 100px; /* height of your footer */
+}
+
+/* Footer */
+
+#footer {
+ position: absolute;
+ bottom: 0;
+ width: 100%;
+ text-align: center;
+}
+
 /* Navigation bar */
 
 .navbar a {
@@ -9,7 +36,7 @@
 }
 
 .collection-header {
-    font-weight: normal;
+  font-weight: normal;
 }
 
 /* Home */
@@ -69,7 +96,6 @@ svg.motivation-logo {
   font-size: 18px;
 }
 
-
 .card .no-full-text {
   font-size: 16px;
   margin-top: 8px;
@@ -121,8 +147,9 @@ svg.motivation-logo {
 
 /* Transitions */
 
-.fade-enter-active, .fade-leave-active {
-  transition: opacity .3s;
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.3s;
 }
 .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
   opacity: 0;
