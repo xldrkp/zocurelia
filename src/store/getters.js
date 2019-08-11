@@ -46,5 +46,8 @@ export default {
   },
   hypothesis_group: state => {
     return state.hypothesis_group;
+  },
+  hypothesis_access: state => {
+    return state.hypothesis_access;
   }
 };

@@ -20,7 +20,8 @@ const state = {
     library: ""
   },
   error: "",
-  hypothesis_group: ""
+  hypothesis_group: "",
+  hypothesis_access: false
 };
 
 export default {

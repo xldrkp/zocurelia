@@ -29,10 +29,13 @@
               class="btn navbar-btn ml-md-2 btn-sm btn-light text-dark"
               to="/new"
               replace
-            >New</router-link>
+            >Create</router-link>
           </li>
           <li class="nav-item">
             <router-link class="nav-link" to="/settings" replace>Settings</router-link>
+          </li>
+          <li class="nav-item">
+            <ShowHypothesisAccess />
           </li>
         </ul>
       </div>
@@ -41,10 +44,14 @@
 </template>
 
 <script>
+import ShowHypothesisAccess from "@/components/ShowHypothesisAccess"
 import { mapActions, mapGetters } from "vuex";
 
 export default {
   name: "Navigation",
+  components: {
+    ShowHypothesisAccess
+  },
   methods: {
     ...mapActions(["create"])
   },

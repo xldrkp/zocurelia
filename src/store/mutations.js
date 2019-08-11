@@ -46,5 +46,8 @@ export default {
   },
   SET_HYPOTHESIS_GROUP(state, group) {
     state.hypothesis_group = group;
+  },
+  SET_HYPOTHESIS_ACCESS(state, status) {
+    state.hypothesis_access = status;
   }
 };

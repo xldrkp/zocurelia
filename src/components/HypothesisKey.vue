@@ -5,7 +5,7 @@
       <p class="lead">Enter your Hypothesis token to track your private groups.</p>
       <div class="form-row justify-content-start">
         <form class="form-row">
-          <div class="col-md-10">
+          <div class="col-md-8">
             <input
               id="token"
               v-model="hypothesis_token"
@@ -15,7 +15,10 @@
             />
           </div>
           <div class="col-md-2">
-            <input @click="remove()" type="reset" value="Remove" class="btn btn-primary" />
+            <button @click.prevent="store()" class="btn btn-primary">Store</button>
+          </div>
+          <div class="col-md-2">
+            <input @click="remove()" type="reset" value="Remove" class="btn btn-info" />
           </div>
         </form>
       </div>
@@ -43,14 +46,29 @@
 
 
 <script>
+import HypothesisClient from "hypothesis-api-client";
+
 export default {
   name: "HypothesisKey",
   data() {
     return {};
   },
   methods: {
+    store: function() {
+      let token = localStorage.getItem("hypothesis_token") || null;
+      this.hac = new HypothesisClient(token);
+      this.hac.getUserProfile((err, profile) => {
+        if (err) {
+          window.console.error(err);
+        } else {
+          window.console.log("Profile: ", profile);
+      this.$store.commit("SET_HYPOTHESIS_ACCESS", true);
+        }
+      });
+    },
     remove: function() {
       localStorage.removeItem("hypothesis_token");
+      this.$store.commit("SET_HYPOTHESIS_ACCESS", false);
     }
   },
   computed: {

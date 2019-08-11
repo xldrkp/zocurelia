@@ -118,7 +118,7 @@
                   <button
                     id="button58"
                     type="button"
-                    class="btn btn-secondary btn-default ml-2"
+                    class="btn btn-info btn-default ml-2"
                     @click="reset()"
                   >Reset</button>
                 </div>
