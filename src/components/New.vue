@@ -218,8 +218,7 @@ export default {
   },
   created() {
     window.console.log("Inside New created()");
-    if (this.$store.getters.hypothesis_group != null) {
-      window.console.log("Found! asdf")
+    if (this.$store.getters.hypothesis_group != "") {
       this.is_private_hypo = true;
     }
   }

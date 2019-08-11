@@ -16,7 +16,7 @@ export default {
     context.commit("SET_GROUPID", null);
     context.commit("SET_LIST_COLLECTION", false);
     context.commit("SET_COLLECTIONKEY", null);
-    context.commit("SET_HYPOTHESIS_GROUP", null)
+    context.commit("SET_HYPOTHESIS_GROUP", "")
   },
   clear_filter(context) {
     window.console.log("Clearing filter...");

@@ -20,7 +20,7 @@ const state = {
     library: ""
   },
   error: "",
-  hypothesis_group: null
+  hypothesis_group: ""
 };
 
 export default {

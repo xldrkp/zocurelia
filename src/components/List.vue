@@ -2,25 +2,34 @@
   <div class="container">
     <div id="action-area">
       <div class="row justify-content-center">
-        <div class="mt-3 col-lg-8 col-md-12">
+        <div v-show="hypothesis_group != '' && !check_token" class="mt-3 col-md-10">
+          <div class="alert alert-warning" role="alert">
+            <h4>Warning!</h4>
+            <p>Please enter a valid Hypothesis token to access private Hypothesis groups! You can do this <router-link to="/settings" replace>on the Settings page</router-link>.</p>
+          </div>
+        </div>
+
+        <div class="mt-3 col-md-10">
           <div v-show="loading_status == 'loading'">
             <div class="mt-5 col-md-12 d-flex justify-content-center">
               <i class="fa fa-refresh fa-spin fa-3x fa-fw"></i>
             </div>
           </div>
 
-          <div class="alert alert-danger" v-show="loading_status == 'error'">
-            <h3>An error occured!</h3>
-            <p class="error">{{ get_error }}</p>
-          </div>
+          <div v-show="loading_status == 'done'">
+            <div class="alert alert-danger" v-show="loading_status == 'error'">
+              <h3>An error occured!</h3>
+              <p class="error">{{ get_error }}</p>
+            </div>
 
-          <v-dialog />
-          <div class="d-flex justify-content-end mb-3">
-            <a href="#" @click.prevent="showModal" class="share-list">
-              <i class="fa d-inline fa-lg fa-share-alt-square"></i> Share with your community
-            </a>
+            <v-dialog />
+            <div class="d-flex justify-content-end mb-3">
+              <a href="#" @click.prevent="showModal" class="share-list">
+                <i class="fa d-inline fa-lg fa-share-alt-square"></i> Share with your community
+              </a>
+            </div>
+            <Group />
           </div>
-          <Group />
         </div>
       </div>
     </div>
@@ -51,7 +60,10 @@ export default {
       "get_error",
       "collectionKey",
       "hypothesis_group"
-    ])
+    ]),
+    check_token() {
+      return localStorage.hypothesis_token || false
+    }
   },
   methods: {
     ...mapActions([
