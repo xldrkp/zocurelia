@@ -3,11 +3,13 @@
     <div class="card-header">
       <Annotations v-if="item.url" class="float-right" :item=item :url="item.url" />
       <span v-else class="no-full-text float-right">No online full text</span>
-      <span class="title">{{ item.title }}</span>
+      <h5 class="title">{{ item.title }}</h5>
       <Authors :authors="item.authors" :zotero_item_url="item.zotero_item_url" />
     </div>
     <div class="card-body">
       <AbstractNote :abstractNote="item.abstractNote" />
+    </div>
+    <div class="card-footer">
       <Tags :tags="item.tags" />
     </div>
   </div>

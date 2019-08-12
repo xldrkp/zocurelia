@@ -2,8 +2,8 @@
 
 html,
 body {
- height: 100%;
- position: relative;
+  height: 100%;
+  position: relative;
 }
 
 /* App container */
@@ -19,10 +19,10 @@ body {
 /* Footer */
 
 #footer {
- position: absolute;
- bottom: 0;
- width: 100%;
- text-align: center;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
 }
 
 /* Navigation bar */
@@ -37,6 +37,9 @@ body {
 
 .collection-header {
   font-weight: normal;
+  padding: 8px 5px;
+  margin-bottom: 14px;
+  background: #eee;
 }
 
 /* Home */
@@ -94,6 +97,7 @@ svg.motivation-logo {
 
 .card-header {
   font-size: 18px;
+  background: rgba(18, 187, 173, 0.14);
 }
 
 .card .no-full-text {
@@ -111,6 +115,10 @@ svg.motivation-logo {
   display: block;
 }
 
+.card-header h5 {
+  margin-bottom: 0;
+}
+
 .card-header .authors {
   font-size: 16px;
 }
@@ -125,6 +133,10 @@ svg.motivation-logo {
   overflow: hidden;
   width: 100%;
   white-space: nowrap;
+}
+
+.card-footer:last-child {
+  padding: 0 20px;
 }
 
 /* Annotations */
@@ -166,4 +178,10 @@ svg.motivation-logo {
   border: 2px solid #ddd;
   padding: 10px;
   margin-bottom: 15px;
+}
+
+/* Curator */
+
+.curator {
+  margin-top: 10px;
 }
