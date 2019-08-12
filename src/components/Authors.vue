@@ -1,8 +1,8 @@
 <template>
   <div>
-    <a :href="this.zotero_item_url" target="_blank">
+    <!-- <a :href="this.zotero_item_url" target="_blank">
       <img class="zotero-logo" src="@/assets/img/zotero.png" alt />
-    </a>
+    </a> -->
     <span class="authors" v-html="list_authors"></span>
   </div>
 </template>
