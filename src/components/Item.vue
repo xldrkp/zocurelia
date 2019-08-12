@@ -7,7 +7,7 @@
       <Authors :authors="item.authors" :zotero_item_url="item.zotero_item_url" />
     </div>
     <div class="card-body">
-      <AbstractNote :abstractNote="item.abstractNote" />
+      <AbstractNote :abstractNote="item.abstractNote" :extra="item.extra" />
     </div>
     <div class="card-footer">
       <Tags :tags="item.tags" />

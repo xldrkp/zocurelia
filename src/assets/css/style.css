@@ -6,6 +6,10 @@ body {
   position: relative;
 }
 
+h3 {
+  font-size: 2.75em;
+}
+
 /* App container */
 
 .app-container {
@@ -14,15 +18,6 @@ body {
   display: block;
   position: relative;
   padding-bottom: 100px; /* height of your footer */
-}
-
-/* Footer */
-
-#footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  text-align: center;
 }
 
 /* Navigation bar */
@@ -38,7 +33,7 @@ body {
 .collection-header {
   font-weight: normal;
   padding: 8px 5px;
-  margin-bottom: 14px;
+  margin: 40px 0 14px;
   background: #eee;
 }
 
@@ -155,6 +150,7 @@ svg.motivation-logo {
   display: block;
   font-size: 12px;
   text-align: right;
+  margin-top: 5px;
 }
 
 /* Transitions */
@@ -184,4 +180,19 @@ svg.motivation-logo {
 
 .curator {
   margin-top: 10px;
+  float: right;
+}
+
+.curator h6 {
+  font-weight: normal;
+  color: #aaa;
+}
+
+/* Footer */
+
+#footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
 }

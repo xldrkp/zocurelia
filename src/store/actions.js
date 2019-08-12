@@ -56,7 +56,8 @@ export default {
       url: i.url,
       zotero_item_url: raw[idx].links.alternate.href,
       tags: i.tags,
-      idx: idx
+      idx: idx,
+      extra: i.extra
     }));
     return mapped_items;
   },

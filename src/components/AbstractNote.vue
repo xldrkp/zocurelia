@@ -1,8 +1,8 @@
 <template>
   <div class="abstractNote" v-show="abstractNote != ''">
-    <h5>Curation Note by <Curator /></h5>
       
     <vue-simple-markdown :class="{ more: moreToggle }" :source="abstractNote"></vue-simple-markdown>
+    <Curator :extra="extra" />
       <a class="more-link" href="#" @click.prevent="moreToggle = !moreToggle">
         <span v-if="moreToggle">Show more</span>
         <span v-else>Show less</span>
@@ -19,7 +19,7 @@ export default {
   components: {
     Curator
   },
-  props: [ 'abstractNote' ],
+  props: [ 'abstractNote', 'extra' ],
   data() {
     return {
       moreToggle: true
