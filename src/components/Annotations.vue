@@ -13,20 +13,21 @@
       class="badge badge-pill"
       v-bind:class="{ 'badge-warning': count == 0, 'badge-primary': count > 0}"
     >{{ count }}</span>
-    <span class="hypothesis-group">
-      <i class="fa fa-users"></i>
-      {{(hypothesis_group != '' ? hypothesis_group : 'Public')}}
-    </span>
+    <HypothesisGroup :hypothesis_group="hypothesis_group" :url="item.url" />
   </div>
 </template>
 
 <script>
 import HypothesisClient from "hypothesis-api-client";
+import HypothesisGroup from "@/components/HypothesisGroup";
 import { mapGetters } from "vuex";
 
 export default {
   name: "Annotations",
   props: ["item", "url"],
+  components: {
+    HypothesisGroup
+  },
   data() {
     return {
       count: 0,
