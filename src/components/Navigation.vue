@@ -2,9 +2,9 @@
   <nav class="navbar navbar-expand-md navbar-dark bg-primary">
     <div class="container">
       <router-link class="navbar-brand" to="/">
-        <i class="fa d-inline fa-book"></i>
+        <i class="fa fa-users"></i>
         &nbsp;
-        <b>Zocurelia</b>
+        <b>Zocurelia</b><span class="subline">Zotero Curated Reading Lists Annotated</span>
       </router-link>
       <button
         class="navbar-toggler navbar-toggler-right border-0"
@@ -25,14 +25,14 @@
         </ul>
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
+            <router-link class="nav-link" to="/settings" replace>Settings</router-link>
+          </li>
+          <li class="nav-item">
             <router-link
               class="btn navbar-btn ml-md-2 btn-sm btn-light text-dark"
               to="/new"
               replace
             >Create</router-link>
-          </li>
-          <li class="nav-item">
-            <router-link class="nav-link" to="/settings" replace>Settings</router-link>
           </li>
           <li class="nav-item">
             <ShowHypothesisAccess />
