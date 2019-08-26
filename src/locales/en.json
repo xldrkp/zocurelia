@@ -1,3 +1,11 @@
 {
-  "message": "hello i18n !!"
+  "navigation": {
+    "about": "About",
+    "help": "Help",
+    "settings": "Settings"
+  },
+  "home": {
+    "mainclaim": "Enjoy Reading in Distributed Communities",
+    "action-button": "Check out an example!"
+  }
 }

@@ -1,10 +1,7 @@
 <template>
   <div id="app" class="app-container">
     <Navigation />
-    <!-- <transition name="fade"> -->
-    <transition>
-      <router-view></router-view>
-    </transition>
+    <router-view></router-view>
     <Footer />
   </div>
 </template>
@@ -20,7 +17,7 @@ export default {
   name: "app",
   components: {
     Navigation,
-    Footer
+    Footer,
   },
   methods: {
     ...mapActions(["set_groupID", "set_list_collections", "create"])

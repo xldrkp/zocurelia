@@ -1,0 +1,11 @@
+{
+  "navigation": {
+    "about": "Über",
+    "help": "Hilfe",
+    "settings": "Einstellungen"
+  },
+  "home": {
+    "mainclaim": "Gemeinsam Lesen in verteilten Communitys",
+    "action-button": "Schau Dir ein Beispiel an!"
+  }
+}

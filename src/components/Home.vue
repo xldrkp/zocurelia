@@ -6,14 +6,14 @@
           <div class="container">
             <div class="row">
               <div class="col-md-12 px-md-5">
-                <h1 class="display-3 mb-4">Enjoy Reading in Distributed Communities</h1>
+                <h1 class="display-3 mb-4">{{ $t('home.mainclaim') }}</h1>
                 <p class="lead mb-4">
                   <em>Zocurelia</em> supports reading together, especially when your community is spread all over the world, your school, your university or your city.
                 </p>
                 <a
                   class="btn btn-primary btn-lg my-4"
                   href="/list?groupID=2343885&list_collections"
-                >Check out an example!</a>
+                >{{ $t('home.action-button') }}</a>
               </div>
             </div>
           </div>
