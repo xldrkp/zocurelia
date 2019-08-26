@@ -34,7 +34,7 @@
       <p>
         You find your token
         <strong>when you're logged in to Hypothesis</strong>. Go to
-        <strong>Account > Developer</strong>. Copy & paste the token to the form field.
+        <strong>Account > Developer</strong>. Copy & paste the token into the form field.
       </p>
       <img
         class="screenshot img-fluid"
