@@ -5,7 +5,10 @@
         <div v-if="hypothesis_group != '' && !check_token" class="mt-5 col-md-10">
           <div class="alert alert-warning" role="alert">
             <h4>Got Access?</h4>
-            <p>Please enter a valid Hypothesis token to access Hypothesis groups! You can do this <router-link to="/settings" replace>on the Settings page</router-link>.</p>
+            <p>
+              Please enter a valid Hypothesis token to access Hypothesis groups! You can do this
+              <router-link to="/settings" replace>on the Settings page</router-link>.
+            </p>
           </div>
         </div>
         <div v-else class="mt-3 col-md-10">
@@ -61,7 +64,7 @@ export default {
       "hypothesis_group"
     ]),
     check_token() {
-      return localStorage.hypothesis_token || ""
+      return localStorage.hypothesis_token || "";
     }
   },
   methods: {
@@ -118,34 +121,58 @@ export default {
 
     // Case: Collections of the library
     if (this.list_collections && this.collectionKey === null) {
-      this.$router.replace(
-        "/list?groupID=" + this.groupID + "&list_collections"
-      );
+      // this.$router.replace(
+      //   "/list?groupID=" + this.groupID + "&list_collections"
+      // );
+      $i18nRoute({
+        name: "list",
+        query: { groupID: this.groupID, list_collections }
+      });
     }
 
     // Case: Special collection
     if (this.list_collections && this.collectionKey != null) {
       window.console.log("List: Fetching single collection...");
-      this.$router.replace(
-        "/list?groupID=" +
-          this.groupID +
-          "&list_collections" +
-          "&collectionKey=" +
-          this.collectionKey
-      );
+      // this.$router.replace(
+      //   "/list?groupID=" +
+      //     this.groupID +
+      //     "&list_collections" +
+      //     "&collectionKey=" +
+      //     this.collectionKey
+      // );
+      $i18nRoute({
+        name: "list",
+        query: {
+          groupID: this.groupID,
+          list_collections: 1,
+          collectionKey: this.collectionKey
+        }
+      });
       // Case: Complete library
     }
 
     // Case: Collections of the library and private Hypothesis access
-    if (this.list_collections && this.hypothesis_group != "" && this.check_token != "") {
+    if (
+      this.list_collections &&
+      this.hypothesis_group != "" &&
+      this.check_token != ""
+    ) {
       window.console.log("List: Fetching single collection...");
-      this.$router.replace(
-        "/list?groupID=" +
-          this.groupID +
-          "&list_collections" +
-          "&hypothesis_group=" +
-          this.hypothesis_group
-      );
+      // this.$router.replace(
+      //   "/list?groupID=" +
+      //     this.groupID +
+      //     "&list_collections" +
+      //     "&hypothesis_group=" +
+      //     this.hypothesis_group
+      // );
+      $i18nRoute({
+        name: "list",
+        query: {
+          groupID: this.groupID,
+          list_collections: 1,
+          hypothesis_group: this.hypothesis_group
+        }
+      });
     }
 
     // Case: Complete library
@@ -154,7 +181,8 @@ export default {
       this.collectionKey == null &&
       this.hypothesis_group == ""
     ) {
-      this.$router.replace("/list?groupID=" + this.groupID);
+      // this.$router.replace("/list?groupID=" + this.groupID);
+      $i18nRoute({ name: "list", query: { groupID: this.groupID } });
     }
   }
 };

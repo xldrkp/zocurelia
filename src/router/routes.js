@@ -64,18 +64,18 @@ export default [
         path: "list",
         name: "list",
         component: require("@/components/List.vue").default,
-        props: getQuery,
-        beforeEnter: (to, from, next) => {
-          window.console.log("Checking parameters in list route...");
-          next();
-        }
+        props: getQuery
+        // beforeEnter: (to, from, next) => {
+        // window.console.log("Checking parameters in list route...");
+        // next();
+        // }
       }
     ]
   },
   {
     // Redirect user to supported lang version.
     path: "*",
-    redirect(to) {
+    redirect(_to) {
       return Trans.getUserSupportedLang();
     }
   }
