@@ -2,10 +2,26 @@
   "navigation": {
     "about": "Über",
     "help": "Hilfe",
-    "settings": "Einstellungen"
+    "settings": "Einstellungen",
+    "new": "Neu"
   },
   "home": {
-    "mainclaim": "Gemeinsam Lesen in verteilten Communitys",
-    "action-button": "Schau Dir ein Beispiel an!"
-  }
+    "mainclaim": "Spaß am Lesen in verteilten Communitys",
+    "subclaim": "Zocurelia unterstützt das Lesen in Gruppen, besonders wenn deine Community über die ganze Welt, deine Schule, deine Hochschule oder deine Stadt verteilt ist.",
+    "action-button": "Schau dir ein Beispiel an"
+  },
+  "group": {
+    "headline": "Zotero-Gruppe"
+  },
+  "annotations": {
+    "count0": "Was denkst du?",
+    "countX": "Frag und diskutiere!"
+  },
+  "help": {
+    "headline": "Hilfe"
+  },
+  "about": {
+    "headline": "Über Zocurelia"
+  },
+  "new": {}
 }

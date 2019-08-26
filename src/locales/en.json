@@ -2,10 +2,26 @@
   "navigation": {
     "about": "About",
     "help": "Help",
-    "settings": "Settings"
+    "settings": "Settings",
+    "new": "Create"
   },
   "home": {
     "mainclaim": "Enjoy Reading in Distributed Communities",
-    "action-button": "Check out an example!"
-  }
+    "subclaim": "Zocurelia supports reading together, especially when your community is spread all over the world, your school, your university or your city.",
+    "action-button": "Check out an example"
+  },
+  "group": {
+    "headline": "Zotero Group"
+  },
+  "annotations": {
+    "count0": "What do you think?",
+    "countX": "Ask and discuss!"
+  },
+  "help": {
+    "headline": "Help"
+  },
+  "about": {
+    "headline": "About Zocurelia"
+  },
+  "new": {}
 }
