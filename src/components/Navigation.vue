@@ -33,7 +33,7 @@
               class="btn navbar-btn ml-md-2 btn-sm btn-light text-dark"
               :to="$i18nRoute({ name: 'new' })"
               replace
-            >Create</router-link>
+            >{{ $t('navigation.new') }}</router-link>
           </li>
           <li class="nav-item">
             <ShowHypothesisAccess />

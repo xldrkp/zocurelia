@@ -1,5 +1,5 @@
 <template>
-  <select class="LanguageSwitcher" name="language" @change="changeLanguage">
+  <select class="lang-switcher form-control" name="language" @change="changeLanguage">
     <option
       v-for="lang in supportedLanguages"
       :key="lang"

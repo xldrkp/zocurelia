@@ -8,12 +8,12 @@
               <div class="col-md-12 px-md-5">
                 <h1 class="display-3 mb-4">{{ $t('home.mainclaim') }}</h1>
                 <p class="lead mb-4">
-                  <em>Zocurelia</em> supports reading together, especially when your community is spread all over the world, your school, your university or your city.
+                  {{ $t('home.subclaim') }}
                 </p>
-                <a
+                <router-link
                   class="btn btn-primary btn-lg my-4"
-                  href="/list?groupID=2343885&list_collections"
-                >{{ $t('home.action-button') }}</a>
+                  :to="$i18nRoute({ name: 'list', query: { groupID: '2343885', list_collections: 1 } })"
+                >{{ $t('home.action-button') }}</router-link>
               </div>
             </div>
           </div>

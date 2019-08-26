@@ -5,8 +5,8 @@
       :href="'https://hyp.is/go?url=' + url + ( hypothesis_group != '' ? ('&group=' + hypothesis_group) : ('&group=__world__'))"
       target="_blank"
     >
-      <span v-show="count > 0">What do you think?</span>
-      <span v-show="count == 0">Ask and discuss!</span>
+      <span v-show="count > 0">{{ $t('annotations.count0') }}</span>
+      <span v-show="count == 0">{{ $t('annotations.countX') }}</span>
     </a>
 
     <span

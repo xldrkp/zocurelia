@@ -1,7 +1,7 @@
 <template>
   <div class="mt-4">
     <h3 class="section-header" v-show="meta_data.groupURL != ''">
-      Zotero Group:
+      {{ $t('group.headline') }}:
       <a :href="( meta_data.groupURL || '#')" target="_blank">{{ meta_data.name }}</a>
     </h3>
 

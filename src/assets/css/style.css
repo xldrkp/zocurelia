@@ -41,6 +41,16 @@ h3 {
 
 /* Navigation bar */
 
+.lang-switcher.form-control {
+  margin-left: 10px;
+  font-weight: normal;
+  font-size: 26px;
+  height: calc(1.35em + 0.75rem + 2px);
+  border-radius: 0.2rem;
+  background-clip: unset;
+  background-color: lemonchiffon;
+}
+
 .subline {
   display: block;
   font-size: 11px;
@@ -63,6 +73,7 @@ h3 {
 
 .section-header {
   margin-bottom: 8px;
+  font-size: 2.5em;
 }
 
 /* Home */
@@ -248,7 +259,6 @@ svg.motivation-logo {
     font-size: 40px;
   }
 }
-
 
 @media (min-width: 1024px) {
   .display-3 {
