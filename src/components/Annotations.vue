@@ -6,12 +6,12 @@
       target="_blank"
     >
       <span v-show="count > 0">What do you think?</span>
-      <span v-show="count == 0">Start discussing!</span>
+      <span v-show="count == 0">Ask and discuss!</span>
     </a>
 
     <span
       class="badge badge-pill"
-      v-bind:class="{ 'badge-warning': count == 0, 'badge-primary': count > 0}"
+      v-bind:class="{ 'badge-info': count == 0, 'badge-primary': count > 0}"
     >{{ count }}</span>
     <HypothesisGroup :hypothesis_group="hypothesis_group" :url="item.url" />
   </div>

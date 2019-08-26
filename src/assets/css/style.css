@@ -10,6 +10,13 @@ h3 {
   font-size: 2.75em;
 }
 
+/* Colors */
+
+.bg-primary,
+.badge.badge-primary {
+  background-color: #1e2b3d !important;
+}
+
 /* App container */
 
 .app-container {
@@ -20,7 +27,35 @@ h3 {
   padding-bottom: 100px; /* height of your footer */
 }
 
+.keyvisual {
+  background-image: url("../img/Galapagos-satellite-2002.jpg");
+  background-size: cover;
+  background-blend-mode: darken;
+  background-color: #555;
+}
+
+.keyvisual .lead,
+.keyvisual .display-3 {
+  color: #fff;
+}
+
 /* Navigation bar */
+
+.subline {
+  display: block;
+  font-size: 11px;
+}
+
+.navbar-brand b {
+  font-size: 36px;
+}
+
+@media (min-width: 768px) {
+  .navbar-expand-md .navbar-collapse {
+    margin-left: 30px;
+    padding-bottom: 8px;
+  }
+}
 
 .navbar a {
   font-size: 26px;
@@ -28,13 +63,6 @@ h3 {
 
 .section-header {
   margin-bottom: 8px;
-}
-
-.collection-header {
-  font-weight: normal;
-  padding: 8px 5px;
-  margin: 40px 0 14px;
-  background: #eee;
 }
 
 /* Home */
@@ -71,13 +99,23 @@ svg.motivation-logo {
 
 /* Cards */
 
+.collection-header {
+  font-weight: normal;
+  padding: 20px 20px;
+  margin: 40px 0 14px;
+  background: #1e2b3d;
+  border-radius: 0.25rem;
+  color: #fff;
+}
+
 .collection-key {
-  color: #ddd;
+  color: #555;
   font-size: 16px;
 }
 
 .card {
   margin-bottom: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.35);
 }
 
 .card .tags {
@@ -92,7 +130,7 @@ svg.motivation-logo {
 
 .card-header {
   font-size: 18px;
-  background: rgba(18, 187, 173, 0.14);
+  background: rgba(18, 90, 187, 0.14);
 }
 
 .card .no-full-text {
@@ -195,4 +233,25 @@ svg.motivation-logo {
   bottom: 0;
   width: 100%;
   text-align: center;
+  margin-bottom: 30px;
+}
+
+/* Markdown Override */
+
+.vue-simple-markdown .markdown-body b {
+}
+
+/* Responsiveness */
+
+@media (min-width: 320px) {
+  .display-3 {
+    font-size: 40px;
+  }
+}
+
+
+@media (min-width: 1024px) {
+  .display-3 {
+    font-size: 70px;
+  }
 }
