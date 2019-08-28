@@ -27,7 +27,7 @@
             <v-dialog />
             <div class="d-flex justify-content-end mb-3">
               <a href="#" @click.prevent="showModal" class="share-list">
-                <i class="fa d-inline fa-lg fa-share-alt-square"></i> Share with your community
+                <i class="fa d-inline fa-lg fa-share-alt-square"></i> {{ $t('list.share') }}
               </a>
             </div>
             <Group />
@@ -124,10 +124,12 @@ export default {
       // this.$router.replace(
       //   "/list?groupID=" + this.groupID + "&list_collections"
       // );
-      $i18nRoute({
-        name: "list",
-        query: { groupID: this.groupID, list_collections }
-      });
+      this.$router.replace(
+        this.$i18nRoute({
+          name: "list",
+          query: { groupID: this.groupID, list_collections: 1 }
+        })
+      );
     }
 
     // Case: Special collection
@@ -140,14 +142,16 @@ export default {
       //     "&collectionKey=" +
       //     this.collectionKey
       // );
-      $i18nRoute({
-        name: "list",
-        query: {
-          groupID: this.groupID,
-          list_collections: 1,
-          collectionKey: this.collectionKey
-        }
-      });
+      this.$router.replace(
+        this.$i18nRoute({
+          name: "list",
+          query: {
+            groupID: this.groupID,
+            list_collections: 1,
+            collectionKey: this.collectionKey
+          }
+        })
+      );
       // Case: Complete library
     }
 
@@ -165,14 +169,16 @@ export default {
       //     "&hypothesis_group=" +
       //     this.hypothesis_group
       // );
-      $i18nRoute({
-        name: "list",
-        query: {
-          groupID: this.groupID,
-          list_collections: 1,
-          hypothesis_group: this.hypothesis_group
-        }
-      });
+      this.$router.replace(
+        this.$i18nRoute({
+          name: "list",
+          query: {
+            groupID: this.groupID,
+            list_collections: 1,
+            hypothesis_group: this.hypothesis_group
+          }
+        })
+      );
     }
 
     // Case: Complete library
@@ -182,7 +188,9 @@ export default {
       this.hypothesis_group == ""
     ) {
       // this.$router.replace("/list?groupID=" + this.groupID);
-      $i18nRoute({ name: "list", query: { groupID: this.groupID } });
+      this.$router.replace(
+        this.$i18nRoute({ name: "list", query: { groupID: this.groupID } })
+      );
     }
   }
 };

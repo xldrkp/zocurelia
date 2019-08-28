@@ -4,15 +4,15 @@
       <div class="row pb-1 justify-content-center">
         <div class="col-12">
           <div class="pt-3">
-            <h1>Create a Zocurelia Community</h1>
+            <h1>{{ $t('new.headline') }}</h1>
             <p
               class="lead"
-            >Get started with pasting the group ID of a Zotero list. Optionally, paste the key of a Zotero collection to show just a section of the list.</p>
+            >{{ $t('new.subline') }}</p>
 
             <form @submit.prevent="submit()" class="needs-validation">
               <div class="form-group row">
                 <label class="control-label col-3 col-form-label" for="GroupID">
-                  Public Zotero Group
+                  {{ $t('new.form.public') }}
                   <span class="req">*</span>
                 </label>
                 <div class="col-3 col-xs-5">
@@ -39,13 +39,13 @@
                       id="list_collections"
                       name="field27"
                       data-parsley-errors-container="#errId2"
-                    /> List collections of the group
+                    /> {{ $t('new.form.listcollections') }}
                   </label>
                   <span id="errId2" class="error"></span>
                 </div>
               </div>
               <div v-show="list_collections" class="form-group row">
-                <label class="control-label col-3" for="CollectionKey">Collection</label>
+                <label class="control-label col-3" for="CollectionKey">{{ $t('new.form.collection') }}</label>
                 <div class="controls col-3">
                   <input
                     id="CollectionKey"
@@ -76,7 +76,7 @@
                 </div>
               </div>-->
               <div class="form-group row">
-                <label class="control-label col-3">Hypothesis Settings</label>
+                <label class="control-label col-3">{{ $t('new.form.hypothesis') }}</label>
                 <div class="controls col-3">
                   <label class="checkbox control-label" for="checkbox49">
                     <input
@@ -86,13 +86,13 @@
                       id="checkbox49"
                       name="field48"
                       data-parsley-errors-container="#errId5"
-                    /> Private Group
+                    /> {{ $t('new.form.private') }}
                   </label>
                   <span id="errId5" class="error"></span>
                 </div>
               </div>
               <div v-show="is_private_hypo" class="form-group row">
-                <label class="control-label col-3" for="Group">Group</label>
+                <label class="control-label col-3" for="Group">{{ $t('new.form.group') }}</label>
                 <div class="controls col-3">
                   <input
                     id="Group"
@@ -156,9 +156,12 @@ export default {
     },
     submit: function() {
       this.set_submitted(true);
-      this.$router.push({
-        path: "/list"
-      });
+      window.console.log(this.$i18nRoute);
+      this.$router.push(
+        this.$i18nRoute({
+          name: "list"
+        })
+      );
     },
     ...mapActions([
       "create",
