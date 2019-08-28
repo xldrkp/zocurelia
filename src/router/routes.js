@@ -38,6 +38,7 @@ export default [
       {
         path: "",
         name: "home",
+        // .default added with advise from https://github.com/vuejs/vue-router/issues/1882#issuecomment-446857893
         component: require("@/components/Home.vue").default
       },
       {
