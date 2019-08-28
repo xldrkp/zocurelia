@@ -4,8 +4,8 @@
     <vue-simple-markdown :class="{ more: moreToggle }" :source="abstractNote"></vue-simple-markdown>
     <Curator :extra="extra" />
       <a class="more-link" href="#" @click.prevent="moreToggle = !moreToggle">
-        <span v-if="moreToggle">Show more</span>
-        <span v-else>Show less</span>
+        <span v-if="moreToggle">{{ $t('abstract.show_more') }}</span>
+        <span v-else>{{ $t('abstract.show_less') }}</span>
       </a>
   </div>
 </template>

@@ -1,8 +1,8 @@
 <template>
   <div class="curator" v-show="curator_parsed != ''">
-    <h6 v-if="curator_link_parsed == ''">Curated by {{ curator_parsed }}</h6>
+    <h6 v-if="curator_link_parsed == ''">{{ $t('curator.curated_by') }} {{ curator_parsed }}</h6>
     <h6 v-if="curator_link_parsed != ''">
-      Curated by
+      {{ $t('curator.curated_by') }}
       <a :href="curator_link_parsed" target="_blank">{{ curator_parsed }}</a>
     </h6>
   </div>

@@ -23,5 +23,26 @@
   "about": {
     "headline": "About Zocurelia"
   },
-  "new": {}
+  "new": {
+    "headline": "Create a Zocurelia Community",
+    "subline": "Get started with pasting the group ID of a Zotero list.",
+    "form": {
+      "public": "Public Zotero Group",
+      "listcollections": "List collections of the group",
+      "collection": "Collection",
+      "hypothesis": "Hypothesis Settings",
+      "private": "Private group",
+      "group": "Group"
+    }
+  },
+  "curator": {
+    "curated_by": "Curated by "
+  },
+  "abstract": {
+    "show_more": "Show more",
+    "show_less": "Show less"
+  },
+  "list": {
+    "share": "Share with your community"
+  }
 }

@@ -23,5 +23,26 @@
   "about": {
     "headline": "Über Zocurelia"
   },
-  "new": {}
+  "new": {
+    "headline": "Erstelle eine eigene Zocurelia Community",
+    "subline": "Beginne damit, die ID einer Zotero-Gruppe einzufügen.",
+    "form": {
+      "public": "Öffentliche Zotero-Gruppe",
+      "listcollections": "Sammlungen der Gruppe auflisten",
+      "collection": "Sammlung",
+      "hypothesis": "Hypothesis-Einstellungen",
+      "private": "Private Gruppe",
+      "group": "Gruppe"
+    }
+  },
+  "curator": {
+    "curated_by": "Kuratiert von"
+  },
+  "abstract": {
+    "show_more": "Mehr anzeigen",
+    "show_less": "Weniger anzeigen"
+  },
+  "list": {
+    "share": "Teile mit deiner Community"
+  }
 }
