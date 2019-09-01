@@ -3,6 +3,7 @@
     <h3 class="section-header" v-show="meta_data.groupURL != ''">
       <a :href="( meta_data.groupURL || '#')" target="_blank">{{ meta_data.name }}</a>
     </h3>
+    <div class="group-description" v-html="meta_data.description"></div>
 
     <!-- Multiple collections -->
     <div v-if="list_collections && !get_init">
@@ -55,27 +56,38 @@ export default {
       "set_groupID",
       "fetch_complete_zotero_list",
       "fetch_top_level_collections",
+      "fetch_group_data",
       "map_items"
     ])
   },
   created() {
-
-    // Get only one item to get the library title etc.
     window.console.log("Inside Group created()...");
-    this.fetch_complete_zotero_list(1).then(response => {
-      window.console.log("Data for Library Meta: ", response.raw);
-      if (response.raw.length == 1) {
-        this.meta_data = {
-          name: response.raw[0].library.name,
-          groupURL: response.raw[0].library.links.alternate.href + "/items",
-          description: response.raw[0].library.description
-        };
-      } else {
-        window.console.error("No items in this library!");
-      }
+
+    this.fetch_group_data().then(response => {
+      window.console.log("Group Data Response: ", response);
+      this.meta_data = {
+        name: response.raw.data.name,
+        groupURL: response.raw.links.alternate.href,
+        description: response.raw.data.description
+      };
+      window.console.log("Group Meta Data new: ", this.meta_data);
     });
 
-// List all collections
+    // Get only one item to get the library title etc.
+    // this.fetch_complete_zotero_list(1).then(response => {
+    //   window.console.log("Data for Library Meta: ", response.raw);
+    //   if (response.raw.length == 1) {
+    //     this.meta_data = {
+    //       name: response.raw[0].library.name,
+    //       groupURL: response.raw[0].library.links.alternate.href + "/items",
+    //       description: response.raw[0].library.description
+    //     };
+    //   } else {
+    //     window.console.error("No items in this library!");
+    //   }
+    // });
+
+    // List all collections
     if (this.list_collections && this.collectionKey === null) {
       this.$store
         .dispatch(
