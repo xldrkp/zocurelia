@@ -16,7 +16,7 @@ export default {
     context.commit("SET_GROUPID", null);
     context.commit("SET_LIST_COLLECTION", false);
     context.commit("SET_COLLECTIONKEY", null);
-    context.commit("SET_HYPOTHESIS_GROUP", "")
+    context.commit("SET_HYPOTHESIS_GROUP", "");
   },
   clear_filter(context) {
     window.console.log("Clearing filter...");
@@ -52,9 +52,11 @@ export default {
       language: i.language,
       title: i.title,
       authors: i.creators,
+      pub_date: i.date,
       abstractNote: i.abstractNote,
       url: i.url,
-      zotero_item_url: raw[idx].links.alternate.href,
+      zotero_item_url:
+        raw[idx].library.links.alternate.href + "/items/itemkey/" + i.key,
       tags: i.tags,
       idx: idx,
       extra: i.extra
