@@ -12,7 +12,7 @@
                 </p>
                 <router-link
                   class="btn btn-primary btn-lg my-4"
-                  :to="$i18nRoute({ name: 'list', query: { groupID: '2343885', list_collections: 1 } })"
+                  :to="$i18nRoute({ name: 'list', query: { groupID: '2362604', list_collections: 1 } })"
                 >{{ $t('home.action-button') }}</router-link>
               </div>
             </div>
