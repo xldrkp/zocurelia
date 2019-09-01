@@ -44,5 +44,8 @@
   },
   "list": {
     "share": "Share with your community"
+  },
+  "item": {
+    "nofulltext": "Text not available online"
   }
 }

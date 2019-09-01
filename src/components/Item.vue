@@ -2,7 +2,7 @@
   <div class="card">
     <div class="card-header">
       <Annotations v-if="item.url" class="float-right" :item=item :url="item.url" />
-      <span v-else class="no-full-text float-right">No online full text</span>
+      <span v-else class="no-full-text float-right">{{ $t('item.nofulltext') }}</span>
       <h5 class="title">{{ item.title }}</h5>
       <Authors :authors="item.authors" :zotero_item_url="item.zotero_item_url" />
     </div>

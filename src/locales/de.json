@@ -44,5 +44,9 @@
   },
   "list": {
     "share": "Teile mit deiner Community"
+  },
+  "item": {
+    "nofulltext": "Text online nicht verfügbar"
   }
+
 }
