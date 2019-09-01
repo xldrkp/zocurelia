@@ -171,13 +171,15 @@ svg.motivation-logo {
   margin-bottom: 0;
 }
 
-.card-header .authors {
+.card-header .authors,
+.card-header .pub_date {
   font-size: 16px;
 }
 
 .card-header .zotero-logo {
-  width: 20px;
+  width: 18px;
   margin-right: 8px;
+  margin-left: 8px;
 }
 
 .card-body .vue-simple-markdown.more {
