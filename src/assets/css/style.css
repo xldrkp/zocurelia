@@ -72,8 +72,9 @@ h3 {
 }
 
 .section-header {
-  margin-bottom: 18px;
+  margin-bottom: 0;
   font-size: 2.5em;
+  font-weight: normal;
 }
 
 /* Home */
@@ -113,7 +114,7 @@ svg.motivation-logo {
 .collection-header {
   font-weight: normal;
   padding: 20px 20px;
-  margin: 40px 0 14px;
+  margin: 30px 0 14px;
   background: #1e2b3d;
   border-radius: 0.25rem;
   color: #fff;
