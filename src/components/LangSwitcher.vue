@@ -25,7 +25,8 @@ export default {
   methods: {
     changeLanguage(e) {
       const lang = e.target.value;
-      const to = this.$router.resolve({ params: { lang } });
+      const query = this.$route.query;
+      const to = this.$router.resolve({ params: { lang }, query: query });
       return Trans.changeLanguage(lang).then(() => {
         this.$router.push(to.location);
       });
