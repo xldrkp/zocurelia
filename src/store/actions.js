@@ -157,5 +157,15 @@ export default {
         context.commit("SET_LOADING_STATUS", "done");
         return response;
       });
+  },
+  fetch_group_data(context) {
+    let groupID = context.getters.groupID;
+
+    return api()
+      .library("group", groupID)
+      .get()
+      .then(response => {
+        return response;
+      });
   }
 };

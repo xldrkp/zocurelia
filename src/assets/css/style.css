@@ -109,6 +109,13 @@ svg.motivation-logo {
   font-weight: normal;
 }
 
+
+/* Group */
+
+.group-description {
+  margin: 10px 0;
+}
+
 /* Cards */
 
 .collection-header {
