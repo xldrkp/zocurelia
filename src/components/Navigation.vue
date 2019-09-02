@@ -18,10 +18,10 @@
       <div class="collapse navbar-collapse" id="navbar16">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item">
-            <router-link class="nav-link" :to="$i18nRoute({ name: 'about' })">{{ $t('navigation.about') }}</router-link>
+            <router-link class="nav-link" :to="$i18nRoute({ name: 'help' })">{{ $t('navigation.help') }}</router-link>
           </li>
           <li class="nav-item">
-            <router-link class="nav-link" :to="$i18nRoute({ name: 'help' })">{{ $t('navigation.help') }}</router-link>
+            <router-link class="nav-link" :to="$i18nRoute({ name: 'about' })">{{ $t('navigation.about') }}</router-link>
           </li>
         </ul>
         <ul class="navbar-nav ml-auto">
