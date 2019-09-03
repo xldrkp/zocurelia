@@ -7,7 +7,7 @@
             <h4>Got Access?</h4>
             <p>
               Please enter a valid Hypothesis token to access Hypothesis groups! You can do this
-              <router-link to="/settings" replace>on the Settings page</router-link>.
+              <router-link :to="$i18nRoute({ name: 'settings' })" replace>on the Settings page</router-link>.
             </p>
           </div>
         </div>
