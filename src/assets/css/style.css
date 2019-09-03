@@ -31,7 +31,7 @@ h3 {
   background-image: url("../img/Galapagos-satellite-2002.jpg");
   background-size: cover;
   background-blend-mode: darken;
-  background-color: #141d2c;
+  background-color: #ddd;
 }
 
 .keyvisual .lead,
@@ -75,6 +75,7 @@ h3 {
   margin-bottom: 0;
   font-size: 2.5em;
   font-weight: normal;
+  border-bottom: 1px solid #ddd;
 }
 
 /* Home */
