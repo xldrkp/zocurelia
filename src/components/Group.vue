@@ -8,13 +8,13 @@
     <!-- Multiple collections -->
     <div v-if="list_collections && !get_init">
       <div v-for="collection in collections" :key="collection.index">
-        <Collection :title="collection.name" :collectionKey="collection.key" />
+        <Collection :title="collection.name" :collectionKey="collection.key" :groupURL="meta_data.groupURL"/>
       </div>
     </div>
 
     <!-- Single collection -->
     <div v-if="list_collections && collectionKey != null && !get_init">
-      <Collection :title="collectionKey" :collectionKey="collectionKey" />
+      <Collection :title="collectionKey" :collectionKey="collectionKey" :groupURL="meta_data.groupURL"/>
     </div>
 
     <!-- Complete library -->

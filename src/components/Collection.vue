@@ -1,6 +1,6 @@
 <template>
   <div class="mt-3">
-    <h4 class="collection-header">{{ title }} <span class="collection-key">&nbsp;{{ collectionKey }}</span></h4>
+    <h4 class="collection-header"><a target="_blank" :href="collectionURL">{{ title }}</a> <span class="collection-key">&nbsp;{{ collectionKey }}</span></h4>
     <Item v-for="item in items" :key="item.index" :item="item" />
   </div>
 </template>
@@ -11,7 +11,7 @@ import { mapActions, mapGetters } from "vuex";
 
 export default {
   name: "Collection",
-  props: ["title", "collectionKey"],
+  props: ["title", "collectionKey", "groupURL"],
   components: {
     Item
   },
@@ -24,7 +24,10 @@ export default {
     ...mapActions(["fetch_single_collection", "map_items"])
   },
   computed: {
-    ...mapGetters(["zotero_items", "collections", "meta_data"])
+    ...mapGetters(["zotero_items", "collections", "meta_data"]),
+    collectionURL: function() {
+      return `${this.groupURL}/items/collectionKey/${this.collectionKey}`
+    }
   },
   created() {
     // This method get a collection key from the parent
