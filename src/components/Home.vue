@@ -28,7 +28,7 @@
               <div class="container">
                 <div class="row pt-5">
                   <div class="col-lg-6 col-md-12 text-center text-md-left">
-                    <h1>Motivation and Idea</h1>
+                    <h1>{{ $t('home.motivation-idea.headline') }}</h1>
                   </div>
                 </div>
                 <div class="row">
@@ -39,8 +39,7 @@
                         src="@/assets/img/zotero.png"
                         alt
                       />
-                      <b>Zotero</b> is great for collecting and distributing Open Access literature and Open Educational Resources in a reading community. But as
-                      <b>Zotero</b> reading lists and collections do not provide a back channel, you usually need additional tools to track and share comments, annotations and discussions.
+                      <span v-html="$t('home.motivation-idea.zotero')"></span>
                     </p>
                   </div>
                   <div class="col-lg-6 col-md-12">
@@ -59,18 +58,14 @@
                           fill-rule="evenodd"
                         />
                       </svg>
-                      Here,
-                      <b>Hypothesis</b> comes in handy. All online media in your reading list can be annotated and discussed among community members with this smart browser tool.
+                      <span v-html="$t('home.motivation-idea.hypothesis')"></span>
                     </p>
                   </div>
                 </div>
                 <div class="row justify-content-center text-center">
                   <div class="col-6 pt-4">
                     <p class="lead">
-                      <b>
-                        But how do you and your community track this activity on your reading list? Enter
-                        <em>Zocurelia</em>!
-                      </b>
+                      <span v-html="$t('home.motivation-idea.zocurelia')"></span>
                     </p>
                   </div>
                 </div>
@@ -78,16 +73,9 @@
               <div class="container">
                 <div class="row pt-5">
                   <div class="col-md-12 text-center text-md-left">
-                    <h1>Zocurelia Features</h1>
+                    <h1>{{ $t('home.features.headline') }}</h1>
                     <p class="lead">
-                      <em>Zocurelia</em> is short for
-                      <b>Zo</b>tero
-                      <b>cu</b>rated
-                      <b>re</b>ading
-                      <b>li</b>sts
-                      <b>a</b>nnotated.
-                      It integrates the features of Zotero and Hypothesis seamlessly. With a
-                      <em>Zocurelia</em> list you can show the Hypothesis activity for each text on a Zotero reading list.
+                      <span v-html="$t('home.features.subline')"></span>
                     </p>
                   </div>
                 </div>
@@ -103,9 +91,9 @@
                       width="1500"
                     />
                     <h4 class="my-3">
-                      <b>Collect</b>
+                      <b>{{ $t('home.features.collect.headline') }}</b>
                     </h4>
-                    <p>Choose texts for your curriculum and structure them in Zotero collections. Invite others to add to the list.</p>
+                    <p>{{ $t('home.features.collect.description') }}</p>
                   </div>
                   <div class="col-md-4 col-lg-3 p-4">
                     <img
@@ -114,9 +102,9 @@
                       width="1500"
                     />
                     <h4 class="my-3">
-                      <b>Curate</b>
+                      <b>{{ $t('home.features.curate.headline') }}</b>
                     </h4>
-                    <p>Add a curation note with Markdown in Zotero. Tell your community the reasons why a text was chosen.</p>
+                    <p>{{ $t('home.features.curate.description') }}</p>
                   </div>
                   <div class="col-md-4 col-lg-3 p-4">
                     <img
@@ -125,9 +113,9 @@
                       width="1500"
                     />
                     <h4 class="my-3">
-                      <b>Tag</b>
+                      <b>{{ $t('home.features.tag.headline') }}</b>
                     </h4>
-                    <p>Allow your community to classify texts in Zotero with tags and thus help each other to adjust their learning curve.</p>
+                    <p>{{ $t('home.features.tag.description') }}</p>
                   </div>
                 </div>
                 <!-- Second row -->
@@ -139,9 +127,9 @@
                       width="1500"
                     />
                     <h4 class="my-3">
-                      <b>Annotate</b>
+                      <b>{{ $t('home.features.annotate.headline') }}</b>
                     </h4>
-                    <p>Link from Zotero to Open Access versions of articles and books. Use Hypothesis to annotate and discuss while reading.</p>
+                    <p>{{ $t('home.features.annotate.description') }}</p>
                   </div>
                   <div class="col-md-4 col-lg-3 p-4">
                     <img
@@ -150,9 +138,9 @@
                       width="1500"
                     />
                     <h4 class="my-3">
-                      <b>Share</b>
+                      <b>{{ $t('home.features.share.headline') }}</b>
                     </h4>
-                    <p>Invite other to participate in your reading community and share a link to the Zocurelia list within your class or in social media.</p>
+                    <p>{{ $t('home.features.share.description') }}</p>
                   </div>
                   <div class="col-md-4 col-lg-3 p-4">
                     <img
@@ -161,9 +149,9 @@
                       width="1500"
                     />
                     <h4 class="my-3">
-                      <b>Follow and React</b>
+                      <b>{{ $t('home.features.track.headline') }}</b>
                     </h4>
-                    <p>Curious what others think about the texts you are reading? Track what's going on in your reading community and react.</p>
+                    <p>{{ $t('home.features.track.description') }}</p>
                   </div>
                 </div>
               </div>

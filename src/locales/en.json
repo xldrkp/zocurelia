@@ -8,7 +8,41 @@
   "home": {
     "mainclaim": "Enjoy Reading in Distributed Communities",
     "subclaim": "Zocurelia supports reading together, especially when your community is spread all over the world, your school, your university or your city.",
-    "action-button": "Check out an example"
+    "action-button": "Check out an example",
+    "motivation-idea": {
+      "headline": "Motivation and Idea",
+      "zotero": "<b>Zotero</b> is great for collecting and distributing Open Access literature and Open Educational Resources in a reading community. But as <b>Zotero</b> reading lists and collections do not provide a back channel, you usually need additional tools to track and share comments, annotations and discussions.",
+      "hypothesis": "Here, <b>Hypothesis</b> comes in handy. All online media in your reading list can be annotated and discussed among community members with this smart browser tool.",
+      "zocurelia": "<b>But how do you and your community track this activity on your reading list? Enter <em>Zocurelia</em>!</b>"
+    },
+    "features": {
+      "headline": "Zocurelia Features",
+      "subline": "<em>Zocurelia</em> is short for <b>Zo</b>tero <b>cu</b>rated <b>re</b>ading <b>li</b>sts <b>a</b>nnotated. It integrates the features of Zotero and Hypothesis seamlessly. With a <em>Zocurelia</em> list you can show the Hypothesis activity for each text on a Zotero reading list.",
+      "collect": {
+        "headline": "Collect",
+        "description": "Choose texts for your community and structure them in Zotero collections. Invite others to add to the list."
+      },
+      "curate": {
+        "headline": "Curate",
+        "description": "Add a curation note with Markdown in Zotero. Tell your community the reasons why a text was chosen."
+      },
+      "tag": {
+        "headline": "Tag",
+        "description": "Allow your community to classify texts in Zotero with tags and thus help each other to adjust their learning curve."
+      },
+      "annotate": {
+        "headline": "Annotate",
+        "description": "Link from Zotero to Open Access versions of articles and books. Use Hypothesis to annotate and discuss while reading."
+      },
+      "share": {
+        "headline": "Share",
+        "description": "Invite other to participate in your reading community and share a link to the Zocurelia list within your class or in social media."
+      },
+      "track": {
+        "headline": "Track and React",
+        "description": "Curious what others think about the texts you are reading? Track what's going on in your reading community and react."
+      }
+    }
   },
   "group": {
     "headline": "Zotero Group"

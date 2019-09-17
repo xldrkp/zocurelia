@@ -8,7 +8,41 @@
   "home": {
     "mainclaim": "Spaß am Lesen in verteilten Communitys",
     "subclaim": "Zocurelia unterstützt das Lesen in Gruppen, besonders wenn deine Community über die ganze Welt, deine Schule, deine Hochschule oder deine Stadt verteilt ist.",
-    "action-button": "Schau dir ein Beispiel an"
+    "action-button": "Schau dir ein Beispiel an",
+    "motivation-idea": {
+      "headline": "Motivation und Idee",
+      "zotero": "<b>Zotero</b> eignet sich hervorragend zum Sammeln und Verteilen von Open-Access-Literatur und Open Educational Resources in einer Lesegruppe. Aber da <b>Zotero</b>-Leselisten und -Sammlungen keinen Rückkanal bieten, benötigst du in der Regel zusätzliche Werkzeuge, um Kommentare, Anmerkungen und Diskussionen zu verfolgen und zu teilen.",
+      "hypothesis": "Hier ist <b>Hypothesis</b> hilfreich. Alle Online-Medien in deiner Leseliste können mit diesem praktischen Browser-Tool kommentiert und unter den Community-Mitgliedern diskutiert werden.",
+      "zocurelia": "<b>Aber wie verfolgst du und deine Community diese Aktivität auf deiner Leseliste? Auftritt <em>Zocurelia</em>!</b>"
+    },
+    "features": {
+      "headline": "Zocurelia Features",
+      "subline": "<em>Zocurelia</em> steht für <b>Zo</b>tero <b>cu</b>cu</b>rated <b>re</b>ading <b>li</b>sts <b>a</b>nnotated. Es integriert nahtlos die Funktionen von Zotero und Hypothesis. Mit einer <em>Zocurelia</em>-Liste kannst du die Hypothesis-Aktivität für jeden Text auf einer Zotero-Leseliste anzeigen.",
+      "collect": {
+        "headline": "Sammeln",
+        "description": "Wähle Texte für deine Gruppe aus und strukturiere sie in Zotero-Sammlungen. Lade andere ein, sich an der Liste zu beteiligen."
+      },
+      "curate": {
+        "headline": "Kuratieren",
+        "description": "Füge eine Notiz mit Markdown in Zotero hinzu. Erläutere deiner Community die Gründe, warum ein Text ausgewählt wurde."
+      },
+      "tag": {
+        "headline": "Verschlagworten",
+        "description": "Lass deine Leserinnen und Leser Texte in Zotero mit Tags klassifizieren. Auf diese Weise helfen sie sich gegenseitig, ihre Lernkurve anzupassen."
+      },
+      "annotate": {
+        "headline": "Annotatieren",
+        "description": "Verlinke von Zotero zu Open-Access-Versionen von Artikeln und Büchern. Verwende Hypothesis, um beim Lesen Anmerkungen zu machen und zu diskutieren."
+      },
+      "share": {
+        "headline": "Teilen",
+        "description": "Lade andere ein, an deiner Lese-Community teilzunehmen und teile einen Link zur Zocurelia-Liste in deiner Klasse oder über Social Media."
+      },
+      "track": {
+        "headline": "Dranbleiben und reagieren",
+        "description": "Bist du neugierig, was andere über die Texte denken, die du gerade liest? Verfolge, was in deiner Gruppe vor sich geht und reagieren drauf."
+      }
+    }
   },
   "group": {
     "headline": "Zotero-Gruppe"
@@ -48,5 +82,4 @@
   "item": {
     "nofulltext": "Text online nicht verfügbar"
   }
-
 }

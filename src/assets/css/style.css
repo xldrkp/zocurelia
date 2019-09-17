@@ -110,7 +110,6 @@ svg.motivation-logo {
   font-weight: normal;
 }
 
-
 /* Group */
 
 .group-description {
@@ -188,10 +187,8 @@ svg.motivation-logo {
 }
 
 .card-body .vue-simple-markdown.more {
-  text-overflow: ellipsis;
   overflow: hidden;
-  width: 100%;
-  white-space: nowrap;
+  height: 30px;
 }
 
 .card-footer:last-child {
@@ -264,7 +261,12 @@ svg.motivation-logo {
 
 /* Markdown Override */
 
-.vue-simple-markdown .markdown-body b {
+.vue-simple-markdown .markdown-body > *:last-child {
+  margin-bottom: 10px !important;
+}
+
+.markdown-body > h4 {
+  margin-bottom: 14px !important;
 }
 
 /* Responsiveness */
