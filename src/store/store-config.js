@@ -21,7 +21,7 @@ const state = {
   },
   error: "",
   hypothesis_group: "",
-  hypothesis_access: false
+  hypothesis_access: localStorage.hypothesis_token != undefined ? true : false
 };
 
 export default {
