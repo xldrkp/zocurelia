@@ -81,5 +81,22 @@
   },
   "item": {
     "nofulltext": "Text not available online"
+  },
+  "settings": {
+    "headline": "Settings",
+    "hypothesisKey": {
+      "headline": "Get Access to Hypothesis",
+      "description": "Enter your Hypothesis token to track your private groups.",
+      "button-store": "Store",
+      "button-reset": "Remove",
+      "success": "You've logged into Hypothesis successfully!",
+      "error": "There was a problem logging into Hypothesis! Please check the token again.",
+      "help": {
+        "headline": "Help",
+        "token-info": "You find your token <strong>when you're logged in to Hypothesis</strong>. Go to <strong>Account > Developer</strong>. Copy & paste the token into the form field.",
+        "security-info": "<strong>Security notice:</strong> Your token will be stored on your device only and sent over a secure connection to the Hypothesis server."
+      }
+    }
   }
+
 }

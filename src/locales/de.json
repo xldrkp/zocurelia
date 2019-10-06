@@ -11,9 +11,9 @@
     "action-button": "Schau dir ein Beispiel an",
     "motivation-idea": {
       "headline": "Motivation und Idee",
-      "zotero": "<b>Zotero</b> eignet sich hervorragend zum Sammeln und Verteilen von Open-Access-Literatur und Open Educational Resources in einer Lesegruppe. Aber da <b>Zotero</b>-Leselisten und -Sammlungen keinen Rückkanal bieten, benötigst du in der Regel zusätzliche Werkzeuge, um Kommentare, Anmerkungen und Diskussionen zu verfolgen und zu teilen.",
-      "hypothesis": "Hier ist <b>Hypothesis</b> hilfreich. Alle Online-Medien in deiner Leseliste können mit diesem praktischen Browser-Tool kommentiert und unter den Community-Mitgliedern diskutiert werden.",
-      "zocurelia": "<b>Aber wie verfolgst du und deine Community diese Aktivität auf deiner Leseliste? Auftritt <em>Zocurelia</em>!</b>"
+      "zotero": "<b>Zotero</b> eignet sich hervorragend zum Sammeln und Verteilen von Open-Access-Literatur und Open Educational Resources in einer Lese- oder Lerngruppe. Aber um am Text zu diskutieren und darin Kommentare und Anmerkungen zu machen, benötigst Du in der Regel weitere Werkzeuge.",
+      "hypothesis": "Zu diesen praktischen Werkzeugen zählt <b>Hypothesis</b>: Alle Online-Medien in deiner Leseliste können mit diesem praktischen Browser-Tool kommentiert und unter den Community-Mitgliedern diskutiert werden - auch wenn diese verteilt sind über die ganze Welt sind und sich erst beim gemeinsamen Lesen kennenlernen.",
+      "zocurelia": "<b>Aber wie verfolgst du und deine Community diese Aktivität auf deiner Leseliste? Mit <em>Zocurelia</em>!</b>"
     },
     "features": {
       "headline": "Zocurelia Features",
@@ -81,5 +81,21 @@
   },
   "item": {
     "nofulltext": "Text online nicht verfügbar"
+  },
+  "settings": {
+    "headline": "Einstellungen",
+    "hypothesisKey": {
+      "headline": "Zugang zu Hypothesis",
+      "description": "Gib Dein Hypothesis-Token ein, um Zugang zu privaten Gruppen zu erhalten.",
+      "button-store": "Speichern",
+      "button-reset": "Entfernen",
+      "success": "Du hast dich erfolgreich bei Hypothesis eingeloggt!",
+      "error": "Es ist ein Problem aufgetreten. Bitte prüfe noch einmal das Token.",
+      "help": {
+        "headline": "Hilfe",
+        "token-info": "Du findest dein Token, <strong>wenn du bei Hypothesis angemeldet bist</strong>: Gehe zu <strong>Account > Developer</strong>. Kopiere das Token und füge es in das Formularfeld ein.",
+        "security-info": "<strong>Sicherheitshinweis:</strong> Dein Token wird nur auf deinem Gerät gespeichert und über eine sichere Verbindung zum Hypothesen-Server gesendet."
+      }
+    }
   }
 }
