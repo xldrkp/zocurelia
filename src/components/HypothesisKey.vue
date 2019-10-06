@@ -1,11 +1,11 @@
 <template>
   <div class="row">
     <div class="col-md-6">
-      <h3>Get Access to Hypothesis</h3>
-      <p class="lead">Enter your Hypothesis token to track your private groups.</p>
+      <h4>{{ $t('settings.hypothesisKey.headline') }}</h4>
+      <p class="lead">{{ $t('settings.hypothesisKey.description') }}</p>
       <div class="form-row justify-content-start">
         <form class="form-row">
-          <div class="col-md-8">
+          <div class="col-md-7">
             <input
               id="token"
               v-model="hypothesis_token"
@@ -14,27 +14,37 @@
               placeholder="Enter a valid API token."
             />
           </div>
-          <div class="col-md-2">
-            <button @click.prevent="store()" class="btn btn-primary">Store</button>
+          <div class="col-md-3">
+            <button
+              @click.prevent="store()"
+              class="btn btn-primary"
+            >{{ $t('settings.hypothesisKey.button-store') }}</button>
           </div>
           <div class="col-md-2">
-            <input @click="remove()" type="reset" value="Remove" class="btn btn-info" />
+            <input
+              @click="remove()"
+              type="reset"
+              :value="$t('settings.hypothesisKey.button-reset')"
+              class="btn btn-info"
+            />
           </div>
         </form>
       </div>
-      <div v-if="login_success" class="alert alert-success mt-3" role="alert">You've logged into Hypothesis successfully!</div>
+      <div
+        v-if="login_success"
+        class="alert alert-success mt-3"
+        role="alert"
+      >{{ $t('settings.hypothesisKey.success') }}</div>
       <div
         class="alert alert-danger mt-3"
         role="alert"
         v-if="login_success === false"
-      >There was a problem logging into Hypothesis! Please check the token again.</div>
+      >{{ $t('settings.hypothesisKey.error') }}</div>
     </div>
     <div class="col-md-4 help">
-      <h3>Help</h3>
+      <h3>{{ $t('settings.hypothesisKey.help.headline') }}</h3>
       <p>
-        You find your token
-        <strong>when you're logged in to Hypothesis</strong>. Go to
-        <strong>Account > Developer</strong>. Copy & paste the token into the form field.
+        <span v-html="$t('settings.hypothesisKey.help.token-info')"></span>
       </p>
       <img
         class="screenshot img-fluid"
@@ -42,7 +52,7 @@
         alt="screenshot Hypothesis developer key"
       />
       <p>
-        <strong>Security notice:</strong> Your token will be stored on your device only and send over a secure connection to the Hypothesis server.
+        <span v-html="$t('settings.hypothesisKey.help.security-info')"></span>
       </p>
     </div>
   </div>
@@ -92,7 +102,7 @@ export default {
     }
   },
   beforeDestroy() {
-    this.login_success = null;
+    // this.login_success = null;
   }
 };
 </script>

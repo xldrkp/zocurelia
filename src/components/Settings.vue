@@ -7,7 +7,7 @@
             <div class="pt-3">
               <div class="container">
                 <div class="row">
-                  <h1 class="mb-4">Settings</h1>
+                  <h1 class="mb-4">{{ $t('settings.headline') }}</h1>
                   <HypothesisKey />
                 </div>
               </div>
