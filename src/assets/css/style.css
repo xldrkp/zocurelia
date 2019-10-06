@@ -63,6 +63,10 @@ h3 {
 /* Hypothesis logged in */
 .hypothesis_logged_in {
   color: #bd1c2b;
+}
+
+.zocurelia-logo,
+.hypothesis_logged_in {
   display: inline-block;
   position: relative;
   top: -4px;

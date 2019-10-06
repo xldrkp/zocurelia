@@ -2,7 +2,10 @@
   <nav class="navbar navbar-expand-md navbar-dark bg-primary">
     <div class="container">
       <router-link class="navbar-brand" :to="$i18nRoute({ name: 'home' })">
-        <i v-bind:class="{ hypothesis_logged_in: check_hypothesis_access}" class="fa fa-users"></i>
+        <i
+          v-bind:class="{ hypothesis_logged_in: check_hypothesis_access}"
+          class="fa fa-users zocurelia-logo"
+        ></i>
         &nbsp;
         <b>Zocurelia</b>
         <span class="subline">Zotero Curated Reading Lists Annotated</span>
@@ -61,8 +64,7 @@ import { mapActions, mapGetters } from "vuex";
 export default {
   name: "Navigation",
   data() {
-    return {
-    };
+    return {};
   },
   components: {
     LangSwitcher

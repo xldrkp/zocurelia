@@ -97,6 +97,24 @@
         "security-info": "<strong>Security notice:</strong> Your token will be stored on your device only and sent over a secure connection to the Hypothesis server."
       }
     }
+  },
+  "imprint": {
+    "headline": "Imprint"
+  },
+  "privacy": {
+    "headline": "Privacy Policy"
+  },
+  "gitlab": {
+    "headline": "Improve this software!"
+  },
+  "footer": {
+    "imprint": "Imprint",
+    "privacy": "Privacy Policy",
+    "gitlab": "Wanna fork, found a bug or have an idea?"
+  },
+  "cookiewarning": {
+    "buttonText": "Got it!",
+    "buttonLinkText": "More info",
+    "message": "This website uses cookies to ensure you get the best experience on our website."
   }
-
 }

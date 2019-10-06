@@ -97,5 +97,24 @@
         "security-info": "<strong>Sicherheitshinweis:</strong> Dein Token wird nur auf deinem Gerät gespeichert und über eine sichere Verbindung zum Hypothesen-Server gesendet."
       }
     }
+  },
+  "imprint": {
+    "headline": "Impressum"
+  },
+  "privacy": {
+    "headline": "Datenschutzerklärung"
+  },
+  "gitlab": {
+    "headline": "Hilf, diese Software zu verbessern!"
+  },
+  "footer": {
+    "imprint": "Impressum",
+    "privacy": "Datenschutzerklärung",
+    "gitlab": "Verbessere diese Software"
+  },
+  "cookiewarning": {
+    "buttonText": "Verstanden!",
+    "buttonLinkText": "Mehr erfahren",
+    "message": "Diese Website verwendet Cookies, um Dir den vollen Funktionsumfang zu bieten."
   }
 }

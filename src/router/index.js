@@ -1,9 +1,12 @@
-import Vue from 'vue'
-import Router from 'vue-router'
-import routes from './routes.js'
+import Vue from "vue";
+import Router from "vue-router";
+import routes from "./routes.js";
 
-Vue.use(Router)
+Vue.use(Router);
 export default new Router({
-    routes,
-    mode: 'history'
-})
+  scrollBehavior() {
+    return { x: 0, y: 0 };
+  },
+  routes,
+  mode: "history"
+});

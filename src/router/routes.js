@@ -62,6 +62,21 @@ export default [
         component: require("@/components/Settings.vue").default
       },
       {
+        path: "imprint",
+        name: "imprint",
+        component: require("@/components/Imprint.vue").default
+      },
+      {
+        path: "privacy",
+        name: "privacy",
+        component: require("@/components/Privacy.vue").default
+      },
+      {
+        path: "gitlab",
+        name: "gitlab",
+        component: require("@/components/GitLab.vue").default
+      },
+      {
         path: "list",
         name: "list",
         component: require("@/components/List.vue").default,
