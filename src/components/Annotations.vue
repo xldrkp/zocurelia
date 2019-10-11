@@ -1,18 +1,18 @@
 <template>
-  <div class="d-inline">
+  <div class="d-inline annotation-button">
+    <span
+      class="count badge badge-pill"
+      v-bind:class="{ 'badge-info': count == 0, 'badge-primary': count > 0}"
+    >{{ count }}</span>
     <a
       class="hypo-link"
       :href="'https://hyp.is/go?url=' + url + ( hypothesis_group != '' ? ('&group=' + hypothesis_group) : ('&group=__world__'))"
       target="_blank"
     >
-      <span v-show="count > 0">{{ $t('annotations.count0') }}</span>
-      <span v-show="count == 0">{{ $t('annotations.countX') }}</span>
+      <span class="count" v-show="count > 0">{{ $t('annotations.count0') }}</span>
+      <span class="count" v-show="count == 0">{{ $t('annotations.countX') }}</span>
     </a>
 
-    <span
-      class="badge badge-pill"
-      v-bind:class="{ 'badge-info': count == 0, 'badge-primary': count > 0}"
-    >{{ count }}</span>
     <HypothesisGroup :hypothesis_group="hypothesis_group" :url="item.url" />
   </div>
 </template>

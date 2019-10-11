@@ -1,6 +1,6 @@
 <template>
   <span class="hypothesis-group">
-    <i class="fa fa-users"></i>
+    <img class="hypo-icon" src="@/assets/img/hypothesis-icon.png" alt="Icon Hypothesis">
     {{(hypothesis_group != '' ? hypothesis_group_name : 'Public')}}
   </span>
 </template>

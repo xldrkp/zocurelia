@@ -109,7 +109,7 @@ svg.motivation-logo {
 /* Filter settings */
 
 .req {
-  color: red;
+  color: #bd1c2b;
 }
 
 .btn {
@@ -141,10 +141,11 @@ svg.motivation-logo {
 
 .collection-header a {
   color: #fff;
+  text-decoration: underline;
 }
 
 .collection-key {
-  color: #555;
+  color: #1e2b3d;
   font-size: 16px;
 }
 
@@ -209,21 +210,43 @@ svg.motivation-logo {
 
 /* Annotations */
 
-.card .hypo-link {
-  font-size: 16px;
-  margin-right: 6px;
-  margin-left: 15px;
-}
-
 .badge.badge-primary {
   margin-right: 6px;
 }
 
 .hypothesis-group {
+  clear: both;
   display: block;
   font-size: 12px;
   text-align: right;
-  margin-top: 5px;
+  margin: 10px 10px 0 0;
+  padding: 5px 0 5px 0;
+}
+
+.hypothesis-group .hypo-icon {
+  width: 12px;
+}
+
+.annotation-button {
+  background: #12bbad;
+  border-radius: 5px;
+  padding: 5px 10px 5px 0;
+}
+
+.annotation-button .hypo-link {
+  color: #1e2b3d;
+  font-size: 16px;
+  margin-right: 6px;
+  margin-left: 15px;
+  float: right;
+}
+
+.annotation-button .count {
+  float: right;
+}
+
+.annotation-button .count.has-annos {
+  color: #bd1c2b;
 }
 
 /* Transitions */
@@ -286,6 +309,14 @@ svg.motivation-logo {
 @media (min-width: 320px) {
   .display-3 {
     font-size: 40px;
+  }
+}
+
+@media (max-width: 780px) {
+  .annotation-button {
+    float: none !important;
+    display: block !important;
+    margin-bottom: 10px;
   }
 }
 
