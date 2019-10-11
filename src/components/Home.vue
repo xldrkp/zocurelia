@@ -85,72 +85,72 @@
               <div>
                 <div class="row d-flex justify-content-between">
                   <div class="col-md-4 col-lg-3 p-4">
+                    <h4 class="my-3">
+                      <b>{{ $t('home.features.collect.headline') }}</b>
+                    </h4>
                     <img
                       class="img-fluid d-block img-feature"
                       src="@/assets/img/features1.png"
                       width="1500"
                     />
-                    <h4 class="my-3">
-                      <b>{{ $t('home.features.collect.headline') }}</b>
-                    </h4>
                     <p>{{ $t('home.features.collect.description') }}</p>
                   </div>
                   <div class="col-md-4 col-lg-3 p-4">
+                    <h4 class="my-3">
+                      <b>{{ $t('home.features.curate.headline') }}</b>
+                    </h4>
                     <img
                       class="img-fluid d-block img-feature"
                       src="@/assets/img/features2.png"
                       width="1500"
                     />
-                    <h4 class="my-3">
-                      <b>{{ $t('home.features.curate.headline') }}</b>
-                    </h4>
                     <p>{{ $t('home.features.curate.description') }}</p>
                   </div>
                   <div class="col-md-4 col-lg-3 p-4">
+                    <h4 class="my-3">
+                      <b>{{ $t('home.features.tag.headline') }}</b>
+                    </h4>
                     <img
                       class="img-fluid d-block img-feature"
                       src="@/assets/img/features3.png"
                       width="1500"
                     />
-                    <h4 class="my-3">
-                      <b>{{ $t('home.features.tag.headline') }}</b>
-                    </h4>
                     <p>{{ $t('home.features.tag.description') }}</p>
                   </div>
                 </div>
                 <!-- Second row -->
                 <div class="row d-flex justify-content-between">
                   <div class="col-md-4 col-lg-3 p-4">
+                    <h4 class="my-3">
+                      <b>{{ $t('home.features.annotate.headline') }}</b>
+                    </h4>
                     <img
                       class="img-fluid d-block img-feature"
                       src="@/assets/img/features4.png"
                       width="1500"
                     />
-                    <h4 class="my-3">
-                      <b>{{ $t('home.features.annotate.headline') }}</b>
-                    </h4>
                     <p>{{ $t('home.features.annotate.description') }}</p>
                   </div>
                   <div class="col-md-4 col-lg-3 p-4">
+                    <h4 class="my-3">
+                      <b>{{ $t('home.features.share.headline') }}</b>
+                    </h4>
                     <img
                       class="img-fluid d-block img-feature"
                       src="@/assets/img/features5.png"
                       width="1500"
                     />
-                    <h4 class="my-3">
-                      <b>{{ $t('home.features.share.headline') }}</b>
-                    </h4>
                     <p>{{ $t('home.features.share.description') }}</p>
                   </div>
                   <div class="col-md-4 col-lg-3 p-4">
+                    <h4 class="my-3">
+                      <b>{{ $t('home.features.track.headline') }}</b>
+                    </h4>
                     <img
                       class="img-fluid d-block img-feature"
                       src="@/assets/img/features6.png"
                       width="1500"
                     />
-                    <h4 class="my-3">
-                      <b>{{ $t('home.features.track.headline') }}</b>
-                    </h4>
                     <p>{{ $t('home.features.track.description') }}</p>
                   </div>
                 </div>

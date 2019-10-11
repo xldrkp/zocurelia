@@ -5,7 +5,7 @@
         <div class="col-12">
           <div class="mt-4">
             <div class="pt-3">
-              <div class="container">
+              <div class="container" style="word-break: break-word">
                 <div class="row">
                   <div>
                     <h1>{{ $t('privacy.headline') }}</h1>
