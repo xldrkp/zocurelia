@@ -4,9 +4,9 @@
     <div class="row">
       <div class="col-md-12 text-center">
         <p class="mb-0">
-          <router-link :to="$i18nRoute({ name: 'gitlab' })" replace>{{ $t('footer.gitlab') }}</router-link> | © 2019 Axel Dürkop | 
-          <router-link :to="$i18nRoute({ name: 'imprint' })" replace>{{ $t('footer.imprint') }}</router-link> |
-          <router-link :to="$i18nRoute({ name: 'privacy' })" replace>{{ $t('footer.privacy') }}</router-link>
+          <a href="https://collaborating.tuhh.de/xldrkp/zocurelia" target="_blank">{{ $t('footer.gitlab') }}</a> | © 2019 Axel Dürkop | 
+          <router-link :to="$i18nRoute({ name: 'imprint' })">{{ $t('footer.imprint') }}</router-link> |
+          <router-link :to="$i18nRoute({ name: 'privacy' })">{{ $t('footer.privacy') }}</router-link>
         </p>
       </div>
     </div>
