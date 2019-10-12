@@ -4,6 +4,7 @@
       <div class="row pb-1 justify-content-center">
         <div class="col-12">
           <div class="pt-3">
+            <Back />
             <h1>{{ $t('new.headline') }}</h1>
             <p
               class="lead"
@@ -133,10 +134,13 @@
 
 <script>
 import { mapActions, mapGetters } from "vuex";
+import Back from "@/components/Back";
 
 export default {
   name: "New",
-  components: {},
+  components: {
+    Back
+  },
   data() {
     return {
       is_private_hypo: false,

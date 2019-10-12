@@ -48,7 +48,7 @@ h3 {
   height: calc(1.35em + 0.75rem + 2px);
   border-radius: 0.2rem;
   background-clip: unset;
-  background-color: lemonchiffon;
+  background-color: #f3f3f3;
 }
 
 .subline {

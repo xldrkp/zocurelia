@@ -52,10 +52,26 @@
     "countX": "Ask and discuss!"
   },
   "help": {
-    "headline": "Help"
+    "headline": "Help",
+    "introduction": "Zocurelia facilitates reading in distributed communities. This section will help you getting started.",
+    "groups": {
+      "readers": {
+        "headline": "Zocurelia for Readers",
+        "introduction": "Using Zocurelia for reading together is easy. All you need is a <strong>Hypothesis</strong> account, a curated <strong>Zotero</strong> reading list and the address of an according <strong>Zocurelia</strong> community page.<br> To give you an example:",
+        "hypothesis": "This is the link to register a Hypothesis account or log into Hypothesis.",
+        "zotero": "This is an example of a publicly accessible Zotero reading list.",
+        "zocurelia": "This is the Zocurelia community page that combines Zotero and Hypothesis in an integrated view.",
+        "videointroduction": "If you have all this set up, watch the following video. It shows how to interact with the Zocurelia community page."
+      },
+      "organizers": {
+        "headline": "Zocurelia for Community Organizers",
+        "introduction": "This section is currently under development."
+      }
+    }
   },
   "about": {
-    "headline": "About Zocurelia"
+    "headline": "About Zocurelia",
+    "introduction": ""
   },
   "new": {
     "headline": "Create a Zocurelia Community",
@@ -116,5 +132,6 @@
     "buttonText": "Got it!",
     "buttonLinkText": "More info",
     "message": "This website uses cookies to ensure you get the best experience on our website."
-  }
+  },
+  "historyback": "Back"
 }

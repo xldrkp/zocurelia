@@ -10,7 +10,7 @@
                   <div>
                     <h1>{{ $t('imprint.headline') }}</h1>
                     <h2 id="m46">Diensteanbieter</h2>
-                    <p>Axel Dürkop, 21075 Hamburg, Deutschland</p>
+                    <p>Axel Dürkop, Hamburg, Deutschland</p>
                     <ul class="m-elements"></ul>
                     <h2 id="m56">Kontaktmöglichkeiten</h2>
                     <p>

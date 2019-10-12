@@ -26,26 +26,24 @@
               :to="$i18nRoute({ name: 'help' })"
             >{{ $t('navigation.help') }}</router-link>
           </li>
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <router-link
               class="nav-link"
               :to="$i18nRoute({ name: 'about' })"
             >{{ $t('navigation.about') }}</router-link>
-          </li>
+          </li>-->
         </ul>
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
             <router-link
               class="nav-link"
               :to="$i18nRoute({ name: 'settings' })"
-              replace
             >{{ $t('navigation.settings') }}</router-link>
           </li>
           <li class="nav-item">
             <router-link
               class="btn navbar-btn ml-md-2 btn-sm btn-light text-dark"
               :to="$i18nRoute({ name: 'new' })"
-              replace
             >{{ $t('navigation.new') }}</router-link>
           </li>
           <li class="nav-item">

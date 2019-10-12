@@ -1,6 +1,6 @@
 <template>
   <div class="row">
-    <div class="col-md-6">
+    <div class="col-md-8">
       <h4>{{ $t('settings.hypothesisKey.headline') }}</h4>
       <p class="lead">{{ $t('settings.hypothesisKey.description') }}</p>
       <div class="form-row justify-content-start">

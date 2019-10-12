@@ -7,8 +7,11 @@
             <div class="pt-3">
               <div class="container">
                 <div class="row">
+                  <div>
+                  <Back />
                   <h1 class="mb-4">{{ $t('settings.headline') }}</h1>
                   <HypothesisKey />
+                  </div>
                 </div>
               </div>
             </div>
@@ -22,10 +25,12 @@
 
 <script>
 import HypothesisKey from "@/components/HypothesisKey";
+import Back from "@/components/Back";
 
 export default {
   components: {
-    HypothesisKey
+    HypothesisKey,
+    Back
   }
 };
 </script>

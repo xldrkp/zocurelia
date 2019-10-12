@@ -52,7 +52,22 @@
     "countX": "Frag und diskutiere!"
   },
   "help": {
-    "headline": "Hilfe"
+    "headline": "Hilfe",
+    "introduction": "Zocurelia fördert das Lesen in verteilten Communities. Dieser Abschnitt hilft Dir beim Einstieg.",
+    "groups": {
+      "readers": {
+        "headline": "Zocurelia für Leserinnen und Leser",
+        "introduction": "Die Verwendung von Zocurelia zum gemeinsamen Lesen ist einfach. Alles, was du brauchst, ist ein Benutzerkonto bei <strong>Hypothesis</strong>, eine kuratierte Leseliste bei <strong>Zotero</strong> sowie die Adresse einer zugehörigen Community-Seite auf <strong>Zocurelia</strong>.<br> Hier ist ein Beispiel:",
+        "hypothesis": "Dies ist der Link, um sich bei Hypothesis zu registrieren oder sich dort anzumelden.",
+        "zotero": "Dies ist ein Beispiel für eine öffentlich zugängliche Zotero-Leseliste.",
+        "zocurelia": "Dies ist die Zocurelia-Community-Seite, die Zotero und Hypothesis in einer integrierten Ansicht kombiniert.",
+        "videointroduction": "Wenn du all dies eingerichtet hast, schau dir das folgende Video an. Es zeigt, wie du mit der Zocurelia-Community-Seite interagieren kannst."
+      },
+      "organizers": {
+        "headline": "Zocurelia für Community Organizer",
+        "introduction": "Dieser Abschnitt befindet sich derzeit in der Entwicklung."
+      }
+    }
   },
   "about": {
     "headline": "Über Zocurelia"
@@ -116,5 +131,6 @@
     "buttonText": "Verstanden!",
     "buttonLinkText": "Mehr erfahren",
     "message": "Diese Website verwendet Cookies, um Dir den vollen Funktionsumfang zu bieten."
-  }
+  },
+  "historyback": "Zurück"
 }
