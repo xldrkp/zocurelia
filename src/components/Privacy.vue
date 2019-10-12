@@ -8,6 +8,7 @@
               <div class="container" style="word-break: break-word">
                 <div class="row">
                   <div>
+                    <Back />
                     <h1>{{ $t('privacy.headline') }}</h1>
                     <h2>Einfach in eigenen Worten</h2>
                     <p>Die folgende Datenschutzerklärung entspricht den gesetzlichen Vorgaben für diese Seite. Dennoch soll eingangs versucht werden, die technischen Zusammenhänge kurz und nachvollziehbar zu schildern.</p>
@@ -411,3 +412,13 @@
     </div>
   </div>
 </template>
+
+<script>
+import Back from "@/components/Back";
+
+export default {
+  components: {
+    Back
+  }
+};
+</script>

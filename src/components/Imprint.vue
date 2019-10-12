@@ -8,6 +8,7 @@
               <div class="container">
                 <div class="row">
                   <div>
+                    <Back />
                     <h1>{{ $t('imprint.headline') }}</h1>
                     <h2 id="m46">Diensteanbieter</h2>
                     <p>Axel Dürkop, Hamburg, Deutschland</p>
@@ -51,3 +52,13 @@
     </div>
   </div>
 </template>
+
+<script>
+import Back from "@/components/Back";
+
+export default {
+  components: {
+    Back
+  }
+};
+</script>
