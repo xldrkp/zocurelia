@@ -217,6 +217,7 @@ svg.motivation-logo {
 
 .hypothesis-group {
   clear: both;
+  float: right;
   display: block;
   font-size: 12px;
   text-align: right;
@@ -325,4 +326,14 @@ svg.motivation-logo {
   .display-3 {
     font-size: 70px;
   }
+}
+
+/* RSS */
+
+.rss-icon {
+  width: 20px;
+  display: inline-block;
+  margin: 12px 10px 0 8px;
+  padding: 5px 0 0 5px;
+  float: left;
 }

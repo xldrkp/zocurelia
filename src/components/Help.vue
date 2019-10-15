@@ -28,7 +28,7 @@
                       </li>
                       <li>
                         <a
-                          href="http://localhost:8080/en/list?groupID=2362604&list_collections=1"
+                          href="https://zocurelia.com/de/list?groupID=2362604&list_collections=1"
                           target="_blank"
                         >{{ $t('help.groups.readers.zocurelia') }}</a>
                       </li>

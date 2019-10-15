@@ -132,5 +132,8 @@
     "buttonLinkText": "Mehr erfahren",
     "message": "Diese Website verwendet Cookies, um Dir den vollen Funktionsumfang zu bieten."
   },
-  "historyback": "Zurück"
+  "historyback": "Zurück",
+  "rss": {
+    "tooltip": "Rechtsklick, um den RSS-Feed für Annotationen zu kopieren"
+  }
 }

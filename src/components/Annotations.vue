@@ -14,19 +14,23 @@
     </a>
 
     <HypothesisGroup :hypothesis_group="hypothesis_group" :url="item.url" />
+    <RSS :url="item.url" />
+    <div style="clear: both;"></div>
   </div>
 </template>
 
 <script>
 import HypothesisClient from "hypothesis-api-client";
 import HypothesisGroup from "@/components/HypothesisGroup";
+import RSS from "@/components/RSS";
 import { mapGetters } from "vuex";
 
 export default {
   name: "Annotations",
   props: ["item", "url"],
   components: {
-    HypothesisGroup
+    HypothesisGroup,
+    RSS
   },
   data() {
     return {

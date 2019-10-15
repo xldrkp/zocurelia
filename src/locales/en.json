@@ -133,5 +133,8 @@
     "buttonLinkText": "More info",
     "message": "This website uses cookies to ensure you get the best experience on our website."
   },
-  "historyback": "Back"
+  "historyback": "Back",
+  "rss": {
+    "tooltip": "Right-click to copy the link to the RSS feed of related annotations"
+  }
 }
