@@ -225,8 +225,12 @@ svg.motivation-logo {
   padding: 5px 0 5px 0;
 }
 
-.hypothesis-group .hypo-icon {
-  width: 12px;
+.annotation-button .hypo-icon {
+  width: 20px;
+  display: inline-block;
+  margin: 12px 10px 0 0;
+  padding: 5px 0 0 5px;
+  float: left;
 }
 
 .annotation-button {
@@ -245,6 +249,11 @@ svg.motivation-logo {
 
 .annotation-button .count {
   float: right;
+  text-decoration: underline;
+}
+
+.annotation-button .count.badge {
+  text-decoration: none;
 }
 
 .annotation-button .count.has-annos {

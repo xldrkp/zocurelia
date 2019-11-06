@@ -1,6 +1,5 @@
 <template>
   <span class="hypothesis-group">
-    <img class="hypo-icon" src="@/assets/img/hypothesis-icon.png" alt="Icon Hypothesis">
     {{(hypothesis_group != '' ? hypothesis_group_name : 'Public')}}
   </span>
 </template>

@@ -49,7 +49,10 @@
   },
   "annotations": {
     "count0": "What do you think?",
-    "countX": "Ask and discuss!"
+    "countX": "Ask and discuss!",
+    "hypothesis": {
+      "dashboardlink": "Open Hypothesis dashboard for latest annotations."
+    }
   },
   "help": {
     "headline": "Help",

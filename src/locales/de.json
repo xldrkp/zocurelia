@@ -49,7 +49,10 @@
   },
   "annotations": {
     "count0": "Was denkst du?",
-    "countX": "Frag und diskutiere!"
+    "countX": "Frag und diskutiere!",
+    "hypothesis": {
+      "dashboardlink": "Hypothesis-Dashboard mit jüngsten Annotationen öffnen"
+    }
   },
   "help": {
     "headline": "Hilfe",
