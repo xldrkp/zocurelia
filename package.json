@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "serve": "vue-cli-service serve",
+    "serve": "HOST=127.0.0.1 vue-cli-service serve",
     "build": "vue-cli-service build",
     "test": "vue-cli-service lint && yarn run test:unit",
     "lint": "vue-cli-service lint",

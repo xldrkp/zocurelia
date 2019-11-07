@@ -51,7 +51,7 @@
     "count0": "What do you think?",
     "countX": "Ask and discuss!",
     "hypothesis": {
-      "dashboardlink": "Open Hypothesis dashboard for latest annotations."
+      "tooltip": "Open Hypothesis dashboard for latest annotations"
     }
   },
   "help": {
@@ -138,6 +138,9 @@
   },
   "historyback": "Back",
   "rss": {
-    "tooltip": "Right-click to copy the link to the RSS feed of related annotations"
+    "tooltip": "Link to the RSS feed of related annotations"
+  },
+  "zotero": {
+    "tooltip": "Link to detailled bibliographic information in Zotero"
   }
 }

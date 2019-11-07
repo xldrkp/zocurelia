@@ -216,47 +216,51 @@ svg.motivation-logo {
 }
 
 .hypothesis-group {
-  clear: both;
   float: right;
   display: block;
   font-size: 12px;
   text-align: right;
-  margin: 10px 10px 0 0;
-  padding: 5px 0 5px 0;
+  margin: 0 10px 5px 0;
+  padding: 0;
 }
 
-.annotation-button .hypo-icon {
+.annotation-area .service-icon {
   width: 20px;
-  display: inline-block;
-  margin: 12px 10px 0 0;
-  padding: 5px 0 0 5px;
-  float: left;
+  float: right;
+  margin: 12px 10px;
 }
 
-.annotation-button {
+.annotation-area .service-icons {
+  clear: both;
+  float: none;
+  display: block;
+}
+
+.annotation-area {
   background: #12bbad;
   border-radius: 5px;
-  padding: 5px 10px 5px 0;
+  padding: 5px 5px 5px 0;
+  float: right;
 }
 
-.annotation-button .hypo-link {
+.annotation-area .hypo-link {
   color: #1e2b3d;
   font-size: 16px;
-  margin-right: 6px;
   margin-left: 15px;
   float: right;
 }
 
-.annotation-button .count {
-  float: right;
+.annotation-area .count {
   text-decoration: underline;
+  margin-right: 10px;
+  padding-top: 3px;
 }
 
-.annotation-button .count.badge {
+.annotation-area .count.badge {
   text-decoration: none;
 }
 
-.annotation-button .count.has-annos {
+.annotation-area .count.has-annos {
   color: #bd1c2b;
 }
 
@@ -324,7 +328,7 @@ svg.motivation-logo {
 }
 
 @media (max-width: 780px) {
-  .annotation-button {
+  .annotation-area {
     float: none !important;
     display: block !important;
     margin-bottom: 10px;
@@ -339,10 +343,10 @@ svg.motivation-logo {
 
 /* RSS */
 
-.rss-icon {
+/* .rss-icon {
   width: 20px;
   display: inline-block;
   margin: 12px 10px 0 8px;
   padding: 5px 0 0 5px;
   float: left;
-}
+} */

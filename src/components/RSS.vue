@@ -1,7 +1,7 @@
 <template>
   <div>
     <a :title="$t('rss.tooltip')" target="_blank" :href="feed">
-      <img class="rss-icon" src="@/assets/img/rss.png" alt="RSS icon" />
+      <img class="service-icon" src="@/assets/img/rss.png" alt="RSS icon" />
     </a>
   </div>
 </template>

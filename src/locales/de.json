@@ -137,6 +137,9 @@
   },
   "historyback": "Zurück",
   "rss": {
-    "tooltip": "Rechtsklick, um den RSS-Feed für Annotationen zu kopieren"
+    "tooltip": "RSS-Feed der Annotationen in diesem Beitrag"
+  },
+  "zotero": {
+    "tooltip": "Link zu bibliografischen Informationen in Zotero"
   }
 }

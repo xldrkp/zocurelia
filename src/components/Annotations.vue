@@ -1,22 +1,28 @@
 <template>
-  <div class="d-inline annotation-button">
-    <span
-      class="count badge badge-pill"
-      v-bind:class="{ 'badge-info': count == 0, 'badge-primary': count > 0}"
-    >{{ count }}</span>
-    <a
-      class="hypo-link"
-      :href="'https://hyp.is/go?url=' + url + ( hypothesis_group != '' ? ('&group=' + hypothesis_group) : ('&group=__world__'))"
-      target="_blank"
-    >
-      <span class="count" v-show="count > 0">{{ $t('annotations.count0') }}</span>
-      <span class="count" v-show="count == 0">{{ $t('annotations.countX') }}</span>
-    </a>
-
+  <div class="annotation-area">
     <HypothesisGroup :hypothesis_group="hypothesis_group" :url="item.url" />
-    <RSS :url="item.url" />
-    <DashboardLink :url="item.url" />
     <div style="clear: both;"></div>
+    <div class="hypo-link-container">
+      <a
+        class="hypo-link"
+        :href="'https://hyp.is/go?url=' + url + ( hypothesis_group != '' ? ('&group=' + hypothesis_group) : ('&group=__world__'))"
+        target="_blank"
+      >
+        <span class="count" v-show="count > 0">{{ $t('annotations.count0') }}</span>
+        <span class="count" v-show="count == 0">{{ $t('annotations.countX') }}</span>
+        <span
+          class="count badge badge-pill"
+          v-bind:class="{ 'badge-info': count == 0, 'badge-primary': count > 0}"
+        >{{ count }}</span>
+      </a>
+    </div>
+
+    <div class="service-icons">
+      <RSS :url="item.url" />
+      <ZotReferenceLink :zotero_item_url="item.zotero_item_url" />
+      <DashboardLink :url="item.url" />
+    </div>
+      <div style="clear: both;"></div>
   </div>
 </template>
 
@@ -24,6 +30,7 @@
 import HypothesisClient from "hypothesis-api-client";
 import HypothesisGroup from "@/components/HypothesisGroup";
 import DashboardLink from "@/components/HypothesisDocInDashboard";
+import ZotReferenceLink from "@/components/ZotReferenceLink";
 import RSS from "@/components/RSS";
 import { mapGetters } from "vuex";
 
@@ -33,7 +40,8 @@ export default {
   components: {
     HypothesisGroup,
     RSS,
-    DashboardLink
+    DashboardLink,
+    ZotReferenceLink
   },
   data() {
     return {

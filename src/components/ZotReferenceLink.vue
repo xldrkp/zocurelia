@@ -1,7 +1,7 @@
 <template>
   <span>
-      <a target="_blank" :href="zotero_item_url">
-          <img class="zotero-logo" src="@/assets/img/zotero.png" alt="">
+      <a :title="$t('zotero.tooltip')" target="_blank" :href="zotero_item_url">
+          <img class="service-icon" src="@/assets/img/zotero.png" alt="">
       </a>
   </span>
 </template>
