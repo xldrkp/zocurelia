@@ -1,5 +1,7 @@
 # Zocurelia
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3687258.svg)](https://doi.org/10.5281/zenodo.3687258)
+
 Zocurelia supports reading together, especially when your community is spread all over the world, your school, your university or your city.
 
 ![](src/assets/img/screenshot-homepage.png)
