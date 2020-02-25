@@ -4,7 +4,7 @@
     <div class="row">
       <div class="col-md-12 text-center">
         <p class="mb-0">
-          <a href="https://collaborating.tuhh.de/xldrkp/zocurelia" target="_blank">{{ $t('footer.gitlab') }}</a> | © 2019 Axel Dürkop | 
+          <a href="https://collaborating.tuhh.de/xldrkp/zocurelia" target="_blank">{{ $t('footer.gitlab') }}</a> | © 2020 Axel Dürkop | 
           <router-link :to="$i18nRoute({ name: 'imprint' })">{{ $t('footer.imprint') }}</router-link> |
           <router-link :to="$i18nRoute({ name: 'privacy' })">{{ $t('footer.privacy') }}</router-link>
         </p>

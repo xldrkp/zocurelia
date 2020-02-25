@@ -40,4 +40,4 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 
 ## License
 
-&copy; 2019 Axel Dürkop | [MIT License](LICENSE)
+&copy; 2020 Axel Dürkop | [MIT License](LICENSE)
